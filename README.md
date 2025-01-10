@@ -1,1 +1,2 @@
 # 65_GenerativeLandscape
+Generative Designに利用するpythonライブラリをまとめる
