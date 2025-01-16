@@ -1,0 +1,94 @@
+import rhinoscriptsyntax as rs
+import scriptcontext as sc
+import Rhino as R
+from rhinoscript import utility as rhutil
+from lib_65land.config import Config
+from lib_65land.Forest import ForestRegion
+
+
+def get_layer_objects(layer):
+    """_summary_
+
+    Parameters
+    ----------
+    layer : str
+
+    Returns
+    -------
+    objs: (n,) rhino_object
+    guids: (n,) str
+    """
+    if not isinstance(layer, str): raise Exception("method: get should receive str. received : {}".format(layer))
+    
+    sc.doc = R.RhinoDoc.ActiveDoc
+
+    exists = rs.IsLayer(layer)
+    if not exists: raise Exception("Layer:{} doesn't exist".format(layer))
+
+    objs = list(rs.ObjectsByLayer(layer))
+    sc.doc = ghdoc
+
+    return objs
+
+def get_user_texts(guid,key):
+    """get user text from guid and key
+
+    Parameters
+    ----------
+    guid : str
+    key :str
+
+    Returns
+    -------
+    user_text: str
+    """
+    sc.doc = R.RhinoDoc.ActiveDoc
+    try:
+        rst = rs.GetUserText(guid,key=key)
+    except ValueError:
+        raise Exception("key is not found : key:{}".format(key))
+    sc.doc = ghdoc
+    return str(rst)
+
+def coercemesh(guid):
+    sc.doc = R.RhinoDoc.ActiveDoc
+    mesh = rhutil.coercemesh(guid, True)
+    sc.doc = ghdoc
+    return mesh
+
+def find_index_by_attribute(class_list, target_value):
+    return next(
+        (i for i, cls in enumerate(class_list) if cls.value == target_value),
+        None  # 見つからなかった場合に返す値
+    )
+
+def load_forest_region(forest_domains):
+    config = Config()
+    region_layer = config.forest_region_archive_layer
+    region_keys = config.forest_region_keys
+
+    guids = get_layer_objects(region_layer)
+
+    region_id = [int(get_user_texts(guid,region_keys[0])) for guid in guids]
+    region_domain_name = [str(get_user_texts(guid,region_keys[1])) for guid in guids]
+    region_meshes = [coercemesh(guid) for guid in guids]
+    print('region_id', region_id)
+    print('region_domain_name', region_domain_name)
+    print('region_meshes', region_meshes)
+    forest_regions = []
+    if region_meshes and region_domain_name and region_id:
+        for i in range(len(region_meshes)):
+            
+            fd = next(fd for fd in forest_domains if fd.name==region_domain_name[i])
+            if not fd: raise Exception("forest domain not found.")
+            forest_region = ForestRegion(region_id[i],region_meshes[i],fd)
+            forest_regions.append(forest_region)
+
+
+    if not forest_regions:
+        raise Exception("No forest region is loaded")
+    return forest_regions
+
+
+if forest_domains:
+    forest_region = load_forest_region(forest_domains)

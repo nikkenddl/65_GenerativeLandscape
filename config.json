@@ -1,0 +1,38 @@
+{
+    "shade_tolerance":
+    [
+        6.0,
+        4.0,
+        2.0
+    ],
+    "wind_tolerance":
+    [
+        4.3,
+        5.6,
+        -1
+    ],
+    "rhino_const_values":
+    {
+        "map_layer_name":"GH_MESH_GRIDMAP",
+        "map_keys":
+        [
+            "x_cell_count",
+            "y_cell_count",
+            "grid_origin",
+            "span",
+            "is_cell_in_region_base64",
+            "cell_z_value_base64",
+            "sunshine_duration_hour_base64",
+            "soil_thickness_base64",
+            "wind_speed_base64",
+            "FR_data_base64",
+            "created_time"
+        ],
+        "forest_region_layer": "GH_srf_forest-domain",
+        "forest_region_archive_layer": "GH_mesh_forest_regions",
+        "forest_region_keys": [
+            "forest_region_ID",
+            "forest_domain_name"
+        ]
+    }
+}

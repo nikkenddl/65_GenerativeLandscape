@@ -1,0 +1,24 @@
+try:
+    from lib_65land.config import Config
+    from lib_65land.rhinopy import ExcelReader
+    from lib_65land.Forest import ForestDomain
+except:
+    from .config import Config
+    from .rhinopy import ExcelReader
+    from .Forest import ForestDomain
+
+def load_forest_domain():
+    conf = Config()
+    path = conf.path_forest_domain
+    mat_data,sheets = ExcelReader.read_from_file(path,0)
+
+    # remove header
+    data_matrix = mat_data[2:]
+    # pop layer name
+    layer_name = [d.pop(1) for d in data_matrix]
+
+    # construct ForestDomain
+    forest_domain = [ForestDomain(*d) for d in data_matrix]
+    return layer_name,forest_domain
+
+layer_name,forest_domain = load_forest_domain()

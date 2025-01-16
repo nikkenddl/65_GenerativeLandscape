@@ -12,7 +12,7 @@ def try_get_text(something,default=""):
     except:
         return default
     
-def try_get_int(something,default=""):
+def try_get_int(something,default=None):
     if something is None: return default
     try:
         return int(something)
