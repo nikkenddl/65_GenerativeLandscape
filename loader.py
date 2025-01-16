@@ -14,7 +14,7 @@ def get_source_load_const():
                     'forest_region_layer',
                     'forest_region_archive_layer',
                     'forest_region_keys']
-    ghpy_path = os.path.join(__file__,os.path.pardir,'.load_forest_domain.ghpy')
+    ghpy_path = os.path.join(__file__,os.path.pardir,'.load_const.ghpy')
 
     code = ""
     with open(ghpy_path) as f:

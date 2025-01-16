@@ -1,4 +1,4 @@
-from .config import Config
+from lib_65land.config import Config
 
 conf = Config()
 
