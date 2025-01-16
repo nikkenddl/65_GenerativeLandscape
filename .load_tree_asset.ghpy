@@ -1,0 +1,32 @@
+try:
+    from lib_65land.config import Config
+    from lib_65land.rhinopy import ExcelReader
+    from lib_65land.Tree import Tree
+except:
+    from .config import Config
+    from .rhinopy import ExcelReader
+    from .Tree import Tree
+
+def load_tree_asset():
+    conf = Config()
+    path = conf.path_tree_asset
+    mat_data,sheets = ExcelReader.read_from_file(path,0)
+
+    tree_assets = Tree.generate_trees_from_database(
+        mat_data,
+        col_species=conf.tree_asset_table_col_species,
+        col_symbol=conf.tree_asset_table_col_symbol,
+        col_height=conf.tree_asset_table_col_height,
+        col_trunk_circumference=conf.tree_asset_table_col_trunk_circumference,
+        col_diameter=conf.tree_asset_table_col_diameter,
+        col_maximum_height=conf.tree_asset_table_col_maximum_height,
+        col_shade_tolerance=conf.tree_asset_table_col_shade_tolerance,
+        col_wind_tolerance=conf.tree_asset_table_col_wind_tolerance,
+        col_shape_type=conf.tree_asset_table_col_shape_type,
+        col_root_type=conf.tree_asset_table_col_root_type,
+        col_growing_speed=conf.tree_asset_table_col_growing_speed,
+    )
+    return tree_assets
+   
+tree_asset = load_tree_asset()
+

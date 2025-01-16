@@ -36,15 +36,37 @@ class Config(Singleton):
             "forest_domain_name"
         )
 
-        self.__path_forest_domain = os.path.abspath(os.path.join(
+        path_project_root = os.path.abspath(os.path.join(
             __file__,
             os.pardir,
             os.pardir,
             os.pardir,
-            os.pardir,
+            os.pardir
+        ))
+
+        self.__path_forest_domain = os.path.abspath(os.path.join(
+            path_project_root,
             "20_data",
             "forest_domain_data.xlsx"
         ))
+
+        self.__path_tree_asset = os.path.abspath(os.path.join(
+            path_project_root,
+            "20_data",
+            "tree_asset_table.xlsx"
+        ))
+
+        self.__tree_asset_table_col_species = "樹木名"
+        self.__tree_asset_table_col_symbol = "記号"
+        self.__tree_asset_table_col_height = "樹高"
+        self.__tree_asset_table_col_trunk_circumference = "幹周"
+        self.__tree_asset_table_col_diameter = "葉張"
+        self.__tree_asset_table_col_maximum_height = "最大成長樹高"
+        self.__tree_asset_table_col_shade_tolerance = "耐陰性"
+        self.__tree_asset_table_col_wind_tolerance = "耐風性"
+        self.__tree_asset_table_col_shape_type = "樹形タイプ"
+        self.__tree_asset_table_col_root_type = "根の成長"
+        self.__tree_asset_table_col_growing_speed = "成長速度"
         
     @property
     def shade_tolerance(self):
@@ -77,3 +99,42 @@ class Config(Singleton):
     @property
     def path_forest_domain(self):
         return self.__path_forest_domain
+    
+    @property
+    def path_tree_asset(self):
+        return self.__path_tree_asset
+    
+
+    @property
+    def tree_asset_table_col_species(self):
+        return self.__tree_asset_table_col_species
+    @property
+    def tree_asset_table_col_symbol(self):
+        return self.__tree_asset_table_col_symbol
+    @property
+    def tree_asset_table_col_height(self):
+        return self.__tree_asset_table_col_height
+    @property
+    def tree_asset_table_col_trunk_circumference(self):
+        return self.__tree_asset_table_col_trunk_circumference
+    @property
+    def tree_asset_table_col_diameter(self):
+        return self.__tree_asset_table_col_diameter
+    @property
+    def tree_asset_table_col_maximum_height(self):
+        return self.__tree_asset_table_col_maximum_height
+    @property
+    def tree_asset_table_col_shade_tolerance(self):
+        return self.__tree_asset_table_col_shade_tolerance
+    @property
+    def tree_asset_table_col_wind_tolerance(self):
+        return self.__tree_asset_table_col_wind_tolerance
+    @property
+    def tree_asset_table_col_shape_type(self):
+        return self.__tree_asset_table_col_shape_type
+    @property
+    def tree_asset_table_col_root_type(self):
+        return self.__tree_asset_table_col_root_type
+    @property
+    def tree_asset_table_col_growing_speed(self):
+        return self.__tree_asset_table_col_growing_speed

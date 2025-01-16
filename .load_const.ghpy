@@ -1,0 +1,9 @@
+from .config import Config
+
+conf = Config()
+
+map_layer_name = conf.map_layer_name
+map_keys = conf.map_keys
+forest_region_layer = conf.forest_region_layer
+forest_region_archive_layer = conf.forest_region_archive_layer
+forest_region_keys = conf.forest_region_keys
