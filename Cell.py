@@ -33,11 +33,11 @@ class Cell:
                              forest_region_id_list,
                              forest_regions
                              ):
-        fr_dict = {fr.ID:fr for fr in forest_regions}
         assert all(len(ID_list)==len(l) for l in [point_list,sunshine_duration_list,soil_thickness_list,wind_speed_list,forest_region_id_list])
         cells = [None] * len(ID_list)
         invalid_cell_points = []
         count = 0
+        fr_dict = {fr.ID:fr for fr in forest_regions}
         
         for ID,pt,sd,st,ws,frid in zip(ID_list,point_list,sunshine_duration_list,soil_thickness_list,wind_speed_list,forest_region_id_list):
             if ID is not None\
