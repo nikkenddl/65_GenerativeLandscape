@@ -1,14 +1,15 @@
 # 65_GenerativeLandscape
 Generative Designに利用するpythonライブラリをまとめる。
 ghファイルに含まれるghpythonコンポーネントからこのライブラリをロードする。
+ghファイルはリリース時にアップロード。
 
 # How to Use
 ## Directory Struction
 root
 
-├── map_creator.gh
+├── MapCreator_65.gh
 
-├── forest_creator.gh
+├── ForestCreator_65.gh
 
 └── lib_65land  <- this repository
 
