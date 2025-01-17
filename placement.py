@@ -2,46 +2,92 @@ import random
 from collections import Iterable
 from .rhinopy import CellRTree
 
+from time import time
+
 class ForestCreator:
     def __init__(self,
                  cell_altanatives,
                  tree_altanatives,
-                 limit_iteration=50):
+                 limit_iteration=50,
+                 random_seed=65):
+        try: random.seed(random_seed, version=1)  # Python 3
+        except TypeError: random.seed(random_seed)  # Python 2
+        s = time()
         self.clear_cells(cell_altanatives)
+        print('time to clear cell: {}'.format(time()-s))
+        
         self.__CELL_FINDING_LIMIT_DISTANCE = 20000.0
+        s = time()
         self.cell_states = {cell : self.__CELL_FINDING_LIMIT_DISTANCE for cell in cell_altanatives}
+        print('time to init cell state: {}'.format(time()-s))
+
         self.trees = tree_altanatives
         
         self.__failured_count = 0
         self.__limit_failured_count = int(limit_iteration)
         self.__placed_trees = []
 
+        s = time()
         self.rtree = CellRTree(cell_altanatives)
+        print('time to init rtree: {}'.format(time()-s))
+
 
 
     def clear_cells(self,cells):
+        s = time()
         for c in cells:
             c.clear()
+        print('time to clear cell : {}'.format(time()-s))
+        s = time()
         frs = set(c.forest_region for c in cells)
+        print('time to create set of forest regions : {}'.format(time()-s))
+        s = time()
         for fr in frs:
             fr.initialize()
-
+        print('time to init forest regions: {}'.format(time()-s))
+        print('count of forest region: {}'.format(len(frs)))
+        
     def create(self):
+        __time_to_pick_cell = []
+        __time_to_try_to_place = []
+        __time_to_update_state = []
+        # for _ in range(10):
         while not self.is_created:
-        # for _ in range(1):
-        #     if self.is_created: break
+            # if self.is_created: break
+            s = time()
             testing_cell = self.pick_cell()
+            __time_to_pick_cell.append(time()-s)
             assert testing_cell is not None
 
+            s = time()
             placed_tree = self.try_to_place(testing_cell)
+            __time_to_try_to_place.append(time()-s)
             if placed_tree:
                 self.__failured_count = 0
+                s = time()
                 self.update_state(placed_tree)
+                __time_to_update_state.append(time()-s)
             else:
                 self.__failured_count += 1
                 testing_cell.kill()
                 del self.cell_states[testing_cell]
 
+        def print_summary(elapsed_time_list,title):
+            print("\nelapsed time[s] for {}\n--------".format(title))
+            total = sum(elapsed_time_list)
+            cnt = len(elapsed_time_list)
+            average = 0 if cnt==0 else total/cnt
+            first = None if cnt==0 else elapsed_time_list[0]
+            last = None if cnt==0 else elapsed_time_list[-1]
+            print("total : {}".format(total))
+            print("average : {}".format(average))
+            print("count : {}".format(cnt))
+            print("first : {}".format(first))
+            print("last : {}".format(last))
+            print('\n')
+        print_summary(__time_to_pick_cell,'TIME_TO_PICK_CELL')
+        print_summary(__time_to_try_to_place,'TIME_TO_TRY_TO_PLACE')
+        print_summary(__time_to_update_state,'TIME_TO_UPDATE_STATE')
         return self.__placed_trees
 
     @property
@@ -88,19 +134,43 @@ class ForestCreator:
         return [t for t in self.trees if t.matches_cell_environment(cell)]
     
     def possibility(self,trees,cell):
-        # spcecies possiblity by forest_domain
+        L = len(trees)
+        possibility_list = [1.0] * L
+
+        # possiblity by dominant species
         dominant_species = cell.FD_dominant_species
         are_dominant = [t.species in dominant_species for t in trees]
         count_dominant = sum(are_dominant)
-        count_undominant = len(trees)-count_dominant
+        count_undominant = L-count_dominant
         
-        possibility_list = []
         if count_dominant==0 or count_undominant==0:
-            possibility_list = [1.0] * len(trees)
+            pass # do nothing
         else:
             dominant_possibility = 0.7/float(count_dominant)
             undominant_possibility = 0.3/float(count_undominant)
-            possibility_list = [dominant_possibility if is_dom else undominant_possibility for is_dom in are_dominant]
+            for i in range(L):
+                if are_dominant[i]:
+                    possibility_list[i] *= dominant_possibility
+                else:
+                    possibility_list[i] *= undominant_possibility
+
+        # possibility by ratio of evergreen and diciduous
+        eg_ratio = cell.FD_eg_ratio
+        dd_ratio = 1.0 - eg_ratio
+        are_EG = [t.is_evergreen for t in trees]
+        count_EG = sum(are_EG)
+        count_DD = L-count_EG
+
+        if count_EG==0 or count_DD==0:
+            pass # do nothing
+        else:
+            eg_possibility = eg_ratio/float(count_EG)
+            dd_possibility = dd_ratio/float(count_DD)
+            for i in range(L):
+                if are_EG[i]:
+                    possibility_list[i] *= eg_possibility
+                else:
+                    possibility_list[i] *= dd_possibility
 
         return possibility_list
     

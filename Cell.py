@@ -23,6 +23,7 @@ class Cell:
 
     def clear(self):
         self.placed_tree=None
+        self.__is_killed = False
 
     @staticmethod
     def create_from_map_info(ID_list,
@@ -94,14 +95,14 @@ class Cell:
         return self.__FD_DICT[self.FDname].count_top_layer_species
     
     @property
-    def FD_eg_dd_ratio(self):
+    def FD_eg_ratio(self):
         if self.FDname not in self.__FD_DICT: raise Exception("FD has not been set yet")
-        return self.__FD_DICT[self.FDname].eg_dd_ratio
+        return self.__FD_DICT[self.FDname].eg_ratio
     
     @property
-    def FD_eg_dd_ratio_in_gap(self):
+    def FD_eg_ratio_in_gap(self):
         if self.FDname not in self.__FD_DICT: raise Exception("FD has not been set yet")
-        return self.__FD_DICT[self.FDname].eg_dd_ratio_in_gap
+        return self.__FD_DICT[self.FDname].eg_ratio_in_gap
     
     @property
     def FD_gap_size(self):
@@ -112,6 +113,9 @@ class Cell:
     def FD_dominant_species(self):
         if self.FDname not in self.__FD_DICT: raise Exception("FD has not been set yet")
         return self.__FD_DICT[self.FDname].dominant_species
+    
+    def __str__(self):
+        return "Cell<{}>".format(self.ID)
     
     def __eq__(self, other):
         if not isinstance(other, Cell):
