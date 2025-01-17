@@ -27,51 +27,36 @@ def try_get_point_from_string(string):
     if not succeeds: raise Exception("failured to parse point. input:{}".format(string))
     return point
 
-class CellRTree:
-    def __init__(self,cells):
-        self.cells = cells
-        self.rtree = rg.RTree.CreateFromPointArray([c.point for c in cells])
-        
-        self.collided = set()
+class PointableRTree:
+    def __init__(self,pointable_objects=[]):
+        self.objects = pointable_objects
+        self.rtree = rg.RTree.CreateFromPointArray([c.point for c in pointable_objects])
 
     def __callback_set(self,sender,e):
         e.Tag.add(e.Id)
 
     def __callback_list(self,sender,e):
         e.Tag.append(e.Id)
+
+    def append(self,pointable_object):
+        self.objects.append(pointable_object)
+        self.rtree.Insert(pointable_object.point,self.rtree.Count)
+
+    def extend(self,pointable_objects):
+        self.objects.extend(pointable_objects)
+        for o in pointable_objects:
+            self.rtree.Insert(o,self.rtree.Count)
         
     
-    def search_close_cells(self,origin_cell,distance):
+    def search_close_objects(self,origin_pointable,distance):
         close_indices = []
-        sphere = rg.Sphere(origin_cell.point,distance)
+        sphere = rg.Sphere(origin_pointable.point,distance)
         self.rtree.Search(sphere,self.__callback_list,close_indices)
-        close_cells = set(self.cells[i] for i in close_indices)
+        close_objects = set(self.objects[i] for i in close_indices)
 
-        return close_cells
-        
-        
-    # def calc_each(self):
-    #     def prlprocess(tp):
-    #         sphere = rg.Sphere(tp[0],tp[1])
-    #         self.rtree.Search(sphere,self.__callback_set,tp[2])
-        
-    #     collided_set_list = [set() for _ in range(len(self.r))]
-        
-    #     args = list(zip(self.source,self.r,collided_set_list))
-        
-    #     ForEach(args,prlprocess)
-        
-    #     #for pt,r,collided_set in zip(self.source,self.r,collided_set_list):
-    #         #sphere = rg.Sphere(pt,r)
-    #         #self.rtree.Search(sphere,self.__callback_set,collided_set)
+        return close_objects
 
-
-    #     rst_tree = DataTree[System.Object]()
-    #     for i,d in enumerate(collided_set_list):
-    #         rst_tree.AddRange(list(d),ghpath(i))
-    #     return rst_tree
-
-
+        
 
 def get_layer_objects(ghdoc,layer):
     """_summary_

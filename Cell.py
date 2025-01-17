@@ -90,9 +90,9 @@ class Cell:
         return self.__FD_DICT[self.FDname].overlap_tolerance_ratio
     
     @property
-    def FD_count_top_layer_species(self):
+    def FD_vicinity_same_height_category_limit(self):
         if self.FDname not in self.__FD_DICT: raise Exception("FD has not been set yet")
-        return self.__FD_DICT[self.FDname].count_top_layer_species
+        return self.__FD_DICT[self.FDname].vicinity_same_height_category_limit
     
     @property
     def FD_eg_ratio(self):

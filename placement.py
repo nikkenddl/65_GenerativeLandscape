@@ -1,10 +1,12 @@
 import random
 from collections import Iterable
-from .rhinopy import CellRTree
+from .rhinopy import PointableRTree
+from .config import Config
 
 from time import time
 
 class ForestCreator:
+    __config = Config()
     def __init__(self,
                  cell_altanatives,
                  tree_altanatives,
@@ -28,8 +30,10 @@ class ForestCreator:
         self.__placed_trees = []
 
         s = time()
-        self.rtree = CellRTree(cell_altanatives)
-        print('time to init rtree: {}'.format(time()-s))
+        self.all_cell_rtree = PointableRTree(cell_altanatives)
+        print('time to init all_cell_rtree: {}'.format(time()-s))
+
+        self.placed_tree_rtree = PointableRTree([])
 
 
 
@@ -82,8 +86,6 @@ class ForestCreator:
             print("total : {}".format(total))
             print("average : {}".format(average))
             print("count : {}".format(cnt))
-            print("first : {}".format(first))
-            print("last : {}".format(last))
             print('\n')
         print_summary(__time_to_pick_cell,'TIME_TO_PICK_CELL')
         print_summary(__time_to_try_to_place,'TIME_TO_TRY_TO_PLACE')
@@ -130,8 +132,25 @@ class ForestCreator:
         -------
         filtered_trees: (n,) Tree
         """
+        # filter trees with environment
+        trees_matches_environment = [t for t in self.trees if t.matches_cell_environment(cell)]
+       
+       # filter trees by tree layer count limit.
+        close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_forest_layer_count)
+        limit_layer_count = cell.FD_vicinity_same_height_category_limit
 
-        return [t for t in self.trees if t.matches_cell_environment(cell)]
+        if len(close_placed_trees)<limit_layer_count:
+            # close placed tree count less than limit. = any height category trees can be placed.
+            pass
+        else:
+            # close placed tree count is equal or larger than limit count. 
+            # Filter the placing trees, keeping only those with
+            # a height category that matches the height categories of nearby placed trees.
+            height_category_in_vicinity = set(t.height_category for t in close_placed_trees)
+            if len(height_category_in_vicinity)>=limit_layer_count:
+                trees_matches_environment = [t for t in self.trees if t.height_category in height_category_in_vicinity]
+        
+        return trees_matches_environment
     
     def possibility(self,trees,cell):
         L = len(trees)
@@ -229,6 +248,7 @@ class ForestCreator:
 
         placed_tree = tree.place(cell)
         self.__placed_trees.append(placed_tree)
+        self.placed_tree_rtree.append(placed_tree)
         return placed_tree
     
     def update_state(self,placed_tree):
@@ -243,7 +263,7 @@ class ForestCreator:
         assert placed_point is not None
 
         # update only closer cells
-        close_cells_set = self.rtree.search_close_cells(placed_tree.placed_cell,
+        close_cells_set = self.all_cell_rtree.search_close_objects(placed_tree.placed_cell,
                                                         self.__CELL_FINDING_LIMIT_DISTANCE)
 
         for cell in close_cells_set:

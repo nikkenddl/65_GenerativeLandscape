@@ -74,6 +74,7 @@ class Config(Singleton):
         self.__required_sunshine_duration_hour_by_shade_tolerance = (6.0,4.0,2.0)
         self.__limit_wind_speed_by_wind_tolerance = (4.3,5.6,float('inf'))
         self.__tree_height_lower_limit_to_consider_root_shape_for_soil_thickness = 8000.0 # mm
+        self.__high_tree_shortest_height_class = 3000 # mm
         # use when tree height is equal or higher than __tree_height_lower_limit_to_consider_root_shape_for_soil_thickness
         self.__required_soil_thickness_by_root_type = {
             "A": 1500, # int
@@ -87,6 +88,9 @@ class Config(Singleton):
             5000:600,
             8000:1000
         }
+
+        __area_to_check_forest_layer_count = 100 # m2
+        self.__radius_to_check_forest_layer_count = (__area_to_check_forest_layer_count/math.pi) ** (1/2) * 1000 #mm
 
     @property
     def required_sunshine_duration_hour_by_shade_tolerance(self):
@@ -176,6 +180,10 @@ class Config(Singleton):
             desc sorted.
         """
         return self.__tree_height_category
+    
+    @property
+    def high_tree_shortest_height_class(self):
+        return self.__high_tree_shortest_height_class
 
     @property
     def tree_height_lower_limit_to_consider_root_shape_for_soil_thickness(self):
@@ -192,3 +200,7 @@ class Config(Singleton):
         """use when tree height is lower than Config.tree_height_lower_limit_to_consider_root_shape_for_soil_thickness.
         """
         return self.__required_soil_thickness_by_height_category
+    
+    @property
+    def radius_to_check_forest_layer_count(self):
+        return self.__radius_to_check_forest_layer_count
