@@ -11,6 +11,43 @@ import clr
 # such as D:\Users\{username}\AppData\Roaming\Grasshopper\Libraries
 clr.AddReference("Net.SourceForge.Koogra")
 import Net.SourceForge.Koogra as Excel
+import System
+import clr
+
+clr.AddReference("Clipper2Lib")
+import Clipper2Lib
+
+
+class PolylineBoolenCalculation:
+    ClipperPoint = Clipper2Lib.PointD
+    ClipperPath = Clipper2Lib.PathD
+    ClipperPathTree = Clipper2Lib.PathsD
+
+    @classmethod
+    def make_clipper_path_from_rhino_polyline(cls,rhino_polyline):
+        return cls.ClipperPath([cls.ClipperPoint(p.X,p.Y) for p in rhino_polyline.GetEnumerator()])
+
+    @classmethod
+    def make_rhino_polyline_from_clipper_path(cls,pathD):
+        points = [rg.Point3d(p.x,p.y,0) for p in pathD]
+        points.append(points[0])
+        return rg.Polyline(points)
+
+    @classmethod
+    def intersect_polyline(cls,pl1,pl2):
+        path1 = cls.make_clipper_path_from_rhino_polyline(pl1)
+        path2 = cls.make_clipper_path_from_rhino_polyline(pl2)
+        result = cls.ClipperPathTree()
+
+        solver = Clipper2Lib.ClipperD(2)
+        solver.AddSubject(path1)
+        solver.AddClip(path2)
+        intersection_clip_type = Clipper2Lib.ClipType.Intersection
+        nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+
+        solver.Execute(intersection_clip_type,nonzero_fill_rule,result)
+
+        return [cls.make_rhino_polyline_from_clipper_path(r) for r in result]
 
 
 def project_to_xyplane(geometry):
