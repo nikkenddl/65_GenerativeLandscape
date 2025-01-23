@@ -6,15 +6,8 @@ from pickle import loads
 import base64
 
 import System
-import clr
-# Place dll at the folder of grasshopper library
-# such as D:\Users\{username}\AppData\Roaming\Grasshopper\Libraries
-clr.AddReference("Net.SourceForge.Koogra")
 import Net.SourceForge.Koogra as Excel
 import System
-import clr
-
-clr.AddReference("Clipper2Lib")
 import Clipper2Lib
 
 
@@ -32,22 +25,77 @@ class PolylineBoolenCalculation:
         points = [rg.Point3d(p.x,p.y,0) for p in pathD]
         points.append(points[0])
         return rg.Polyline(points)
+    
+    @classmethod
+    def make_clipper_path_from_coordinates(cls,coordinates):
+        """instance Clipper2Lib.PathD with 2d coordinates list.
+
+        Parameters
+        ----------
+        coordinates : (n,2) float
+            [p1(x1,y1),p2(x2,y2)...]
+            first and end points must be not duplicated.
+
+        Returns
+        -------
+        ClipperPathD
+        """
+        return cls.ClipperPath([cls.ClipperPoint(coords[0],coords[1]) for coords in coordinates])
 
     @classmethod
-    def intersect_polyline(cls,pl1,pl2):
-        path1 = cls.make_clipper_path_from_rhino_polyline(pl1)
-        path2 = cls.make_clipper_path_from_rhino_polyline(pl2)
+    def get_coordinates_from_clipper_path(cls,pathD):
+        """get coordinates from pathD
+
+        Parameters
+        ----------
+        pathD : Clipper2Lib.PathD
+
+        Returns
+        -------
+        coordinates : (n,2) float
+            [p1(x1,y1),p2(x2,y2)...]
+            first and end points must be not duplicated.
+        """
+        points = [(p.x,p.y) for p in pathD]
+        return points
+    
+    @classmethod
+    def execute(cls,clip_type,fill_rule,polyline_target,polyline_operator,use_rhino=False,return_clipper_path=False):
+        clipper_path_func = None # func
+        restoring_result_func = None # func
+        if use_rhino:
+            clipper_path_func = cls.make_clipper_path_from_rhino_polyline
+            restoring_result_func = cls.make_rhino_polyline_from_clipper_path
+        else:
+            clipper_path_func = cls.make_clipper_path_from_coordinates
+            restoring_result_func = cls.get_coordinates_from_clipper_path
+
+        path1 = clipper_path_func(polyline_target)
+        path2 = clipper_path_func(polyline_operator)
         result = cls.ClipperPathTree()
 
         solver = Clipper2Lib.ClipperD(2)
         solver.AddSubject(path1)
         solver.AddClip(path2)
+
+        solver.Execute(clip_type,fill_rule,result)
+
+        if return_clipper_path:
+            return result
+        else:
+            return [restoring_result_func(r) for r in result]
+
+    @classmethod
+    def intersect_polyline(cls,pl1,pl2,use_rhino=False,return_clipper_path=False):
         intersection_clip_type = Clipper2Lib.ClipType.Intersection
         nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+        return cls.execute(intersection_clip_type,nonzero_fill_rule,pl1,pl2,use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+    
 
-        solver.Execute(intersection_clip_type,nonzero_fill_rule,result)
+    @staticmethod
+    def get_area_of_clipper_path(clipper_path):
+        return Clipper2Lib.Clipper.Area(clipper_path)
 
-        return [cls.make_rhino_polyline_from_clipper_path(r) for r in result]
 
 
 def project_to_xyplane(geometry):
