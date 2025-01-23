@@ -245,6 +245,13 @@ class ForestCreator:
         tree = weighted_choice(tree_altanatives,weight,1)[0]
 
         # add collision check here
+        close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_collision)
+        if close_placed_trees:
+            for close_tree in close_placed_trees:
+                overlapping_ratio = tree.get_overlapping_ratio(close_tree,cell.point)
+                if overlapping_ratio>cell.FD_overlap_tolerance_ratio:
+                    # too close with already placed tree.
+                    return None
 
         placed_tree = tree.place(cell)
         self.__placed_trees.append(placed_tree)

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from .conversion import *
 from .config import Config
+from .rhinopy import PolylineBoolenCalculation
 from copy import copy
 from math import floor
 
@@ -37,7 +38,8 @@ class Tree:
                  root_type=None,
                  growing_speed=None,
                  is_evergreen=None,
-                 is_conifers=None):
+                 is_conifers=None,
+                 undercut_height_ratio=None):
 
         self.species = try_get_text(species)
         self.symbol = try_get_text(symbol)
@@ -47,6 +49,7 @@ class Tree:
         self.trunk_circumference = try_get_float(trunk_circumference,False) * 1000 # convert from m to mm
         self.diameter = try_get_float(diameter) * 1000 # convert from m to mm
         self.maximum_height = try_get_float(maximum_height) * 1000 # convert from m to mm
+        self.undercut_height_ratio = try_get_float(undercut_height_ratio)
 
         self.__shade_tolerance_index = try_get_int(shade_tolerance)
         self.__wind_tolerance_index = try_get_int(wind_tolerance)
@@ -61,8 +64,9 @@ class Tree:
         self.required_shade_tolerance = None
         self.limit_wind_tolerance = None
         self.required_soil_thickness = None
-        self.shape = None
+        self.tree_shape_section = None
         self.root = None
+        self.section_area = None
 
         self.set_config_value()
 
@@ -83,16 +87,43 @@ class Tree:
             self.limit_wind_tolerance = self.__config.limit_wind_speed_by_wind_tolerance[self.__wind_tolerance_index]
         if self.root_type is not None and self.height_category is not None:
             self.required_soil_thickness = get_required_soil_thickness()
+        if self.shape_type is not None:
+            self.tree_shape_section = self.get_tree_shape_section(self.radius,self.height,self.undercut_height_ratio,self.shape_type)
+            self.section_area = self.compute_area_of_coordinates(self.tree_shape_section)
+
+    
+    @staticmethod
+    def compute_area_of_coordinates(coordinates):
+        def cross(v1, v2):
+            return v1[0] * v2[1] - v1[1] * v2[0]
+
+        area = 0
+        for i in range(len(coordinates) - 1):
+            area += cross(coordinates[i], coordinates[i + 1])
+        area += cross(coordinates[-1],coordinates[0])
+
+        return abs(area / 2)
+
+    @classmethod
+    def get_tree_shape_section(cls,canopy_radius,tree_height,undercut_hegiht_ratio,tree_shape_type):
+        base_coordinates = cls.__config.tree_shape_section_2D_dictionary[tree_shape_type]
+
+        canopy_height = tree_height*(1.0-undercut_hegiht_ratio)
+        undercut_height = tree_height*undercut_hegiht_ratio
+
+        # scale
+        shape_section_coordinates = [(p[0]*canopy_radius,p[1]*canopy_height+undercut_height) for p in base_coordinates]
+        return shape_section_coordinates
 
     @classmethod
     def get_height_category(cls,height):
         return next(h for h in cls.__config.tree_height_category if int(floor(height))>=h)
 
-    
-
     @property
     def radius(self):
         return self.diameter/2
+    
+
     
     def __str__(self):
         if self.placed_cell:
@@ -140,6 +171,36 @@ class Tree:
         
         # default
         return True
+    
+    def get_overlapping_ratio(self,other_tree,self_tree_origin=None):
+        def translate_coordinates(coordinates,vec):
+            return [(c[0]+vec[0],c[1]+vec[1]) for c in coordinates]
+        
+        if self.section_area is None or other_tree.section_area is None:
+            raise Exception("Tree area is not set")
+        if (self_tree_origin is None and self.placed_cell is None) or other_tree.placed_cell is None:
+            raise Exception("To compute canopy overlapping area, self and other trees must already have been placed.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,other_tree.placed_cell))
+
+        self_point = self_tree_origin or self.placed_cell.point
+        xy_dist = (
+                float(other_tree.placed_cell.point.X - self_point.X)**2
+               +float(other_tree.placed_cell.point.Y - self_point.Y)**2
+            )**(1.0/2.0)
+        z_dist = other_tree.placed_cell.point.Z - self_point.Z
+        vec = (xy_dist,z_dist)
+
+        other_tree_shape_section_translated = translate_coordinates(other_tree.tree_shape_section,vec)
+        overlap_region_as_pathsD = PolylineBoolenCalculation.intersect_polyline(pl1=self.tree_shape_section,
+                                                                                pl2=other_tree_shape_section_translated,
+                                                                                use_rhino=False,
+                                                                                return_clipper_path=True)
+        intersected_area = 0.0
+        for pathD in overlap_region_as_pathsD:
+            intersected_area += PolylineBoolenCalculation.get_area_of_clipper_path(pathD)
+        
+        smaller_canopy_section_area = min(self.section_area,other_tree.section_area)
+        return intersected_area / smaller_canopy_section_area
+
 
     @classmethod
     def generate_trees_from_database(cls,database_matrix):
@@ -156,7 +217,8 @@ class Tree:
             "root_type":cls.__config.tree_asset_table_col_root_type,
             "growing_speed":cls.__config.tree_asset_table_col_growing_speed,
             "is_evergreen":cls.__config.tree_asset_table_col_is_evergreen,
-            "is_conifers":cls.__config.tree_asset_table_col_is_conifers
+            "is_conifers":cls.__config.tree_asset_table_col_is_conifers,
+            "undercut_height_ratio":cls.__config.tree_asset_table_col_undercut_height_ratio
         } #TreeType init args: this function args
 
         args_col_names = {key:value for key,value in args_col_names.items() if value is not None}
