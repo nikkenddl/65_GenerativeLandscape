@@ -2,8 +2,10 @@
 from .conversion import *
 from .config import Config
 from .rhinopy import PolylineBoolenCalculation
+from .Cell import Cell
 from copy import copy
 from math import floor
+from collections import Iterable
 
 
 class Void:
@@ -60,6 +62,9 @@ class Tree:
         self.is_conifers = try_convert_strbool_to_bool(is_conifers)
 
         self.placed_cell = None
+        self.__placed_point = None
+        self.__overlapped_trees = []
+        self.is_damy = False
 
         self.required_shade_tolerance = None
         self.limit_wind_tolerance = None
@@ -67,6 +72,8 @@ class Tree:
         self.tree_shape_section = None
         self.root = None
         self.section_area = None
+
+        self.custom_tags = set()
 
         self.set_config_value()
 
@@ -91,6 +98,9 @@ class Tree:
             self.tree_shape_section = self.get_tree_shape_section(self.radius,self.height,self.undercut_height_ratio,self.shape_type)
             self.section_area = self.compute_area_of_coordinates(self.tree_shape_section)
 
+    def init_list_contents(self):
+        self.__overlapped_trees = []
+        self.custom_tags = set()
     
     @staticmethod
     def compute_area_of_coordinates(coordinates):
@@ -118,33 +128,100 @@ class Tree:
     @classmethod
     def get_height_category(cls,height):
         return next(h for h in cls.__config.tree_height_category if int(floor(height))>=h)
+    
+    @property
+    def is_placed(self):
+        return not self.is_damy and self.placed_cell is not None
 
     @property
     def radius(self):
         return self.diameter/2
     
-
+    @property
+    def overlapped_trees(self):
+        return copy(self.__overlapped_trees)
+    
+    def copy(self):
+        new = copy(self)
+        new.init_list_contents()
+        return new
+    
+    def register_custom_tag(self,string):
+        if isinstance(string,str):
+            self.custom_tags.add(string)
+        
+    def has_tag(self,tag_string):
+        return tag_string in self.custom_tags
+    
+    def register_overlapped_tree(self,tree):
+        return self.__overlapped_trees.append(tree)
+    
+    def register_overlapped_trees(self,trees):
+        return self.__overlapped_trees.extend(trees)
     
     def __str__(self):
-        if self.placed_cell:
+        if self.__placed_point and self.placed_cell:
             return "Tree<{}/{}/cell[{}]>".format(self.symbol,self.species,self.placed_cell.ID)
         else:
             return "Tree<{}/{}>".format(self.symbol,self.species)
         
     @property
     def point(self):
-        if not self.placed_cell: return None
-        else: return self.placed_cell.point
+        if not self.__placed_point: return None
+        else: return self.__placed_point
+
+    def set_placed_point(self,point):
+        self.__placed_point = point
     
-    def place(self,cell):
-        if not cell: raise Exception("cell is not existing")
-        new = copy(self)
-        new.placed_cell = cell
-        # add this tree to cell.
-        cell.placed_tree = new
-        # update forest_region status.
-        cell.forest_region.update_has_been_finished()
+    def get_damy_pointed_tree(self,point):
+        new = self.copy()
+        new.set_placed_point(point)
+        new.is_damy = True
         return new
+    
+    def place(self,cell,is_damy=False):
+        if not cell: raise Exception("cell is not existing")
+        new = self.copy()
+        new.placed_cell = cell
+        new.set_placed_point(cell.point)
+
+        if not is_damy:
+            # add this tree to cell.
+            cell.placed_tree = new
+            # update forest_region status.
+            cell.forest_region.update_has_been_finished()
+        else:
+            new.is_damy = True
+        return new
+    
+
+    def place_with_point(self,point,cells,is_damy=False):
+        id_of_cell = Cell.get_cell_ID_of_point(point)
+        try:
+            cell = next(cell for cell in cells if cell.ID==id_of_cell)
+        except StopIteration as e:
+            print("not found cell whose id=={}".format(id_of_cell))
+            return None
+        except Exception as e:
+            raise Exception("strange error ",e )
+
+        new = self.copy()
+        new.placed_cell = cell
+        new.set_placed_point(point)
+
+        if not is_damy:
+            # add this tree to cell.
+            cell.placed_tree = new
+            # update forest_region status.
+            cell.forest_region.update_has_been_finished()
+        else:
+            new.is_damy = True
+        return new
+    
+
+        
+
+
     
     def matches_cell_environment(self,testing_cell):
         """Check if this tree can be planted in the testing cell.
@@ -156,50 +233,99 @@ class Tree:
         Returns
         -------
         is_placable: bool
+        status: str
         """
         # check sunduraiton hour
         if testing_cell.sunshine_duration < self.required_shade_tolerance:
-            return False
+            return False,"sunshine duration is too short"
 
         # check wind speed
         if testing_cell.wind_speed > self.limit_wind_tolerance:
-            return False
+            return False,"wind speed is too fast"
         
         # check soil thickness
         if testing_cell.soil_thickness < self.required_soil_thickness:
-            return False
+            return False,"soil thickness is too thin"
         
         # default
-        return True
+        return True,"ok"
     
-    def get_overlapping_ratio(self,other_tree,self_tree_origin=None):
+    def get_overlapping_ratio(self,neighbor_trees,self_tree_origin=None):
+        """_summary_
+
+        Parameters
+        ----------
+        neighbor_trees : (n,) Tree
+        self_tree_origin : Rhino.Geometry.Point3d, optional
+            Override self.point to get overlaping trees before placement, by default None
+
+        Returns
+        -------
+        overlap_ratio: float
+        overlap_neighbors: (n,) Tree
+
+        """
         def translate_coordinates(coordinates,vec):
             return [(c[0]+vec[0],c[1]+vec[1]) for c in coordinates]
         
-        if self.section_area is None or other_tree.section_area is None:
+        if self.section_area is None: # other trees has been set = must have section_area attribute.
             raise Exception("Tree area is not set")
-        if (self_tree_origin is None and self.placed_cell is None) or other_tree.placed_cell is None:
-            raise Exception("To compute canopy overlapping area, self and other trees must already have been placed.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,other_tree.placed_cell))
+        if self_tree_origin is None and self.point is None: # other tree has been set = must have point attribute.
+            raise Exception("To compute canopy overlapping area, self and other trees must already have been placed.\nYou can specify damy origin for self via the parameter 'self_tree_origin'.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,neighbor.placed_cell))
 
-        self_point = self_tree_origin or self.placed_cell.point
-        xy_dist = (
-                float(other_tree.placed_cell.point.X - self_point.X)**2
-               +float(other_tree.placed_cell.point.Y - self_point.Y)**2
-            )**(1.0/2.0)
-        z_dist = other_tree.placed_cell.point.Z - self_point.Z
-        vec = (xy_dist,z_dist)
+        self_point = self_tree_origin or self.point
 
-        other_tree_shape_section_translated = translate_coordinates(other_tree.tree_shape_section,vec)
-        overlap_region_as_pathsD = PolylineBoolenCalculation.intersect_polyline(pl1=self.tree_shape_section,
-                                                                                pl2=other_tree_shape_section_translated,
-                                                                                use_rhino=False,
-                                                                                return_clipper_path=True)
+        # find overlapped trees and its intersectioned area
+        overlap_neighbors = []
         intersected_area = 0.0
-        for pathD in overlap_region_as_pathsD:
-            intersected_area += PolylineBoolenCalculation.get_area_of_clipper_path(pathD)
+        for neighbor in neighbor_trees:
+            xy_dist = (
+                    (neighbor.point.X - self_point.X)**2
+                   +(neighbor.point.Y - self_point.Y)**2
+                )**(1.0/2.0)
+            z_dist = neighbor.point.Z - self_point.Z
+            vec = (xy_dist,z_dist)
+
+            other_tree_shape_section_translated = translate_coordinates(neighbor.tree_shape_section,vec)
+            overlap_region_as_pathsD = PolylineBoolenCalculation.intersect_polyline(pl1=self.tree_shape_section,
+                                                                                    pl2=other_tree_shape_section_translated,
+                                                                                    use_rhino=False,
+                                                                                    return_clipper_path=True)
+            if overlap_region_as_pathsD.Count>0:
+                for pathD in overlap_region_as_pathsD:
+                    intersected_area += PolylineBoolenCalculation.get_area_of_clipper_path(pathD)
+                overlap_neighbors.append(neighbor)
         
-        smaller_canopy_section_area = min(self.section_area,other_tree.section_area)
-        return intersected_area / smaller_canopy_section_area
+        overlap_ratio = intersected_area / self.section_area
+        print(overlap_ratio)
+        return overlap_ratio,overlap_neighbors
+
+    def recheck_overlap(self,extra_tree,extra_tree_origin):
+        """_summary_
+
+        Parameters
+        ----------
+        extra_tree : Tree
+        extra_tree_origin : Rhino.Geometry.Point3d
+
+        Returns
+        -------
+        is_acceptable: bool
+            This tree can be placed if extra_tree is added.
+        """
+        if not self.is_placed: raise Exception("Placed trees can be rechecked.")
+
+        added_tree = extra_tree.get_damy_pointed_tree(extra_tree_origin)
+        overlapped_trees = self.overlapped_trees
+        overlapped_trees.append(added_tree)
+
+        ov_ratio,_ = self.get_overlapping_ratio(overlapped_trees)
+        
+        return ov_ratio<=self.placed_cell.FD_overlap_tolerance_ratio
+
+
+
+
 
 
     @classmethod
@@ -230,3 +356,35 @@ class Tree:
 
 
         
+class PlacementPostponedTree:
+    __config = Config()
+    def __init__(self,tree,point,cell,custom_tags=None):
+        self.tree = tree
+        self.cell = cell
+        self.point = point
+        if custom_tags:
+            if isinstance(custom_tags,str):
+                self.custom_tags = [custom_tags]
+            elif isinstance(custom_tags,Iterable):
+                self.custom_tags = [str(tag) for tag in custom_tags]
+            else:
+                self.custom_tags = [str(custom_tags)]
+        else:
+            self.custom_tags = []
+        self.custom_tags.append(self.__config.preplaced_tag)
+        
+    def place(self):
+        placed = self.tree.place(self.cell)
+        if placed: # if point is out of map, place_with_point() returns None.
+            placed.set_placed_point(self.point) # override placed point by the accurate point.
+            for tag in self.custom_tags:
+                placed.register_custom_tag(tag)
+            return placed
+        else:
+            return None
+        
+    def place_damy(self):
+        new = self.tree.get_damy_pointed_tree(self.point)
+        for tag in self.custom_tags:
+            new.register_custom_tag(tag)
+        return new

@@ -54,6 +54,8 @@ class Config(Singleton):
             "tree_asset_table.xlsx"
         ))
 
+        self.__preplaced_tag = "preplaced-tree"
+
         self.__tree_asset_table_col_species = "樹木名"
         self.__tree_asset_table_col_symbol = "記号"
         self.__tree_asset_table_col_height = "樹高"
@@ -233,3 +235,7 @@ class Config(Singleton):
     @property
     def radius_to_check_collision(self):
         return self.__radius_to_check_collision
+    
+    @property
+    def preplaced_tag(self):
+        return self.__preplaced_tag

@@ -60,7 +60,7 @@ class PolylineBoolenCalculation:
         return points
     
     @classmethod
-    def execute(cls,clip_type,fill_rule,polyline_target,polyline_operator,use_rhino=False,return_clipper_path=False):
+    def execute(cls,clip_type,fill_rule,polyline_target,polyline_operators,use_rhino=False,return_clipper_path=False):
         clipper_path_func = None # func
         restoring_result_func = None # func
         if use_rhino:
@@ -71,12 +71,13 @@ class PolylineBoolenCalculation:
             restoring_result_func = cls.get_coordinates_from_clipper_path
 
         path1 = clipper_path_func(polyline_target)
-        path2 = clipper_path_func(polyline_operator)
+        paths_op = [clipper_path_func(pl) for pl in polyline_operators]
         result = cls.ClipperPathTree()
 
         solver = Clipper2Lib.ClipperD(2)
         solver.AddSubject(path1)
-        solver.AddClip(path2)
+        for pl in paths_op:
+            solver.AddClip(pl)
 
         solver.Execute(clip_type,fill_rule,result)
 
@@ -87,9 +88,39 @@ class PolylineBoolenCalculation:
 
     @classmethod
     def intersect_polyline(cls,pl1,pl2,use_rhino=False,return_clipper_path=False):
-        intersection_clip_type = Clipper2Lib.ClipType.Intersection
+        if not (pl1 and pl2):
+            raise Exception("pl1 or pl2 is None")
+        clip_type = Clipper2Lib.ClipType.Intersection
         nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
-        return cls.execute(intersection_clip_type,nonzero_fill_rule,pl1,pl2,use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+        return cls.execute(clip_type,nonzero_fill_rule,pl1,[pl2],use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+    
+    @classmethod
+    def intersect_polylines(cls,pl1,polylines,use_rhino=False,return_clipper_path=False):
+        if not (pl1 and polylines):
+            raise Exception("pl1 or polylines is None")
+        clip_type = Clipper2Lib.ClipType.Intersection
+        nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+        return cls.execute(clip_type,nonzero_fill_rule,pl1,polylines,use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+    
+    @classmethod
+    def union_polylines(cls,polylines,use_rhino=False,return_clipper_path=False):
+        if len(polylines)==0:
+            raise Exception("polylines is not existing")
+        elif len(polylines)==1:
+            if return_clipper_path:
+                if use_rhino:
+                    return cls.make_clipper_path_from_rhino_polyline(polylines[0])
+                else:
+                    return cls.make_clipper_path_from_coordinates(polylines[0])
+            else:
+                return polylines
+            
+        base = polylines[0]
+        ops = polylines[1:]
+
+        clip_type = Clipper2Lib.ClipType.Union
+        nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+        return cls.execute(clip_type,nonzero_fill_rule,base, ops ,use_rhino=use_rhino,return_clipper_path=return_clipper_path)
     
 
     @staticmethod

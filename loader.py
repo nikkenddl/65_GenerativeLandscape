@@ -13,7 +13,8 @@ def get_source_load_const():
                     'map_keys',
                     'forest_region_layer',
                     'forest_region_archive_layer',
-                    'forest_region_keys']
+                    'forest_region_keys',
+                    'preplaced_tag']
     ghpy_path = os.path.join(__file__,os.path.pardir,'.load_const.ghpy')
 
     code = ""
