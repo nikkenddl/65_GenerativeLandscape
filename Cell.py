@@ -85,6 +85,17 @@ class Cell:
             self.placed_tree is not None\
             or self.forest_region.has_finished_placement
     
+    @property
+    def xy_ID(self):
+        """return col and row index of the cell.
+
+        Returns
+        -------
+        (x,y) (2,) int
+        """
+        y,x = divmod(self.ID,self.__NumericalGrid.x_num)
+        return (int(x),int(y))
+    
     def kill(self):
         self.__is_killed = True
 
@@ -96,6 +107,11 @@ class Cell:
     def set_FDs(cls, FDs):
         for FD in FDs:
             cls.set_FD(FD)
+
+    @property
+    def grid_info(self):
+        return self.__NumericalGrid
+
     
     @property
     def FD_density(self):
@@ -155,8 +171,8 @@ class NumericalGrid:
         self.span = cell_span
         self.x_interval = (grid_origin.X,grid_origin.X + self.span * num_cells_x)
         self.y_interval = (grid_origin.Y,grid_origin.Y + self.span * num_cells_y)
-        self.x_num = num_cells_x
-        self.y_num = num_cells_y
+        self.x_num = int(num_cells_x)
+        self.y_num = int(num_cells_y)
 
     def index_at_point(self,point, not_found_value=-1):
         """Inspect grid face index at a point

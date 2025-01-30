@@ -184,22 +184,23 @@ class ForestCreator:
         
        
        # filter trees by tree layer count limit.
-        # close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_forest_layer_count)
-        # limit_layer_count = cell.FD_vicinity_same_height_category_limit
+        close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_forest_layer_count)
+        limit_layer_count = cell.FD_vicinity_same_height_category_limit
 
-        # if len(close_placed_trees)<limit_layer_count:
-        #     # close placed tree count less than limit. = any height category trees can be placed.
-        #     pass
-        # else:
-        #     # close placed tree count is equal or larger than limit count. 
-        #     # Filter the placing trees, keeping only those with
-        #     # a height category that matches the height categories of nearby placed trees.
-        #     height_category_in_vicinity = set(t.height_category for t in close_placed_trees)
-        #     if len(height_category_in_vicinity)>=limit_layer_count:
-        #         trees_matches_environment = [t for t in self.trees if t.height_category in height_category_in_vicinity]
+        if len(close_placed_trees)<limit_layer_count:
+            # close placed tree count less than limit. = any height category trees can be placed.
+            pass
+        else:
+            # Placed and closed tree count is equal or larger than limit count. 
+            # Filter the placing trees, keeping only those with
+            # a height category that matches the height categories of nearby placed trees.
+            height_category_in_vicinity = set(t.height_category for t in close_placed_trees)
+            if len(height_category_in_vicinity)>=limit_layer_count:
+                trees_matches_environment = [t for t in self.trees if t.height_category in height_category_in_vicinity]
         
 
         return trees_matches_environment,"OK"
+    
     
     def possibility(self,trees,cell):
         L = len(trees)

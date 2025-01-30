@@ -74,7 +74,8 @@ class Config(Singleton):
         self.__tree_height_category = [8000,5000,3000,2000]
         self.__tree_height_category.sort(reverse=True)
 
-        self.__required_sunshine_duration_hour_by_shade_tolerance = (6.0,4.0,2.0)
+        self.__dominant_species_ratio = 0.7
+        self.__required_sunshine_duration_hour_by_shade_tolerance = (6.0,4.0,2.0,0.0)
         self.__limit_wind_speed_by_wind_tolerance = (4.3,5.6,float('inf'))
         self.__tree_height_lower_limit_to_consider_root_shape_for_soil_thickness = 8000.0 # mm
         self.__high_tree_shortest_height_class = 3000 # mm
@@ -105,7 +106,7 @@ class Config(Singleton):
         }
 
         __area_to_check_forest_layer_count = 100 # m2
-        self.__radius_to_check_forest_layer_count = (__area_to_check_forest_layer_count/math.pi) ** (1/2) * 1000 #mm
+        self.__radius_to_check_forest_layer_count = (__area_to_check_forest_layer_count/math.pi) ** 0.5 * 1000.0 #mm
 
         self.__radius_to_check_collision = 8000 * 2 # finding radius * 2
 
@@ -116,6 +117,10 @@ class Config(Singleton):
     @property
     def limit_wind_speed_by_wind_tolerance(self):
         return self.__limit_wind_speed_by_wind_tolerance
+    
+    @property
+    def dominant_species_ratio(self):
+        return self.__dominant_species_ratio
     
     @property
     def map_layer_name(self):

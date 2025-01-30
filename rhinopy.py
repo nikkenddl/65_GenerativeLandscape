@@ -168,7 +168,7 @@ class PointableRTree:
         close_indices = []
         sphere = rg.Sphere(origin_pointable.point,distance)
         self.rtree.Search(sphere,self.__callback_list,close_indices)
-        close_objects = set(self.objects[i] for i in close_indices)
+        close_objects = [self.objects[i] for i in close_indices]
 
         return close_objects
 

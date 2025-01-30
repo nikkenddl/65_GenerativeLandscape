@@ -297,7 +297,6 @@ class Tree:
                 overlap_neighbors.append(neighbor)
         
         overlap_ratio = intersected_area / self.section_area
-        print(overlap_ratio)
         return overlap_ratio,overlap_neighbors
 
     def recheck_overlap(self,extra_tree,extra_tree_origin):
