@@ -6,11 +6,127 @@ from pickle import loads
 import base64
 
 import System
-import clr
-# Place dll at the folder of grasshopper library
-# such as D:\Users\{username}\AppData\Roaming\Grasshopper\Libraries
-clr.AddReference("Net.SourceForge.Koogra")
 import Net.SourceForge.Koogra as Excel
+import System
+import Clipper2Lib
+
+
+class PolylineBoolenCalculation:
+    ClipperPoint = Clipper2Lib.PointD
+    ClipperPath = Clipper2Lib.PathD
+    ClipperPathTree = Clipper2Lib.PathsD
+
+    @classmethod
+    def make_clipper_path_from_rhino_polyline(cls,rhino_polyline):
+        return cls.ClipperPath([cls.ClipperPoint(p.X,p.Y) for p in rhino_polyline.GetEnumerator()])
+
+    @classmethod
+    def make_rhino_polyline_from_clipper_path(cls,pathD):
+        points = [rg.Point3d(p.x,p.y,0) for p in pathD]
+        points.append(points[0])
+        return rg.Polyline(points)
+    
+    @classmethod
+    def make_clipper_path_from_coordinates(cls,coordinates):
+        """instance Clipper2Lib.PathD with 2d coordinates list.
+
+        Parameters
+        ----------
+        coordinates : (n,2) float
+            [p1(x1,y1),p2(x2,y2)...]
+            first and end points must be not duplicated.
+
+        Returns
+        -------
+        ClipperPathD
+        """
+        return cls.ClipperPath([cls.ClipperPoint(coords[0],coords[1]) for coords in coordinates])
+
+    @classmethod
+    def get_coordinates_from_clipper_path(cls,pathD):
+        """get coordinates from pathD
+
+        Parameters
+        ----------
+        pathD : Clipper2Lib.PathD
+
+        Returns
+        -------
+        coordinates : (n,2) float
+            [p1(x1,y1),p2(x2,y2)...]
+            first and end points must be not duplicated.
+        """
+        points = [(p.x,p.y) for p in pathD]
+        return points
+    
+    @classmethod
+    def execute(cls,clip_type,fill_rule,polyline_target,polyline_operators,use_rhino=False,return_clipper_path=False):
+        clipper_path_func = None # func
+        restoring_result_func = None # func
+        if use_rhino:
+            clipper_path_func = cls.make_clipper_path_from_rhino_polyline
+            restoring_result_func = cls.make_rhino_polyline_from_clipper_path
+        else:
+            clipper_path_func = cls.make_clipper_path_from_coordinates
+            restoring_result_func = cls.get_coordinates_from_clipper_path
+
+        path1 = clipper_path_func(polyline_target)
+        paths_op = [clipper_path_func(pl) for pl in polyline_operators]
+        result = cls.ClipperPathTree()
+
+        solver = Clipper2Lib.ClipperD(2)
+        solver.AddSubject(path1)
+        for pl in paths_op:
+            solver.AddClip(pl)
+
+        solver.Execute(clip_type,fill_rule,result)
+
+        if return_clipper_path:
+            return result
+        else:
+            return [restoring_result_func(r) for r in result]
+
+    @classmethod
+    def intersect_polyline(cls,pl1,pl2,use_rhino=False,return_clipper_path=False):
+        if not (pl1 and pl2):
+            raise Exception("pl1 or pl2 is None")
+        clip_type = Clipper2Lib.ClipType.Intersection
+        nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+        return cls.execute(clip_type,nonzero_fill_rule,pl1,[pl2],use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+    
+    @classmethod
+    def intersect_polylines(cls,pl1,polylines,use_rhino=False,return_clipper_path=False):
+        if not (pl1 and polylines):
+            raise Exception("pl1 or polylines is None")
+        clip_type = Clipper2Lib.ClipType.Intersection
+        nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+        return cls.execute(clip_type,nonzero_fill_rule,pl1,polylines,use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+    
+    @classmethod
+    def union_polylines(cls,polylines,use_rhino=False,return_clipper_path=False):
+        if len(polylines)==0:
+            raise Exception("polylines is not existing")
+        elif len(polylines)==1:
+            if return_clipper_path:
+                if use_rhino:
+                    return cls.make_clipper_path_from_rhino_polyline(polylines[0])
+                else:
+                    return cls.make_clipper_path_from_coordinates(polylines[0])
+            else:
+                return polylines
+            
+        base = polylines[0]
+        ops = polylines[1:]
+
+        clip_type = Clipper2Lib.ClipType.Union
+        nonzero_fill_rule = Clipper2Lib.FillRule.NonZero
+        return cls.execute(clip_type,nonzero_fill_rule,base, ops ,use_rhino=use_rhino,return_clipper_path=return_clipper_path)
+    
+
+    @staticmethod
+    def get_area_of_clipper_path(clipper_path):
+        return Clipper2Lib.Clipper.Area(clipper_path)
+
 
 
 def project_to_xyplane(geometry):
@@ -27,51 +143,36 @@ def try_get_point_from_string(string):
     if not succeeds: raise Exception("failured to parse point. input:{}".format(string))
     return point
 
-class CellRTree:
-    def __init__(self,cells):
-        self.cells = cells
-        self.rtree = rg.RTree.CreateFromPointArray([c.point for c in cells])
-        
-        self.collided = set()
+class PointableRTree:
+    def __init__(self,pointable_objects=[]):
+        self.objects = pointable_objects
+        self.rtree = rg.RTree.CreateFromPointArray([c.point for c in pointable_objects])
 
     def __callback_set(self,sender,e):
         e.Tag.add(e.Id)
 
     def __callback_list(self,sender,e):
         e.Tag.append(e.Id)
+
+    def append(self,pointable_object):
+        self.objects.append(pointable_object)
+        self.rtree.Insert(pointable_object.point,self.rtree.Count)
+
+    def extend(self,pointable_objects):
+        self.objects.extend(pointable_objects)
+        for o in pointable_objects:
+            self.rtree.Insert(o,self.rtree.Count)
         
     
-    def search_close_cells(self,origin_cell,distance):
+    def search_close_objects(self,origin_pointable,distance):
         close_indices = []
-        sphere = rg.Sphere(origin_cell.point,distance)
+        sphere = rg.Sphere(origin_pointable.point,distance)
         self.rtree.Search(sphere,self.__callback_list,close_indices)
-        close_cells = set(self.cells[i] for i in close_indices)
+        close_objects = [self.objects[i] for i in close_indices]
 
-        return close_cells
-        
-        
-    # def calc_each(self):
-    #     def prlprocess(tp):
-    #         sphere = rg.Sphere(tp[0],tp[1])
-    #         self.rtree.Search(sphere,self.__callback_set,tp[2])
-        
-    #     collided_set_list = [set() for _ in range(len(self.r))]
-        
-    #     args = list(zip(self.source,self.r,collided_set_list))
-        
-    #     ForEach(args,prlprocess)
-        
-    #     #for pt,r,collided_set in zip(self.source,self.r,collided_set_list):
-    #         #sphere = rg.Sphere(pt,r)
-    #         #self.rtree.Search(sphere,self.__callback_set,collided_set)
+        return close_objects
 
-
-    #     rst_tree = DataTree[System.Object]()
-    #     for i,d in enumerate(collided_set_list):
-    #         rst_tree.AddRange(list(d),ghpath(i))
-    #     return rst_tree
-
-
+        
 
 def get_layer_objects(ghdoc,layer):
     """_summary_

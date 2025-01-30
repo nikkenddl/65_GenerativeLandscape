@@ -1,6 +1,7 @@
 import lib_65land
 reload(lib_65land)
 
+from lib_65land import Analyser
 from lib_65land import Cell
 from lib_65land import config
 from lib_65land import conversion
@@ -10,6 +11,7 @@ from lib_65land import placement
 from lib_65land import rhinopy
 from lib_65land import Tree
 
+reload(Analyser)
 reload(Cell)
 reload(config)
 reload(conversion)

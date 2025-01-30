@@ -109,6 +109,8 @@ def load_map(forest_regions):
     
     created_time = get_user_texts(guid,map_keys[10])
 
+    Cell.set_grid_info(grid_origin,x_cell_count,y_cell_count,span)
+    
     cells,invalid_cell_points = Cell.create_from_map_info(cell_IDs,
                                                           grid_points,
                                                           sunshine_duration_hour,
