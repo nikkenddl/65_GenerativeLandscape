@@ -2,27 +2,35 @@ import random
 from collections import Iterable,defaultdict
 from .rhinopy import PointableRTree
 from .config import Config
+from . import log
 
 from time import time
 
 class ForestCreator:
     __config = Config()
+    __LOG_FILE_LOCATION =  __config.forest_creator_log_file_path
+    __LOG_AUTOFLUSH_COUNT=100
+    __log_archive = []
+    __log_count = 0
     def __init__(self,
                  cell_altanatives,
                  tree_altanatives,
                  placement_postponed_trees=[],
                  limit_iteration=50,
                  random_seed=65):
+        
+
+
         try: random.seed(random_seed, version=1)  # Python 3
         except TypeError: random.seed(random_seed)  # Python 2
         s = time()
         self.clear_cells(cell_altanatives)
-        print('time to clear cell: {}'.format(time()-s))
+        self.log('time to clear cell: {}'.format(time()-s))
         
         self.__CELL_FINDING_LIMIT_DISTANCE = 20000.0
         s = time()
         self.cell_states = {cell : self.__CELL_FINDING_LIMIT_DISTANCE for cell in cell_altanatives}
-        print('time to init cell state: {}'.format(time()-s))
+        self.log('time to init cell state: {}'.format(time()-s))
 
         self.trees = tree_altanatives
         
@@ -34,13 +42,13 @@ class ForestCreator:
 
         s = time()
         self.all_cell_rtree = PointableRTree(cell_altanatives)
-        print('time to init all_cell_rtree: {}'.format(time()-s))
+        self.log('time to init all_cell_rtree: {}'.format(time()-s))
 
         self.placed_tree_rtree = PointableRTree([])
 
         s = time()
         self.init_preplaced(placement_postponed_trees)
-        print('time to init preplaced trees: {}'.format(time()-s))
+        self.log('time to init preplaced trees: {}'.format(time()-s))
         
 
 
@@ -48,15 +56,15 @@ class ForestCreator:
         s = time()
         for c in cells:
             c.clear()
-        print('time to clear cell : {}'.format(time()-s))
+        self.log('time to clear cell : {}'.format(time()-s))
         s = time()
         frs = set(c.forest_region for c in cells)
-        print('time to create set of forest regions : {}'.format(time()-s))
+        self.log('time to create set of forest regions : {}'.format(time()-s))
         s = time()
         for fr in frs:
             fr.initialize()
-        print('time to init forest regions: {}'.format(time()-s))
-        print('count of forest region: {}'.format(len(frs)))
+        self.log('time to init forest regions: {}'.format(time()-s))
+        self.log('count of forest region: {}'.format(len(frs)))
 
 
     def init_preplaced(self,placement_postponed_trees):
@@ -72,8 +80,29 @@ class ForestCreator:
                 self.update_state(placed)
             else:
                 self.preplaced_unplaced_trees.append(ppt.place_damy())
-            
 
+    @classmethod
+    def log(cls,msg,*args):
+        msg = str(msg)
+        if args:
+            msg += " | "
+            msg += " | ".join(str(a) for a in args)
+
+        cls.__log_archive.append(msg)
+
+        cls.__log_count += 1
+        if cls.__LOG_AUTOFLUSH_COUNT<cls.__log_count:
+            cls.__log_count = 0
+            cls.__flush()
+
+    @classmethod
+    def __flush(cls):
+        if cls.__log_archive:
+            path = log.create_incremented_file(cls.__LOG_FILE_LOCATION,1028*1028*50)
+            log.write(path,"\n".join(cls.__log_archive))
+
+        cls.__log_archive = []
+            
         
     def create(self):
         __time_to_pick_cell = []
@@ -92,6 +121,8 @@ class ForestCreator:
             placed_tree,status = self.try_to_place(testing_cell)
             __time_to_try_to_place.append(time()-s)
             if placed_tree:
+                self.log("tree<{}/{}/sd:{}/st:{}/ws:{}>".format(placed_tree.species,placed_tree.symbol,placed_tree.required_shade_tolerance, placed_tree.required_soil_thickness, placed_tree.limit_wind_tolerance), 
+                           "cell<id:{}/sd:{}/st:{}/ws:{}>".format(testing_cell.ID,testing_cell.sunshine_duration,testing_cell.soil_thickness,testing_cell.wind_speed))
                 self.__failured_count = 0
                 s = time()
                 self.update_state(placed_tree)
@@ -102,15 +133,15 @@ class ForestCreator:
                 testing_cell.kill()
                 del self.cell_states[testing_cell]
 
-        def print_summary(elapsed_time_list,title):
-            print("\nelapsed time[s] for {}\n--------".format(title))
+        def log_summary(elapsed_time_list,title):
+            self.log("\nelapsed time[s] for {}\n--------".format(title))
             total = sum(elapsed_time_list)
             cnt = len(elapsed_time_list)
             average = 0 if cnt==0 else total/cnt
-            print("total : {}".format(total))
-            print("average : {}".format(average))
-            print("count : {}".format(cnt))
-            print('\n')
+            self.log("total : {}".format(total))
+            self.log("average : {}".format(average))
+            self.log("count : {}".format(cnt))
+            self.log('\n')
         def try_write_log_files(txt,file_name_without_extension):
             try:
                 with open(r"D:\Users\11104\Desktop\{}.txt".format(file_name_without_extension),'w') as f:
@@ -118,11 +149,27 @@ class ForestCreator:
             except Exception as e:
                 print('failured writing log.\n{}'.format(e))
 
-        print_summary(__time_to_pick_cell,'TIME_TO_PICK_CELL')
-        print_summary(__time_to_try_to_place,'TIME_TO_TRY_TO_PLACE')
-        print_summary(__time_to_update_state,'TIME_TO_UPDATE_STATE')
-        try_write_log_files("\n".join(__failured_status),"failured_status")
+        log_summary(__time_to_pick_cell,'TIME_TO_PICK_CELL')
+        log_summary(__time_to_try_to_place,'TIME_TO_TRY_TO_PLACE')
+        log_summary(__time_to_update_state,'TIME_TO_UPDATE_STATE')
+        self.log("failured status--------------------"+"\n".join(__failured_status))
+        self.__flush()
         return self.__placed_trees
+
+
+    def post_create(self,trying_cells):
+        self.log('Executing post_create------------------------------')
+        __failured_status = []
+        placed_trees = []
+        for testing_cell in trying_cells:
+            assert testing_cell is not None
+
+            placed_tree,status = self.try_to_place(testing_cell,places_damy=True)
+            __failured_status.append(__failured_status)
+            placed_trees.append(placed_tree)
+        self.__flush()
+        return placed_trees
+
 
     @property
     def is_created(self):
@@ -147,12 +194,12 @@ class ForestCreator:
         return farthest_cell
 
     
-    def try_to_place(self,cell):
+    def try_to_place(self,cell,places_damy=False):
         filtered_trees,status = self.filtering(cell)
         if not filtered_trees:
             return None,status
         possibility = self.possibility(filtered_trees,cell)
-        placed_tree,status = self.placement(filtered_trees,possibility,cell)
+        placed_tree,status = self.placement(filtered_trees,possibility,cell,places_damy=places_damy)
         return placed_tree,status
             
     def filtering(self,cell):
@@ -172,7 +219,7 @@ class ForestCreator:
                 counter[x] += 1
             return dict(counter)
         # filter trees with environment
-        ls_is_cleared = [t.matches_cell_environment(cell) for t in self.trees]
+        ls_is_cleared = [t.matches_cell_environment(cell,ForestCreator.log) for t in self.trees]
 
         
         if not (any(rst[0] for rst in ls_is_cleared)):
@@ -196,7 +243,7 @@ class ForestCreator:
             # a height category that matches the height categories of nearby placed trees.
             height_category_in_vicinity = set(t.height_category for t in close_placed_trees)
             if len(height_category_in_vicinity)>=limit_layer_count:
-                trees_matches_environment = [t for t in self.trees if t.height_category in height_category_in_vicinity]
+                trees_matches_environment = [t for t in trees_matches_environment if t.height_category in height_category_in_vicinity]
         
 
         return trees_matches_environment,"OK"
@@ -244,7 +291,22 @@ class ForestCreator:
         return possibility_list
     
     
-    def placement(self,tree_altanatives,weight,cell):
+    def placement(self,tree_altanatives,weight,cell,places_damy=False):
+        """select a tree from altanatives according to the weight and place a tree.
+        if places_damy, places a tree without registration of the tree and the cell.
+        The parameter should be used in post_create.
+
+        Parameters
+        ----------
+        tree_altanatives : _type_
+            _description_
+        weight : _type_
+            _description_
+        cell : _type_
+            _description_
+        places_damy : bool, optional
+            _description_, by default False
+        """
         def weighted_choice(choices, weights, n_extract=-1):
             """extract elements from list. Extraction possibility is weighted by weights.
             """
@@ -314,7 +376,7 @@ class ForestCreator:
                 return None,"Placing Tree is too close with already placed trees"
 
         # place tre trying tree
-        placed_tree = tree.place(cell)
+        placed_tree = tree.place(cell,is_damy=places_damy)
         placed_tree.register_overlapped_trees(overlapping_neighbors)
 
         # Register the placed tree as an overlapped tree with neighbours.
@@ -374,7 +436,7 @@ class RandomPicker:
     def picked(self):
         return self._picked
 
-    def picksome(self,points,picking_count,obstacles=[]):
+    def picksome(self,points,picking_count,picking_radius=0.0,obstacles=[]):
         if picking_count==0: return
         if picking_count>len(points): raise Exception("count is larger than count of points")
 
@@ -388,7 +450,7 @@ class RandomPicker:
                 self._update_weight(points,weight,p)
         
         for _ in range(picking_count):
-            self._farthest_pick_and_remove(points,weight)
+            self._farthest_pick_and_remove(points,weight,picking_radius=picking_radius)
 
     def pick(self,points):
         if len(points)==0: raise Exception("No point inputted")
@@ -407,11 +469,11 @@ class RandomPicker:
         i = random.choice(range(len(ls)))
         self._pick_and_remove(ls,weight,i)
 
-    def _farthest_pick_and_remove(self,ls,weight):
+    def _farthest_pick_and_remove(self,ls,weight,picking_radius=0.0):
         i = weight.index(max(weight))
-        self._pick_and_remove(ls,weight,i)
+        self._pick_and_remove(ls,weight,i,picking_radius=picking_radius)
 
-    def _pick_and_remove(self,ls,weight,i):
+    def _pick_and_remove(self,ls,weight,i,picking_radius=0.0):
         current_count = len(ls)
         picked_point = ls[i]
 
@@ -420,11 +482,11 @@ class RandomPicker:
         del weight[i]
         current_count -= 1
 
-        self._update_weight(ls,weight,picked_point)
+        self._update_weight(ls,weight,picked_point,picking_radius=picking_radius)
 
-    def _update_weight(self,ls,weight,point):
+    def _update_weight(self,ls,weight,point,picking_radius=0.0):
         assert len(ls)==len(weight)
-        weights_raw = [p.DistanceTo(point) for p in ls]
+        weights_raw = [p.DistanceTo(point)-picking_radius for p in ls]
         for i in range(len(ls)):
             if weights_raw[i]<weight[i]:
                 weight[i] = weights_raw[i]
