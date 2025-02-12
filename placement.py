@@ -5,6 +5,7 @@ from .config import Config
 from . import log
 from .Cell import Cell
 import math
+import traceback
 
 from time import time
 
@@ -184,7 +185,8 @@ class ForestCreator:
             self.__flush()
             return self.__placed_trees
         except Exception as e:
-            self.log(e)
+            self.log('failed in ForestCreater.create()')
+            self.log(traceback.format_exc())
             self.__flush()
             raise Exception(e)
 
@@ -395,6 +397,10 @@ class ForestCreator:
         # add collision check here
         close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_collision)
         if close_placed_trees:
+            # root collision
+            if not all(tree.checks_root_collision(t,cell.point) for t in close_placed_trees):
+                return None, "The placing tree root collides to already placed tree roots."
+
             overlapping_ratio,overlapping_neighbors = tree.get_overlapping_ratio(close_placed_trees,cell.point)
             if overlapping_ratio<=cell.FD_overlap_tolerance_ratio:
                 # placing tree's overlap is acceptable.

@@ -373,6 +373,15 @@ class Tree:
         else:
             # default
             return True,"ok"
+        
+    def checks_root_collision(self,other_tree,self_tree_origin=None):
+        if self_tree_origin is None and self.point is None: # other tree has been set = must have point attribute.
+            raise Exception("To check root collision, self and other trees must already have been placed.\nYou can specify damy origin for self via the parameter 'self_tree_origin'.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,neighbor.placed_cell)) # type:ignore
+        self_point = self_tree_origin or self.point
+        xy_dist_square = (other_tree.point.X - self_point.X)**2 +(other_tree.point.Y - self_point.Y)**2 # type: ignore
+        required_dist = (self.root_radius+other_tree.root_radius)**2
+        return xy_dist_square>=required_dist
+                
     
     def get_overlapping_ratio(self,neighbor_trees,self_tree_origin=None):
         """_summary_
