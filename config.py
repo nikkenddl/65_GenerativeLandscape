@@ -28,7 +28,9 @@ class Config(Singleton):
             "sunshine_duration_hour_base64",
             "soil_thickness_base64",
             "wind_speed_base64",
-            "FR_data_base64",
+            # "FR_data_base64",
+            "FR_data_celluar_automaton_base64",
+            "distance_to_edge_base64",
             "created_time"
         )
         self.__forest_region_layer = "GH_srf_forest-domain"
@@ -65,6 +67,7 @@ class Config(Singleton):
         self.__tree_asset_table_col_height = "樹高"
         self.__tree_asset_table_col_trunk_circumference = "幹周"
         self.__tree_asset_table_col_diameter = "葉張"
+        self.__tree_asset_table_col_root_diameter = "根鉢"
         self.__tree_asset_table_col_maximum_height = "最大成長樹高"
         self.__tree_asset_table_col_shade_tolerance = "耐陰性"
         self.__tree_asset_table_col_wind_tolerance = "耐風性"
@@ -130,6 +133,9 @@ class Config(Singleton):
 
         self.__radius_to_check_collision = 8000.0 * 2.0 # finding radius * 2
 
+        self.__trying_placement_count_in_nogap_region = 10
+        self.__trying_multiplacement_radius_in_nogap_region = 3000
+
 
     @property
     def forest_creator_log_file_path(self):
@@ -191,6 +197,9 @@ class Config(Singleton):
     @property
     def tree_asset_table_col_diameter(self):
         return self.__tree_asset_table_col_diameter
+    @property
+    def tree_asset_table_col_root_diameter(self):
+        return self.__tree_asset_table_col_root_diameter
     @property
     def tree_asset_table_col_maximum_height(self):
         return self.__tree_asset_table_col_maximum_height
@@ -283,3 +292,10 @@ class Config(Singleton):
     @property
     def required_soil_thickness_in_20_years_ahead(self):
         return self.__required_soil_thickness_in_20_years_ahead
+    
+    @property
+    def trying_placement_count_in_nogap_region(self):
+        return self.__trying_placement_count_in_nogap_region
+    @property
+    def trying_multiplacement_radius_in_nogap_region(self):
+        return self.__trying_multiplacement_radius_in_nogap_region

@@ -3,6 +3,8 @@ from collections import Iterable,defaultdict
 from .rhinopy import PointableRTree
 from .config import Config
 from . import log
+from .Cell import Cell
+import math
 
 from time import time
 
@@ -105,56 +107,86 @@ class ForestCreator:
             
         
     def create(self):
-        __time_to_pick_cell = []
-        __time_to_try_to_place = []
-        __time_to_update_state = []
-        __failured_status = []
-        # for _ in range(10):
-        while not self.is_created:
-            # if self.is_created: break
-            s = time()
-            testing_cell = self.pick_cell()
-            __time_to_pick_cell.append(time()-s)
-            assert testing_cell is not None
-
-            s = time()
-            placed_tree,status = self.try_to_place(testing_cell)
-            __time_to_try_to_place.append(time()-s)
-            if placed_tree:
-                self.log("tree<{}/{}/sd:{}/st:{}/ws:{}>".format(placed_tree.species,placed_tree.symbol,placed_tree.required_shade_tolerance, placed_tree.required_soil_thickness, placed_tree.limit_wind_tolerance), 
-                           "cell<id:{}/sd:{}/st:{}/ws:{}>".format(testing_cell.ID,testing_cell.sunshine_duration,testing_cell.soil_thickness,testing_cell.wind_speed))
-                self.__failured_count = 0
+        try:
+            __time_to_pick_cell = []
+            __time_to_try_to_place = []
+            __time_to_update_state = []
+            __failured_status = []
+            # for _ in range(10):
+            while not self.is_created:
+                # if self.is_created: break
                 s = time()
-                self.update_state(placed_tree)
-                __time_to_update_state.append(time()-s)
-            else:
-                __failured_status.append(status)
-                self.__failured_count += 1
-                testing_cell.kill()
-                del self.cell_states[testing_cell]
+                testing_cell = self.pick_cell()
+                __time_to_pick_cell.append(time()-s)
+                assert testing_cell is not None
 
-        def log_summary(elapsed_time_list,title):
-            self.log("\nelapsed time[s] for {}\n--------".format(title))
-            total = sum(elapsed_time_list)
-            cnt = len(elapsed_time_list)
-            average = 0 if cnt==0 else total/cnt
-            self.log("total : {}".format(total))
-            self.log("average : {}".format(average))
-            self.log("count : {}".format(cnt))
-            self.log('\n')
-        def try_write_log_files(txt,file_name_without_extension):
-            try:
-                with open(r"D:\Users\11104\Desktop\{}.txt".format(file_name_without_extension),'w') as f:
-                    f.write(txt)
-            except Exception as e:
-                print('failured writing log.\n{}'.format(e))
+                s = time()
+                assert isinstance(testing_cell,Cell)
+                # if the testing cell is in a no-gap region, try to place some trees closely together.
+                is_cell_in_nogap_region = math.isinf(testing_cell.FD_gap_size)
+                loop_limit = self.__config.trying_placement_count_in_nogap_region if is_cell_in_nogap_region else 1
+                close_cells = None
+                if is_cell_in_nogap_region:
+                    close_cells = self.all_cell_rtree.search_close_objects(testing_cell,self.__config.trying_multiplacement_radius_in_nogap_region)
+                    close_cells = [c for c in close_cells if c in self.cell_states]
+                    if len(close_cells)<=1: # if close_cells is empty or contains only testingcell
+                        self.log("NO CLOSE CELL of testing cell:{}".format(testing_cell.ID))
+                        loop_limit = 1
 
-        log_summary(__time_to_pick_cell,'TIME_TO_PICK_CELL')
-        log_summary(__time_to_try_to_place,'TIME_TO_TRY_TO_PLACE')
-        log_summary(__time_to_update_state,'TIME_TO_UPDATE_STATE')
-        self.log("failured status--------------------"+"\n".join(__failured_status))
-        self.__flush()
-        return self.__placed_trees
+                for i_dense_placement in range(loop_limit):
+                    self.log("loop:{}".format(i_dense_placement))
+                    placed_tree,status = self.try_to_place(testing_cell)
+                    __time_to_try_to_place.append(time()-s)
+                    if placed_tree:
+                        self.log("tree<{}/{}/sd:{}/st:{}/ws:{}>".format(placed_tree.species,placed_tree.symbol,placed_tree.required_shade_tolerance, placed_tree.required_soil_thickness, placed_tree.limit_wind_tolerance), 
+                                   "cell<id:{}/sd:{}/st:{}/ws:{}>".format(testing_cell.ID,testing_cell.sunshine_duration,testing_cell.soil_thickness,testing_cell.wind_speed))
+                        self.__failured_count = 0
+                        s = time()
+                        self.update_state(placed_tree)
+                        __time_to_update_state.append(time()-s)
+
+                        
+                    else:
+                        __failured_status.append(status)
+                        self.__failured_count += 1
+                        testing_cell.kill()
+                        del self.cell_states[testing_cell]
+
+                    if i_dense_placement==loop_limit-1:
+                        # last inner loop
+                        break
+                    elif len(close_cells)<=1: # type: ignore if close_cells is empty or contains only testingcell
+                        self.log("All close cells are remove")
+                        break
+                    else:
+                        # update testing cell
+                        
+                        close_cells = [c for c in close_cells if c!=testing_cell] # type:ignore - remove placed testing cell from close_cells
+                        testing_cell = self.pick_cell(close_cells)
+                        if testing_cell is None:
+                            break
+
+
+            def log_summary(elapsed_time_list,title):
+                self.log("\nelapsed time[s] for {}\n--------".format(title))
+                total = sum(elapsed_time_list)
+                cnt = len(elapsed_time_list)
+                average = 0 if cnt==0 else total/cnt
+                self.log("total : {}".format(total))
+                self.log("average : {}".format(average))
+                self.log("count : {}".format(cnt))
+                self.log('\n')
+
+            log_summary(__time_to_pick_cell,'TIME_TO_PICK_CELL')
+            log_summary(__time_to_try_to_place,'TIME_TO_TRY_TO_PLACE')
+            log_summary(__time_to_update_state,'TIME_TO_UPDATE_STATE')
+            self.log("failured status--------------------"+"\n".join(__failured_status))
+            self.__flush()
+            return self.__placed_trees
+        except Exception as e:
+            self.log(e)
+            self.__flush()
+            raise Exception(e)
 
 
     def post_create(self,trying_cells):
@@ -181,10 +213,13 @@ class ForestCreator:
         # default
         return False
     
-    def pick_cell(self):
+    def pick_cell(self,cells=None):
+        cells = cells or self.cell_states.keys()
         farthest_dist = -float('inf')
         farthest_cell = None
-        for cell,dist in self.cell_states.items():
+        for cell in cells:
+            if cell not in self.cell_states: continue
+            dist = self.cell_states[cell]
             if dist>=self.__CELL_FINDING_LIMIT_DISTANCE:
                 farthest_cell = cell
                 break
@@ -387,6 +422,12 @@ class ForestCreator:
         
     
     def update_state(self,placed_tree):
+        """Remove killed or placed cells from self.cell_states and update distances
+
+        Parameters
+        ----------
+        placed_tree : Tree
+        """
         # register the placed tree to cache
         self.__placed_trees.append(placed_tree)
         self.placed_tree_rtree.append(placed_tree)
