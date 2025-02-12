@@ -33,6 +33,7 @@ class Tree:
                  height=None,
                  trunk_circumference=None,
                  diameter=None,
+                 root_diameter=None,
                  maximum_height=None,
                  shade_tolerance=None,
                  wind_tolerance=None,
@@ -47,16 +48,18 @@ class Tree:
 
         self.species = try_get_text(species)
         self.symbol = try_get_text(symbol)
-        self.__height = try_get_float(height) * 1000 # convert from m to mm
+        self.__height = try_get_float(height) * 1000.0 # convert from m to mm
         self.height_category = self.get_height_category(self.height)
         # ignore error because circumuference include "株立"
-        self.trunk_circumference = try_get_float(trunk_circumference,False) * 1000 # convert from m to mm
-        self.maximum_height = try_get_float(maximum_height) * 1000 # convert from m to mm
+        self.trunk_circumference = try_get_float(trunk_circumference,False) * 1000.0 # convert from m to mm
+        self.maximum_height = try_get_float(maximum_height) * 1000.0 # convert from m to mm
         self.undercut_height_ratio = try_get_float(undercut_height_ratio)
 
         # diameter and radius will be got from tree height and d/h ratio
-        diameter = try_get_float(diameter) * 1000 # convert from m to mm
+        diameter = try_get_float(diameter) * 1000.0 # convert from m to mm
         self.DH_ratio = diameter/self.height
+
+        self.__root_radius = try_get_float(root_diameter) * 500.0
 
         self.__shade_tolerance_index = try_get_int(shade_tolerance)
         self.__wind_tolerance_index = try_get_int(wind_tolerance)
@@ -255,6 +258,10 @@ class Tree:
         return 0.5 * self.DH_ratio * self.height
     
     @property
+    def root_radius(self):
+        return self.__root_radius
+    
+    @property
     def overlapped_trees(self):
         return copy(self.__overlapped_trees)
     
@@ -352,19 +359,6 @@ class Tree:
         is_placable: bool
         status: str
         """
-        # check sunduraiton hour
-        if testing_cell.ID==35154 and self.symbol=="IM1" and log:
-            log("tree species:{} / symbol : {}".format(self.species, self.symbol))
-            log("testing_cell.sunshine_duration",testing_cell.sunshine_duration)
-            log("self.required_shade_tolerance",self.required_shade_tolerance)
-            log("testing_cell.wind_speed",testing_cell.wind_speed)
-            log("self.limit_wind_tolerance",self.limit_wind_tolerance)
-            log("testing_cell.soil_thickness",testing_cell.soil_thickness)
-            log("self.required_soil_thickness",self.required_soil_thickness)
-            log("testing_cell.sunshine_duration < self.required_shade_tolerance",testing_cell.sunshine_duration < self.required_shade_tolerance)
-            log("testing_cell.wind_speed > self.limit_wind_tolerance",testing_cell.wind_speed > self.limit_wind_tolerance)
-            log("testing_cell.soil_thickness < self.required_soil_thickness",testing_cell.soil_thickness < self.required_soil_thickness)
-
         if testing_cell.sunshine_duration < self.required_shade_tolerance:
             return False,"sunshine duration is too short"
         # check wind speed
@@ -373,6 +367,9 @@ class Tree:
         # check soil thickness
         elif testing_cell.soil_thickness < self.required_soil_thickness:
             return False,"soil thickness is too thin"
+        # check distance to edge
+        elif testing_cell.distance_to_edge < self.root_radius:
+            return False,"too close to edge"
         else:
             # default
             return True,"ok"
@@ -462,6 +459,7 @@ class Tree:
             "height":cls.__config.tree_asset_table_col_height,
             "trunk_circumference":cls.__config.tree_asset_table_col_trunk_circumference,
             "diameter":cls.__config.tree_asset_table_col_diameter,
+            "root_diameter":cls.__config.tree_asset_table_col_root_diameter,
             "maximum_height":cls.__config.tree_asset_table_col_maximum_height,
             "shade_tolerance":cls.__config.tree_asset_table_col_shade_tolerance,
             "wind_tolerance":cls.__config.tree_asset_table_col_wind_tolerance,

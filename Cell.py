@@ -8,7 +8,8 @@ class Cell:
                  forest_region,
                  soil_thickness,
                  wind_speed,
-                 sunshine_duration):
+                 sunshine_duration,
+                 distance_to_edge):
         self.ID = int(ID)
         self.point = point
         self.forest_region = forest_region
@@ -16,6 +17,7 @@ class Cell:
         self.soil_thickness = soil_thickness
         self.wind_speed = wind_speed
         self.sunshine_duration = sunshine_duration
+        self.distance_to_edge = distance_to_edge
 
         self.placed_tree = None
         self.__is_killed = False
@@ -50,28 +52,42 @@ class Cell:
                              soil_thickness_list,
                              wind_speed_list,
                              forest_region_id_list,
-                             forest_regions
+                             forest_regions,
+                             distance_to_edge_list
                              ):
-        assert all(len(ID_list)==len(l) for l in [point_list,sunshine_duration_list,soil_thickness_list,wind_speed_list,forest_region_id_list])
+        assert all(len(ID_list)==len(l) for l in [point_list,
+                                                  sunshine_duration_list,
+                                                  soil_thickness_list,
+                                                  wind_speed_list,
+                                                  forest_region_id_list,
+                                                  distance_to_edge_list])
         cells = [None] * len(ID_list)
         invalid_cell_points = []
         count = 0
         fr_dict = {fr.ID:fr for fr in forest_regions}
         
-        for ID,pt,sd,st,ws,frid in zip(ID_list,point_list,sunshine_duration_list,soil_thickness_list,wind_speed_list,forest_region_id_list):
+        for ID,pt,sd,st,ws,frid,de in zip(ID_list,
+                                          point_list,
+                                          sunshine_duration_list,
+                                          soil_thickness_list,
+                                          wind_speed_list,
+                                          forest_region_id_list,
+                                          distance_to_edge_list):
             if ID is not None\
            and pt is not None\
            and sd is not None\
            and st is not None\
            and ws is not None\
-           and frid is not None:
+           and frid is not None\
+           and de is not None:
                 fr = fr_dict[frid]
                 cells[count] = Cell(ID=ID,
                                     point=pt,
                                     forest_region=fr,
                                     soil_thickness=st,
                                     wind_speed=ws,
-                                    sunshine_duration=sd)
+                                    sunshine_duration=sd,
+                                    distance_to_edge=de)
                 count+=1
             else:
                 invalid_cell_points.append(pt)
