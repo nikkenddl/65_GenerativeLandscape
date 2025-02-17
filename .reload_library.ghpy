@@ -7,6 +7,7 @@ from lib_65land import config
 from lib_65land import conversion
 from lib_65land import Forest
 from lib_65land import loader
+from lib_65land import log
 from lib_65land import placement
 from lib_65land import rhinopy
 from lib_65land import Tree
@@ -17,6 +18,7 @@ reload(config)
 reload(conversion)
 reload(Forest)
 reload(loader)
+reload(log)
 reload(placement)
 reload(rhinopy)
 reload(Tree)

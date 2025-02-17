@@ -13,6 +13,10 @@ class Singleton(object):
 
 class Config(Singleton):
     def __init__(self):
+        __desktop_path = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + "\\Desktop" #type: ignore
+        self.__forest_creator_log_file_path = __desktop_path + "\\" + "log_forest_creator_000.txt"
+
+
         self.__map_layer_name = "FOREST-CREATOR-DATA_map"
         self.__map_keys = (
             "x_cell_count",
@@ -24,7 +28,9 @@ class Config(Singleton):
             "sunshine_duration_hour_base64",
             "soil_thickness_base64",
             "wind_speed_base64",
-            "FR_data_base64",
+            # "FR_data_base64",
+            "FR_data_celluar_automaton_base64",
+            "distance_to_edge_base64",
             "created_time"
         )
         self.__forest_region_layer = "GH_srf_forest-domain"
@@ -61,6 +67,7 @@ class Config(Singleton):
         self.__tree_asset_table_col_height = "樹高"
         self.__tree_asset_table_col_trunk_circumference = "幹周"
         self.__tree_asset_table_col_diameter = "葉張"
+        self.__tree_asset_table_col_root_diameter = "根鉢"
         self.__tree_asset_table_col_maximum_height = "最大成長樹高"
         self.__tree_asset_table_col_shade_tolerance = "耐陰性"
         self.__tree_asset_table_col_wind_tolerance = "耐風性"
@@ -70,9 +77,11 @@ class Config(Singleton):
         self.__tree_asset_table_col_is_evergreen = "常緑"
         self.__tree_asset_table_col_is_conifers = "針葉"
         self.__tree_asset_table_col_undercut_height_ratio = "下枝高さ比率"
+        self.__tree_asset_table_col_growign_parameter_k = "GP_k"
+        self.__tree_asset_table_col_growign_parameter_B = "GP_B"
 
-        self.__tree_height_category = [8000,5000,3000,2000]
-        self.__tree_height_category.sort(reverse=True)
+        self.__tree_height_category = [65536,8000,5000,3000,2000,-65536]
+        self.__tree_height_category.sort(reverse=False)
 
         self.__dominant_species_ratio = 0.7
         self.__required_sunshine_duration_hour_by_shade_tolerance = (6.0,4.0,2.0,0.0)
@@ -87,10 +96,24 @@ class Config(Singleton):
         }
          # use when tree height is lower than __tree_height_lower_limit_to_consider_root_shape_for_soil_thickness
         self.__required_soil_thickness_by_height_category = {
-            2000:0,
-            3000:600,
+            65536:65536,
+            8000:1000,
             5000:600,
-            8000:1000
+            3000:600,
+            2000:0,
+            -65536:0,
+        }
+
+        self.__height_category_in_20_years_ahead = [65536,15000,12000,8000,6000,-65536]
+        self.__height_category_in_20_years_ahead.sort(reverse=False)
+
+        self.__required_soil_thickness_in_20_years_ahead = {
+            65536:65536,
+            15000:1500,
+            12000:1000,
+            8000:600,
+            6000:0,
+            -65536:0
         }
 
         tree_shape_section_2D_coordinates_typeA = ((1.0,0.0),(0.0,1.0),(-1.0,0.0)) # cone
@@ -108,7 +131,15 @@ class Config(Singleton):
         __area_to_check_forest_layer_count = 100 # m2
         self.__radius_to_check_forest_layer_count = (__area_to_check_forest_layer_count/math.pi) ** 0.5 * 1000.0 #mm
 
-        self.__radius_to_check_collision = 8000 * 2 # finding radius * 2
+        self.__radius_to_check_collision = 8000.0 * 2.0 # finding radius * 2
+
+        self.__trying_placement_count_in_nogap_region = 10
+        self.__trying_multiplacement_radius_in_nogap_region = 3000
+
+
+    @property
+    def forest_creator_log_file_path(self):
+        return self.__forest_creator_log_file_path
 
     @property
     def required_sunshine_duration_hour_by_shade_tolerance(self):
@@ -167,6 +198,9 @@ class Config(Singleton):
     def tree_asset_table_col_diameter(self):
         return self.__tree_asset_table_col_diameter
     @property
+    def tree_asset_table_col_root_diameter(self):
+        return self.__tree_asset_table_col_root_diameter
+    @property
     def tree_asset_table_col_maximum_height(self):
         return self.__tree_asset_table_col_maximum_height
     @property
@@ -195,6 +229,13 @@ class Config(Singleton):
     @property
     def tree_asset_table_col_undercut_height_ratio(self):
         return self.__tree_asset_table_col_undercut_height_ratio
+
+    @property
+    def tree_asset_table_col_growign_parameter_k(self):
+        return self.__tree_asset_table_col_growign_parameter_k
+    @property
+    def tree_asset_table_col_growign_parameter_B(self):
+        return self.__tree_asset_table_col_growign_parameter_B
     
     @property
     def tree_height_category(self):
@@ -244,3 +285,17 @@ class Config(Singleton):
     @property
     def preplaced_tag(self):
         return self.__preplaced_tag
+    
+    @property
+    def height_category_in_20_years_ahead(self):
+        return self.__height_category_in_20_years_ahead
+    @property
+    def required_soil_thickness_in_20_years_ahead(self):
+        return self.__required_soil_thickness_in_20_years_ahead
+    
+    @property
+    def trying_placement_count_in_nogap_region(self):
+        return self.__trying_placement_count_in_nogap_region
+    @property
+    def trying_multiplacement_radius_in_nogap_region(self):
+        return self.__trying_multiplacement_radius_in_nogap_region
