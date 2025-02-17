@@ -159,6 +159,8 @@ class RegionAnalyser(Analyser):
         eval_values = []
         error_values = []
         trees = []
+        tree_states = []
+        height_cat_tol_to_count = self._config.high_tree_shortest_height_class
 
         for cells in cells_by_regions:
             assert cells
@@ -167,17 +169,18 @@ class RegionAnalyser(Analyser):
             area = cells[0].forest_region.area
 
             trees_in_region = [c.placed_tree for c in cells if c.placed_tree]
-            tree_count = len(trees_in_region)
+            # density should be calculated with only trees whose height category is over tolerance.
+            is_tree_in_region = [t.height_category>=height_cat_tol_to_count for t in trees_in_region]
+            tree_count_over_tol = sum(is_tree_in_region)
 
-            density = tree_count / area * 100 * 1000000 # to tree per 100m2
+            density = tree_count_over_tol / area * 100 * 1000000 # to tree per 100m2
             error = density - tol
             
             trees.extend(trees_in_region)
             eval_values.append(density)
             error_values.append(error)
-
-        tree_states = [True] * len(trees)
-        
+            tree_states.extend(is_tree_in_region)
+            
         return (cells_by_regions,trees,tree_states,eval_values,error_values)
 
 
