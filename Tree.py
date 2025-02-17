@@ -45,6 +45,8 @@ class Tree:
                  undercut_height_ratio=None,
                  growing_parameter_k=None,
                  growing_parameter_B=None):
+        self.__age_estimation_cache = {}
+        self.__height_estimation_cache = {}
 
         self.species = try_get_text(species)
         self.symbol = try_get_text(symbol)
@@ -91,7 +93,6 @@ class Tree:
 
         self.set_config_value()
 
-        self.__future_height_cache = {}
 
     @property
     def height(self):
@@ -106,6 +107,7 @@ class Tree:
         return self.__initial_age
 
     def set_config_value(self):
+        assert self.age==self.initial_age
         def get_required_soil_thickness():
             # check soil thickness
             ## check tree height over tolerance should be check root shape.
@@ -135,32 +137,29 @@ class Tree:
             self.section_area = self.compute_area_of_coordinates(self.tree_shape_section)
 
         
-    def __update_attributes_of_age(self):
+    def __update_attributes_of_age(self,age):
+        self.__age = age
         self.__height = self.estimate_height(self.__age)
         self.height_category = self.get_height_category(self.__height)
         self.__update_tree_shape()
 
     def get_attributes_of_age(self,age):
         height = self.estimate_height(age)
-        radius = 0.5 * height * self.DH_ratio
+        radius = self.estimate_radius_from_height(height)
         height_category = self.get_height_category(height)
         tree_shape_section = self.get_tree_shape_section(radius,height,self.undercut_height_ratio,self.shape_type)
         return height,radius,height_category,tree_shape_section
 
 
-    def grow(self,year):
-        self.__age += year
-        self.__height = self.estimate_height(self.__age)
-        self.height_category = self.get_height_category(self.__height)
+    def timetravel(self,years):
+        if years!=0 and years!=0.0:
+            age = self.age + years
+            self.timetravel_at(age)
 
-        self.__update_tree_shape()
-
-    def timetravel(self,age):
+    def timetravel_at(self,age):
         if age<=0:
             age = self.__initial_age
-        
-        self.__age = age
-        self.__update_attributes_of_age()
+        self.__update_attributes_of_age(age)
     
     def __init_age(self):
         assert self.height is not None
@@ -168,28 +167,37 @@ class Tree:
         self.__age = self.__initial_age
 
     def estimate_age(self,height):
-        age = None
-        if self.is_conifers:
-            age = self.__reverse_gompertz(height)
+        if height in self.__age_estimation_cache:
+            return self.__age_estimation_cache[height]
         else:
-            age = self.__reverse_mitcherlich(height)
-        return age
+            age = self.__reverse_gompertz(height) if self.is_conifers else self.__reverse_mitcherlich(height)
+            self.__age_estimation_cache[height] = age
+            return age
     
     def estimate_height(self,age):
-        height = None
-        if self.is_conifers:
-            height = self.__gompertz(age)
+        if age in self.__height_estimation_cache:
+            return self.__height_estimation_cache[age]
         else:
-            height = self.__mitscherlich(age)
-        return height
-    
-    def estimate_future_height(self,years):
-        years = int(years)
+            height = self.__gompertz(age) if self.is_conifers else self.__mitscherlich(age)
+            self.__height_estimation_cache[age] = height
+            return height
         
-    
-    def estimate_radius(self,age):
+    def estimate_radius_from_age(self,age):
         height = self.estimate_height(age)
+        return self.estimate_radius_from_height(height)
+    
+    def estimate_radius_from_height(self,height):
         return 0.5 * self.DH_ratio * height
+    
+    def estimate_future_height(self,year):
+        if year==0 or year==0.0: return self.height
+        age = self.age + year
+        return self.estimate_height(age)
+    
+    def estimate_future_radius(self,year):
+        if year==0 or year==0.0: return self.radius
+        age = self.age + year
+        return self.estimate_radius_from_age(age)
 
     def __reverse_mitcherlich(self,height):
         if (height>=self.maximum_height-0.001):
@@ -226,7 +234,11 @@ class Tree:
         return abs(area / 2)
 
     @classmethod
-    def get_tree_shape_section(cls,canopy_radius,tree_height,undercut_hegiht_ratio,tree_shape_type):
+    def get_tree_shape_section(cls,
+                               canopy_radius,
+                               tree_height,
+                               undercut_hegiht_ratio,
+                               tree_shape_type):
         base_coordinates = cls.__config.tree_shape_section_2D_dictionary[tree_shape_type]
 
         canopy_height = tree_height*(1.0-undercut_hegiht_ratio)
@@ -386,8 +398,7 @@ class Tree:
     def get_overlapping_ratio(self,neighbor_trees,self_tree_origin=None):
         """_summary_
 
-        Parameters
-        ----------
+        Parameters        ----------
         neighbor_trees : (n,) Tree
         self_tree_origin : Rhino.Geometry.Point3d, optional
             Override self.point to get overlaping trees before placement, by default None

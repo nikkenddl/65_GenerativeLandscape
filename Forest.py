@@ -79,6 +79,7 @@ class ForestRegion:
         return self.__has_been_finished_placement
     
     def update_has_been_finished(self):
+        # density should be calculated with only trees whose height category is over tolerance.
         tol = self.__config.high_tree_shortest_height_class
         self.__has_been_finished_placement = sum(t.height_category>=tol for t in self.placed_trees)>self.__limit_tree_count
 
