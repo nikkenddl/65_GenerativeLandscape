@@ -1,5 +1,9 @@
+from .config import Config
+
 class Cell:
+    __config = Config()
     __FD_DICT = {}
+    __FR_DICT = {}
     __NumericalGrid = None
 
     def __init__(self,
@@ -13,16 +17,18 @@ class Cell:
         self.ID = int(ID)
         self.point = point
         self.forest_region = forest_region
-        self.FDname = self.forest_region.forest_domain.name
-        self.soil_thickness = soil_thickness
-        self.wind_speed = wind_speed
-        self.sunshine_duration = sunshine_duration
-        self.distance_to_edge = distance_to_edge
+        self.FDname = str(self.forest_region.forest_domain.name)
+        self.soil_thickness = int(soil_thickness)
+        self.wind_speed = float(wind_speed)
+        self.sunshine_duration = float(sunshine_duration)
+        self.distance_to_edge = float(distance_to_edge)
 
         self.placed_tree = None
         self.__is_killed = False
 
         self.forest_region.cells.append(self)
+
+        self.tree_height_limit = self.get_height_limit_by_soil_thickness(self.soil_thickness)
 
     def clear(self):
         self.placed_tree=None
@@ -43,6 +49,12 @@ class Cell:
         if id_==-1:
             raise Exception("inputted point is out of grid. inputted point : {}".format(point))
         return id_
+
+
+    @classmethod
+    def get_height_limit_by_soil_thickness(cls,thickness):
+        thickness_category = next(thcat for thcat in cls.__config.soil_thickness_category if thickness>=thcat)
+        return float(cls.__config.height_limit_by_soil_thickness_category[thickness_category])
         
 
     @staticmethod
@@ -123,6 +135,15 @@ class Cell:
     def set_FDs(cls, FDs):
         for FD in FDs:
             cls.set_FD(FD)
+
+    @classmethod
+    def set_FR(cls, FR):
+        cls.__FR_DICT[FR.ID] = FR
+
+    @classmethod
+    def set_FRs(cls, FRs):
+        for FR in FRs:
+            cls.set_FR(FR)
 
     @property
     def grid_info(self):

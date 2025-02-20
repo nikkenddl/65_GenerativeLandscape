@@ -9,6 +9,7 @@ from rhinoscript import utility as rhutil
 from itertools import compress
 from lib_65land.config import Config
 from lib_65land.Cell import Cell
+from lib_65land.rhinopy import get_user_texts
 
 
 def get_layer_objects(layer):
@@ -35,25 +36,25 @@ def get_layer_objects(layer):
 
     return objs
 
-def get_user_texts(guid,key):
-    """get user text from guid and key
+# def get_user_texts(guid,key):
+#     """get user text from guid and key
 
-    Parameters
-    ----------
-    guid : str
-    key :str
+#     Parameters
+#     ----------
+#     guid : str
+#     key :str
 
-    Returns
-    -------
-    user_text: str
-    """
-    sc.doc = R.RhinoDoc.ActiveDoc
-    try:
-        rst = rs.GetUserText(guid,key=key)
-    except ValueError:
-        raise Exception("key is not found : key:{}".format(key))
-    sc.doc = ghdoc
-    return str(rst)
+#     Returns
+#     -------
+#     user_text: str
+#     """
+#     sc.doc = R.RhinoDoc.ActiveDoc
+#     try:
+#         rst = rs.GetUserText(guid,key=key)
+#     except ValueError:
+#         raise Exception("key is not found : key:{}".format(key))
+#     sc.doc = ghdoc
+#     return str(rst)
 
 def try_get_point_from_string(string):
     succeeds,point =  rg.Point3d.TryParse(string)
@@ -81,35 +82,35 @@ def load_map(forest_regions):
     
     grid = coercemesh(guid)
 
-    map_keys = config.map_keys
 
-    x_cell_count = int(get_user_texts(guid,map_keys[0]))
-    y_cell_count = int(get_user_texts(guid,map_keys[1]))
-    grid_origin_coords = list(map(float,get_user_texts(guid,map_keys[2])[1:-1].split(",")))
+    x_cell_count = int(get_user_texts(guid,config.map_key_x_cell_count))
+    y_cell_count = int(get_user_texts(guid,config.map_key_y_cell_count))
+    grid_origin_coords = list(map(float,get_user_texts(guid,config.map_key_grid_origin)[1:-1].split(",")))
     grid_origin = rg.Point3d(grid_origin_coords[0],grid_origin_coords[1],0)
-    span = float(get_user_texts(guid,map_keys[3]))
+    span = float(get_user_texts(guid,config.map_key_span))
     
-    is_cell_in_region = load_base64_pickle(get_user_texts(guid,map_keys[4]))
+    is_cell_in_region = load_base64_pickle(get_user_texts(guid,config.map_key_is_cell_in_region_base64))
     cell_IDs = [i for i,bo in enumerate(is_cell_in_region) if bo]
     
-    cell_z_value = load_base64_pickle(get_user_texts(guid,map_keys[5]))
+    cell_z_value = load_base64_pickle(get_user_texts(guid,config.map_key_cell_z_value_base64))
     cell_z_value = [cell_z_value[i] for i in cell_IDs]
-    sunshine_duration_hour = load_base64_pickle(get_user_texts(guid,map_keys[6]))
+    sunshine_duration_hour = load_base64_pickle(get_user_texts(guid,config.map_key_sunshine_duration_hour_base64))
     sunshine_duration_hour = [sunshine_duration_hour[i] for i in cell_IDs]
-    soil_thickness = load_base64_pickle(get_user_texts(guid,map_keys[7]))
+    soil_thickness = load_base64_pickle(get_user_texts(guid,config.map_key_soil_thickness_base64))
     soil_thickness = [soil_thickness[i] for i in cell_IDs]
-    wind_speed = load_base64_pickle(get_user_texts(guid,map_keys[8]))
+    wind_speed = load_base64_pickle(get_user_texts(guid,config.map_key_wind_speed_base64))
     wind_speed = [wind_speed[i] for i in cell_IDs]
-    forest_region_id = load_base64_pickle(get_user_texts(guid,map_keys[9]))
+    forest_region_id = load_base64_pickle(get_user_texts(guid,config.map_key_FR_data_celluar_automaton_base64,False))\
+                    or load_base64_pickle(get_user_texts(guid,config.map_key_FR_data_base64))
     forest_region_id = [forest_region_id[i] for i in cell_IDs]
-    distance_to_edge = load_base64_pickle(get_user_texts(guid,map_keys[10]))
+    distance_to_edge = load_base64_pickle(get_user_texts(guid,config.map_key_distance_to_edge_base64))
     distance_to_edge = [distance_to_edge[i] for i in cell_IDs]
     
     grid_points = [grid.Faces.GetFaceCenter(i) for i in cell_IDs]
     for pt,z in zip(grid_points,cell_z_value):
         pt.Z = z
     
-    created_time = get_user_texts(guid,map_keys[10])
+    created_time = get_user_texts(guid,config.map_key_created_time)
 
     Cell.set_grid_info(grid_origin,x_cell_count,y_cell_count,span)
     

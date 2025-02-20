@@ -199,7 +199,7 @@ def get_layer_objects(ghdoc,layer):
 
     return objs,guids
 
-def get_user_texts(guid,key):
+def get_user_texts(guid,key,raise_if_error=True):
     """get user text from guid and key
 
     Parameters
@@ -215,7 +215,8 @@ def get_user_texts(guid,key):
     try:
         rst = rs.GetUserText(guid,key=key)
     except ValueError:
-        raise Exception("key is not found : key:{}".format(key))
+        if raise_if_error: raise ValueError("key is not found : key:{}".format(key))
+        else: return None   
         
     return str(rst)
 

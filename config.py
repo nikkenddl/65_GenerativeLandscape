@@ -18,21 +18,36 @@ class Config(Singleton):
 
 
         self.__map_layer_name = "FOREST-CREATOR-DATA_map"
-        self.__map_keys = (
-            "x_cell_count",
-            "y_cell_count",
-            "grid_origin",
-            "span",
-            "is_cell_in_region_base64",
-            "cell_z_value_base64",
-            "sunshine_duration_hour_base64",
-            "soil_thickness_base64",
-            "wind_speed_base64",
-            # "FR_data_base64",
-            "FR_data_celluar_automaton_base64",
-            "distance_to_edge_base64",
-            "created_time"
+
+        self.__map_key_x_cell_count = "x_cell_count"
+        self.__map_key_y_cell_count = "y_cell_count"
+        self.__map_key_grid_origin = "grid_origin"
+        self.__map_key_span = "span"
+        self.__map_key_is_cell_in_region_base64 = "is_cell_in_region_base64"
+        self.__map_key_cell_z_value_base64 = "cell_z_value_base64"
+        self.__map_key_sunshine_duration_hour_base64 = "sunshine_duration_hour_base64"
+        self.__map_key_soil_thickness_base64 = "soil_thickness_base64"
+        self.__map_key_wind_speed_base64 = "wind_speed_base64"
+        self.__map_key_FR_data_base64 = "FR_data_base64"
+        self.__map_key_FR_data_celluar_automaton_base64 = "FR_data_celluar_automaton_base64"
+        self.__map_key_distance_to_edge_base64 = "distance_to_edge_base64"
+        self.__map_key_created_time = "created_time"
+
+        self.exporting_map_keys = (
+            self.__map_key_x_cell_count,
+            self.__map_key_y_cell_count,
+            self.__map_key_grid_origin,
+            self.__map_key_span,
+            self.__map_key_is_cell_in_region_base64,
+            self.__map_key_cell_z_value_base64,
+            self.__map_key_sunshine_duration_hour_base64,
+            self.__map_key_soil_thickness_base64,
+            self.__map_key_wind_speed_base64,
+            self.__map_key_FR_data_base64,
+            self.__map_key_distance_to_edge_base64,
+            self.__map_key_created_time
         )
+
         self.__forest_region_layer = "GH_srf_forest-domain"
         self.__forest_region_archive_layer = "FOREST-CREATOR-DATA_forest-region"
         self.__forest_region_keys = (
@@ -68,6 +83,7 @@ class Config(Singleton):
         self.__tree_asset_table_col_trunk_circumference = "幹周"
         self.__tree_asset_table_col_diameter = "葉張"
         self.__tree_asset_table_col_root_diameter = "根鉢"
+        self.__tree_asset_table_col_safety_distance = "離隔距離"
         self.__tree_asset_table_col_maximum_height = "最大成長樹高"
         self.__tree_asset_table_col_shade_tolerance = "耐陰性"
         self.__tree_asset_table_col_wind_tolerance = "耐風性"
@@ -80,7 +96,10 @@ class Config(Singleton):
         self.__tree_asset_table_col_growign_parameter_k = "GP_k"
         self.__tree_asset_table_col_growign_parameter_B = "GP_B"
 
-        self.__tree_height_category = [65536,8000,5000,3000,2000,-65536]
+        MAXIMUM_INT = 65536
+        MINIMUM_INT = -65536
+
+        self.__tree_height_category = [MAXIMUM_INT,8000,5000,3000,2000,MINIMUM_INT]
         self.__tree_height_category.sort(reverse=False)
 
         self.__dominant_species_ratio = 0.7
@@ -88,33 +107,32 @@ class Config(Singleton):
         self.__limit_wind_speed_by_wind_tolerance = (4.3,5.6,float('inf'))
         self.__tree_height_lower_limit_to_consider_root_shape_for_soil_thickness = 8000.0 # mm
         self.__high_tree_shortest_height_class = 3000 # mm
+
+        __SOIL_THICKNESS_1 = 600
+        __SOIL_THICKNESS_2 = 1000
+        __SOIL_THICKNESS_3 = 1500
         # use when tree height is equal or higher than __tree_height_lower_limit_to_consider_root_shape_for_soil_thickness
         self.__required_soil_thickness_by_root_type = {
-            "A": 1500, # int
-            "B": 1000, 
-            "C": 1000 
+            "A": __SOIL_THICKNESS_3, # int
+            "B": __SOIL_THICKNESS_2, 
+            "C": __SOIL_THICKNESS_2 
         }
          # use when tree height is lower than __tree_height_lower_limit_to_consider_root_shape_for_soil_thickness
         self.__required_soil_thickness_by_height_category = {
-            65536:65536,
-            8000:1000,
-            5000:600,
-            3000:600,
-            2000:0,
-            -65536:0,
+            MAXIMUM_INT:MAXIMUM_INT,
+            8000:__SOIL_THICKNESS_2,
+            5000:__SOIL_THICKNESS_1,
+            3000:__SOIL_THICKNESS_1,
+            2000:MINIMUM_INT,
+            -65536:MINIMUM_INT,
         }
 
-        self.__height_category_in_20_years_ahead = [65536,15000,12000,8000,6000,-65536]
-        self.__height_category_in_20_years_ahead.sort(reverse=False)
-
-        self.__required_soil_thickness_in_20_years_ahead = {
-            65536:65536,
-            15000:1500,
-            12000:1000,
-            8000:600,
-            6000:0,
-            -65536:0
-        }
+        # must be desc order
+        self.__height_limit_by_soil_thickness_category = {__SOIL_THICKNESS_3:15000,
+                                                __SOIL_THICKNESS_2:12000,
+                                                __SOIL_THICKNESS_1:8000,
+                                                0:6000}
+        self.__soil_thickness_category = sorted(self.__height_limit_by_soil_thickness_category.keys())
 
         tree_shape_section_2D_coordinates_typeA = ((1.0,0.0),(0.0,1.0),(-1.0,0.0)) # cone
         tree_shape_section_2D_coordinates_typeB = ((0.0,0.0),(0.134459,0.00454),(0.268285,0.01833),(0.400732,0.041902),(0.530792,0.076249),(0.656898,0.12301),(0.7763,0.184818),(0.883492,0.265777),(0.966226,0.371153),(1.0,0.5),(0.966226,0.628847),(0.883492,0.734223),(0.7763,0.815182),(0.656898,0.87699),(0.530792,0.923751),(0.400732,0.958098),(0.268285,0.98167),(0.134459,0.99546),(0.0,1.0),(-0.134459,0.99546),(-0.268285,0.98167),(-0.400732,0.958098),(-0.530792,0.923751),(-0.656898,0.87699),(-0.7763,0.815182),(-0.883492,0.734223),(-0.966226,0.628847),(-1.0,0.5),(-0.966226,0.371153),(-0.883492,0.265777),(-0.7763,0.184818),(-0.656898,0.12301),(-0.530792,0.076249),(-0.400732,0.041902),(-0.268285,0.01833),(-0.134459,0.00454)) # ellipse
@@ -133,7 +151,7 @@ class Config(Singleton):
 
         self.__radius_to_check_collision = 8000.0 * 2.0 # finding radius * 2
 
-        self.__trying_placement_count_in_nogap_region = 10
+        self.__trying_placement_count_in_nogap_region = 15
         self.__trying_multiplacement_radius_in_nogap_region = 3000
 
 
@@ -158,10 +176,6 @@ class Config(Singleton):
         return self.__map_layer_name
     
     @property
-    def map_keys(self):
-        return self.__map_keys
-    
-    @property
     def forest_region_layer(self):
         return self.__forest_region_layer
     
@@ -181,7 +195,48 @@ class Config(Singleton):
     def path_tree_asset(self):
         return self.__path_tree_asset
     
+    ## map info keys
+    @property
+    def map_key_x_cell_count(self):
+        return self.__map_key_x_cell_count
+    @property
+    def map_key_y_cell_count(self):
+        return self.__map_key_y_cell_count
+    @property
+    def map_key_grid_origin(self):
+        return self.__map_key_grid_origin
+    @property
+    def map_key_span(self):
+        return self.__map_key_span
+    @property
+    def map_key_is_cell_in_region_base64(self):
+        return self.__map_key_is_cell_in_region_base64
+    @property
+    def map_key_cell_z_value_base64(self):
+        return self.__map_key_cell_z_value_base64
+    @property
+    def map_key_sunshine_duration_hour_base64(self):
+        return self.__map_key_sunshine_duration_hour_base64
+    @property
+    def map_key_soil_thickness_base64(self):
+        return self.__map_key_soil_thickness_base64
+    @property
+    def map_key_wind_speed_base64(self):
+        return self.__map_key_wind_speed_base64
+    @property
+    def map_key_FR_data_base64(self):
+        return self.__map_key_FR_data_base64
+    @property
+    def map_key_FR_data_celluar_automaton_base64(self):
+        return self.__map_key_FR_data_celluar_automaton_base64
+    @property
+    def map_key_distance_to_edge_base64(self):
+        return self.__map_key_distance_to_edge_base64
+    @property
+    def map_key_created_time(self):
+        return self.__map_key_created_time
 
+    ## tree asset table col name
     @property
     def tree_asset_table_col_species(self):
         return self.__tree_asset_table_col_species
@@ -200,6 +255,9 @@ class Config(Singleton):
     @property
     def tree_asset_table_col_root_diameter(self):
         return self.__tree_asset_table_col_root_diameter
+    @property
+    def tree_asset_table_col_safety_distance(self):
+        return self.__tree_asset_table_col_safety_distance
     @property
     def tree_asset_table_col_maximum_height(self):
         return self.__tree_asset_table_col_maximum_height
@@ -248,6 +306,14 @@ class Config(Singleton):
         """
         return self.__tree_height_category
     
+
+    @property
+    def soil_thickness_category(self):
+        return self.__soil_thickness_category
+    @property
+    def height_limit_by_soil_thickness_category(self):
+        return self.__height_limit_by_soil_thickness_category
+    
     @property
     def high_tree_shortest_height_class(self):
         return self.__high_tree_shortest_height_class
@@ -286,12 +352,6 @@ class Config(Singleton):
     def preplaced_tag(self):
         return self.__preplaced_tag
     
-    @property
-    def height_category_in_20_years_ahead(self):
-        return self.__height_category_in_20_years_ahead
-    @property
-    def required_soil_thickness_in_20_years_ahead(self):
-        return self.__required_soil_thickness_in_20_years_ahead
     
     @property
     def trying_placement_count_in_nogap_region(self):
