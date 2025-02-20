@@ -34,6 +34,7 @@ class Tree:
                  trunk_circumference=None,
                  diameter=None,
                  root_diameter=None,
+                 safety_distance=None,
                  maximum_height=None,
                  shade_tolerance=None,
                  wind_tolerance=None,
@@ -59,9 +60,12 @@ class Tree:
 
         # diameter and radius will be got from tree height and d/h ratio
         diameter = try_get_float(diameter) * 1000.0 # convert from m to mm
-        self.DH_ratio = diameter/self.height
+        self.DH_ratio = diameter/self.__height
+        self.__initial_height = self.__height
+        self.__initial_radius = self.radius
 
         self.__root_radius = try_get_float(root_diameter) * 500.0
+        self.safety_distance = try_get_float(safety_distance) * 1000.0
 
         self.__shade_tolerance_index = try_get_int(shade_tolerance)
         self.__wind_tolerance_index = try_get_int(wind_tolerance)
@@ -96,7 +100,7 @@ class Tree:
 
     @property
     def height(self):
-        return self.__height
+        return try_get_float(self.__height)
     
     @property
     def age(self):
@@ -105,13 +109,21 @@ class Tree:
     @property
     def initial_age(self):
         return self.__initial_age
+    
+    @property
+    def initial_height(self):
+        return self.__initial_height
+    
+    @property
+    def initial_radius(self):
+        return self.__initial_radius
 
     def set_config_value(self):
         assert self.age==self.initial_age
         def get_required_soil_thickness():
             # check soil thickness
             ## check tree height over tolerance should be check root shape.
-            if self.height>=self.__config.tree_height_lower_limit_to_consider_root_shape_for_soil_thickness-0.001:
+            if self.__height>=self.__config.tree_height_lower_limit_to_consider_root_shape_for_soil_thickness-0.001:
                 ### get by root type
                 tol = self.__config.required_soil_thickness_by_root_type[self.root_type]
             else:
@@ -130,6 +142,13 @@ class Tree:
         self.__overlapped_trees = []
         self.custom_tags = set()
 
+    
+    def __apply_height_limit_by_soil_thickness(self,height): 
+        if not self.placed_cell: 
+            rst = height
+        else: 
+            rst = max(min(height,self.placed_cell.tree_height_limit),self.__initial_height)
+        return rst
 
     def __update_tree_shape(self):
         if self.shape_type is not None:
@@ -140,7 +159,7 @@ class Tree:
     def __update_attributes_of_age(self,age):
         self.__age = age
         self.__height = self.estimate_height(self.__age)
-        self.height_category = self.get_height_category(self.__height)
+        #self.height_category = self.get_height_category(self.__height) # do not change height category by age.
         self.__update_tree_shape()
 
     def get_attributes_of_age(self,age):
@@ -176,11 +195,11 @@ class Tree:
     
     def estimate_height(self,age):
         if age in self.__height_estimation_cache:
-            return self.__height_estimation_cache[age]
+            return self.__apply_height_limit_by_soil_thickness(self.__height_estimation_cache[age])
         else:
             height = self.__gompertz(age) if self.is_conifers else self.__mitscherlich(age)
             self.__height_estimation_cache[age] = height
-            return height
+            return self.__apply_height_limit_by_soil_thickness(height)
         
     def estimate_radius_from_age(self,age):
         height = self.estimate_height(age)
@@ -252,9 +271,6 @@ class Tree:
     def get_height_category(cls,height):
         return next(h for h in cls.__config.tree_height_category if int(floor(height))<=h)
     
-    @classmethod
-    def get_height_category_in_20(cls,height):
-        return next(h for h in cls.__config.height_category_in_20_years_ahead if int(floor(height)<=h))
 
     @property
     def is_placed(self):
@@ -263,11 +279,11 @@ class Tree:
 
     @property
     def diameter(self):
-        return self.DH_ratio * self.height
+        return self.DH_ratio * self.__height
 
     @property
     def radius(self):
-        return 0.5 * self.DH_ratio * self.height
+        return 0.5 * self.DH_ratio * self.__height
     
     @property
     def root_radius(self):
@@ -380,7 +396,7 @@ class Tree:
         elif testing_cell.soil_thickness < self.required_soil_thickness:
             return False,"soil thickness is too thin"
         # check distance to edge
-        elif testing_cell.distance_to_edge < self.root_radius:
+        elif testing_cell.distance_to_edge < self.safety_distance:
             return False,"too close to edge"
         else:
             # default
@@ -391,7 +407,7 @@ class Tree:
             raise Exception("To check root collision, self and other trees must already have been placed.\nYou can specify damy origin for self via the parameter 'self_tree_origin'.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,neighbor.placed_cell)) # type:ignore
         self_point = self_tree_origin or self.point
         xy_dist_square = (other_tree.point.X - self_point.X)**2 +(other_tree.point.Y - self_point.Y)**2 # type: ignore
-        required_dist = (self.root_radius+other_tree.root_radius)**2
+        required_dist = (self.safety_distance+other_tree.safety_distance)**2
         return xy_dist_square>=required_dist
                 
     
@@ -480,6 +496,7 @@ class Tree:
             "trunk_circumference":cls.__config.tree_asset_table_col_trunk_circumference,
             "diameter":cls.__config.tree_asset_table_col_diameter,
             "root_diameter":cls.__config.tree_asset_table_col_root_diameter,
+            "safety_distance":cls.__config.tree_asset_table_col_safety_distance,
             "maximum_height":cls.__config.tree_asset_table_col_maximum_height,
             "shade_tolerance":cls.__config.tree_asset_table_col_shade_tolerance,
             "wind_tolerance":cls.__config.tree_asset_table_col_wind_tolerance,
