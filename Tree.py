@@ -46,13 +46,16 @@ class Tree:
                  undercut_height_ratio=None,
                  growing_parameter_k=None,
                  growing_parameter_B=None):
+        self.placed_cell = None
+        self.__placed_point = None
         self.__age_estimation_cache = {}
         self.__height_estimation_cache = {}
+        self.__tree_shape_cache = {} # hegiht: (polyline coordinates, section_area)
 
         self.species = try_get_text(species)
         self.symbol = try_get_text(symbol)
         self.__height = try_get_float(height) * 1000.0 # convert from m to mm
-        self.height_category = self.get_height_category(self.height)
+        self.height_category = self.get_height_category(self.__height)
         # ignore error because circumuference include "株立"
         self.trunk_circumference = try_get_float(trunk_circumference,False) * 1000.0 # convert from m to mm
         self.maximum_height = try_get_float(maximum_height) * 1000.0 # convert from m to mm
@@ -81,17 +84,13 @@ class Tree:
         self.__age = 0.0
         self.__init_age()
 
-        self.placed_cell = None
-        self.__placed_point = None
         self.__overlapped_trees = []
         self.is_damy = False
 
         self.required_shade_tolerance = None
         self.limit_wind_tolerance = None
         self.required_soil_thickness = None
-        self.tree_shape_section = None
         self.root = None
-        self.section_area = None
 
         self.custom_tags = set()
 
@@ -100,7 +99,7 @@ class Tree:
 
     @property
     def height(self):
-        return try_get_float(self.__height)
+        return self.apply_height_limit_by_soil_thickness(try_get_float(self.__height))
     
     @property
     def age(self):
@@ -117,6 +116,10 @@ class Tree:
     @property
     def initial_radius(self):
         return self.__initial_radius
+
+    @property
+    def tree_shape_section(self):
+        return self.get_tree_shape_info()[0]
 
     def set_config_value(self):
         assert self.age==self.initial_age
@@ -136,37 +139,30 @@ class Tree:
             self.limit_wind_tolerance = self.__config.limit_wind_speed_by_wind_tolerance[self.__wind_tolerance_index]
         if self.root_type is not None and self.height_category is not None:
             self.required_soil_thickness = get_required_soil_thickness()
-        self.__update_tree_shape()
 
     def init_list_contents(self):
         self.__overlapped_trees = []
         self.custom_tags = set()
 
     
-    def __apply_height_limit_by_soil_thickness(self,height): 
+    def apply_height_limit_by_soil_thickness(self,height): 
         if not self.placed_cell: 
             rst = height
         else: 
             rst = max(min(height,self.placed_cell.tree_height_limit),self.__initial_height)
         return rst
 
-    def __update_tree_shape(self):
-        if self.shape_type is not None:
-            self.tree_shape_section = self.get_tree_shape_section(self.radius,self.height,self.undercut_height_ratio,self.shape_type)
-            self.section_area = self.compute_area_of_coordinates(self.tree_shape_section)
-
         
     def __update_attributes_of_age(self,age):
         self.__age = age
         self.__height = self.estimate_height(self.__age)
         #self.height_category = self.get_height_category(self.__height) # do not change height category by age.
-        self.__update_tree_shape()
 
     def get_attributes_of_age(self,age):
         height = self.estimate_height(age)
         radius = self.estimate_radius_from_height(height)
         height_category = self.get_height_category(height)
-        tree_shape_section = self.get_tree_shape_section(radius,height,self.undercut_height_ratio,self.shape_type)
+        tree_shape_section = self.get_tree_shape_info(height)[0]
         return height,radius,height_category,tree_shape_section
 
 
@@ -181,9 +177,36 @@ class Tree:
         self.__update_attributes_of_age(age)
     
     def __init_age(self):
-        assert self.height is not None
-        self.__initial_age = self.estimate_age(self.height) # type: ignore
+        assert self.__height is not None
+        self.__initial_age = self.estimate_age(self.__height) # type: ignore
         self.__age = self.__initial_age
+
+
+    def get_tree_shape_info(self,height=None):
+        """Get tree shape and area from cache.
+        If information is not computed yet, compute information and cahche them.
+
+        Parameters
+        ----------
+        height : float, optional
+            use self.height if None is inptuted, default by None
+
+        Returns
+        -------
+        tuple
+        - tree_shape_section: (n,2) float
+        - tree_shape_area: float
+        """
+        height = height or self.height
+        if height in self.__tree_shape_cache:
+            return self.__tree_shape_cache[height]
+        else:
+            radius = self.estimate_radius_from_height(height)
+            tree_shape_section = self.compute_tree_shape_section(radius,height,self.undercut_height_ratio,self.shape_type)
+            tree_shape_area = self.compute_area_of_coordinates(tree_shape_section)
+            self.__tree_shape_cache[height] = (tree_shape_section,tree_shape_area)
+            return (tree_shape_section,tree_shape_area)
+
 
     def estimate_age(self,height):
         if height in self.__age_estimation_cache:
@@ -195,11 +218,11 @@ class Tree:
     
     def estimate_height(self,age):
         if age in self.__height_estimation_cache:
-            return self.__apply_height_limit_by_soil_thickness(self.__height_estimation_cache[age])
+            return self.apply_height_limit_by_soil_thickness(self.__height_estimation_cache[age])
         else:
             height = self.__gompertz(age) if self.is_conifers else self.__mitscherlich(age)
             self.__height_estimation_cache[age] = height
-            return self.__apply_height_limit_by_soil_thickness(height)
+            return self.apply_height_limit_by_soil_thickness(height)
         
     def estimate_radius_from_age(self,age):
         height = self.estimate_height(age)
@@ -253,11 +276,25 @@ class Tree:
         return abs(area / 2)
 
     @classmethod
-    def get_tree_shape_section(cls,
+    def compute_tree_shape_section(cls,
                                canopy_radius,
                                tree_height,
                                undercut_hegiht_ratio,
                                tree_shape_type):
+        """_summary_
+
+        Parameters
+        ----------
+        canopy_radius : _type_
+        tree_height : _type_
+        undercut_hegiht_ratio : _type_
+        tree_shape_type : _type_
+
+        Returns
+        -------
+        shape coordinates: (n,2)
+            [(x1,y1), (x2,y2)...]
+        """
         base_coordinates = cls.__config.tree_shape_section_2D_dictionary[tree_shape_type]
 
         canopy_height = tree_height*(1.0-undercut_hegiht_ratio)
@@ -267,14 +304,16 @@ class Tree:
         shape_section_coordinates = [(p[0]*canopy_radius,p[1]*canopy_height+undercut_height) for p in base_coordinates]
         return shape_section_coordinates
 
+
     @classmethod
     def get_height_category(cls,height):
+        # find a height category that is equal or lower to the height 
         return next(h for h in cls.__config.tree_height_category if int(floor(height))<=h)
     
 
     @property
     def is_placed(self):
-        return not self.is_damy and self.placed_cell is not None
+        return (not self.is_damy) and (self.placed_cell is not None)
 
 
     @property
@@ -283,7 +322,7 @@ class Tree:
 
     @property
     def radius(self):
-        return 0.5 * self.DH_ratio * self.__height
+        return self.estimate_radius_from_height(self.__height)
     
     @property
     def root_radius(self):
@@ -338,6 +377,7 @@ class Tree:
         new.set_placed_point(cell.point)
 
         if not is_damy:
+            new.is_damy = False
             # add this tree to cell.
             cell.placed_tree = new
             # update forest_region status.
@@ -428,8 +468,6 @@ class Tree:
         def translate_coordinates(coordinates,vec):
             return [(c[0]+vec[0],c[1]+vec[1]) for c in coordinates]
         
-        if self.section_area is None: # other trees has been set = must have section_area attribute.
-            raise Exception("Tree area is not set")
         if self_tree_origin is None and self.point is None: # other tree has been set = must have point attribute.
             raise Exception("To compute canopy overlapping area, self and other trees must already have been placed.\nYou can specify damy origin for self via the parameter 'self_tree_origin'.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,neighbor.placed_cell)) # type:ignore
 
@@ -438,6 +476,8 @@ class Tree:
         # find overlapped trees and its intersectioned area
         overlap_neighbors = []
         intersected_area = 0.0
+        self_tree_section,self_tree_area = self.get_tree_shape_info()
+
         for neighbor in neighbor_trees:
             xy_dist = (
                     (neighbor.point.X - self_point.X)**2 # type: ignore
@@ -446,8 +486,9 @@ class Tree:
             z_dist = neighbor.point.Z - self_point.Z # type: ignore
             vec = (xy_dist,z_dist)
 
-            other_tree_shape_section_translated = translate_coordinates(neighbor.tree_shape_section,vec)
-            overlap_region_as_pathsD = PolylineBoolenCalculation.intersect_polyline(pl1=self.tree_shape_section,
+            other_tree_section = neighbor.get_tree_shape_info()[0]
+            other_tree_shape_section_translated = translate_coordinates(other_tree_section,vec)
+            overlap_region_as_pathsD = PolylineBoolenCalculation.intersect_polyline(pl1=self_tree_section,
                                                                                     pl2=other_tree_shape_section_translated,
                                                                                     use_rhino=False,
                                                                                     return_clipper_path=True)
@@ -456,7 +497,7 @@ class Tree:
                     intersected_area += PolylineBoolenCalculation.get_area_of_clipper_path(pathD)
                 overlap_neighbors.append(neighbor)
         
-        overlap_ratio = intersected_area / self.section_area
+        overlap_ratio = intersected_area / self_tree_area
         return overlap_ratio,overlap_neighbors
 
     def recheck_overlap(self,extra_tree,extra_tree_origin):
@@ -472,7 +513,7 @@ class Tree:
         is_acceptable: bool
             This tree can be placed if extra_tree is added.
         """
-        if not self.is_placed: raise Exception("Placed trees can be rechecked.")
+        if not self.is_placed: raise Exception("Only placed trees can be rechecked.")
 
         added_tree = extra_tree.get_damy_pointed_tree(extra_tree_origin)
         overlapped_trees = self.overlapped_trees

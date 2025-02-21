@@ -129,9 +129,9 @@ class Config(Singleton):
 
         # must be desc order
         self.__height_limit_by_soil_thickness_category = {__SOIL_THICKNESS_3:15000,
-                                                __SOIL_THICKNESS_2:12000,
-                                                __SOIL_THICKNESS_1:8000,
-                                                0:6000}
+                                                          __SOIL_THICKNESS_2:12000,
+                                                          __SOIL_THICKNESS_1:8000,
+                                                          0:6000}
         self.__soil_thickness_category = sorted(self.__height_limit_by_soil_thickness_category.keys())
 
         tree_shape_section_2D_coordinates_typeA = ((1.0,0.0),(0.0,1.0),(-1.0,0.0)) # cone

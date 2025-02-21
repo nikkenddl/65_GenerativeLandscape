@@ -4,6 +4,7 @@ from .rhinopy import PointableRTree
 from .config import Config
 from . import log
 from .Cell import Cell
+from .Forest import ForestRegion
 import math
 import traceback
 
@@ -12,7 +13,7 @@ from time import time
 class ForestCreator:
     __config = Config()
     __LOG_FILE_LOCATION =  __config.forest_creator_log_file_path
-    __LOG_AUTOFLUSH_COUNT=500
+    __LOG_AUTOFLUSH_COUNT=100
     __log_archive = []
     __log_count = 0
     def __init__(self,
@@ -29,11 +30,13 @@ class ForestCreator:
         s = time()
         self.clear_cells(cell_altanatives)
         self.log('time to clear cell: {}'.format(time()-s))
+        self.__flush()
         
         self.__CELL_FINDING_LIMIT_DISTANCE = 5000.0
         s = time()
         self.cell_states = {cell : self.__CELL_FINDING_LIMIT_DISTANCE for cell in cell_altanatives}
         self.log('time to init cell state: {}'.format(time()-s))
+        self.__flush()
 
         self.trees = tree_altanatives
         
@@ -46,12 +49,14 @@ class ForestCreator:
         s = time()
         self.all_cell_rtree = PointableRTree(cell_altanatives)
         self.log('time to init all_cell_rtree: {}'.format(time()-s))
+        self.__flush()
 
         self.placed_tree_rtree = PointableRTree([])
 
         s = time()
         self.init_preplaced(placement_postponed_trees)
         self.log('time to init preplaced trees: {}'.format(time()-s))
+        self.__flush()
         
 
 
@@ -108,7 +113,12 @@ class ForestCreator:
             
         
     def create(self):
-        trees_high = [t for t in self.trees if t.estimate_future_height(0.0)>=self.__config.high_tree_shortest_height_class]
+        ## initial height 
+        trees_high = [t for t in self.trees if t.initial_height>=self.__config.high_tree_shortest_height_class]
+        minimum_required_soil_thickness_for_high_trees = self.__config.required_soil_thickness_by_height_category[self.__config.high_tree_shortest_height_class]
+        cells_for_high_trees = [c for c in self.cell_states.keys() if c.soil_thickness>=minimum_required_soil_thickness_for_high_trees]
+        cells_for_high_trees_set = set(cells_for_high_trees)
+
         __placed_count = 0
         try:
             __time_to_pick_cell = []
@@ -118,10 +128,17 @@ class ForestCreator:
             # for _ in range(10):
             while True:
                 if self.is_created:
-                    self.log("INFO: finish with mature forest.")
+                    self.log("INFO: Finished Creation")
+                    try:
+                        for fr in ForestRegion._regions:
+                            self.log("INFO: region<{}> created status-{}".format(fr.ID,fr.has_finished_placement))
+                            self.log("DEBUG: region tree count (placed[all]/target): {}/{}".format(len(fr.placed_trees),fr.limit_tree_count))
+                    except:
+                        self.log("ERROR:failed to log")
                     break
+
                 s = time()
-                testing_cell = self.pick_cell()
+                testing_cell = self.pick_cell(cells_for_high_trees)
                 __time_to_pick_cell.append(time()-s)
                 
                 if testing_cell is None:
@@ -138,7 +155,7 @@ class ForestCreator:
                 if is_cell_in_nogap_region:
                     close_cells = self.all_cell_rtree.search_close_objects(testing_cell,self.__config.trying_multiplacement_radius_in_nogap_region)
                     # remove dead cells
-                    close_cells = [c for c in close_cells if c in self.cell_states]
+                    close_cells = [c for c in close_cells if c in self.cell_states and c in cells_for_high_trees_set]
                     if len(close_cells)<=1: # if close_cells is empty or contains only testingcell
                         self.log("INFO: NO CLOSE CELL of testing cell:{}".format(testing_cell.ID))
                         loop_limit = 1
@@ -151,7 +168,7 @@ class ForestCreator:
                     __time_to_try_to_place.append(time()-s)
                     if placed_tree:
                         __placed_count += 1
-                        self.log("DEBUG: {}/{} is placed : placed total {}".format(placed_tree.species,placed_tree.symbol,__placed_count))
+                        self.log("INFO: {}/{} is placed : placed total {}".format(placed_tree.species,placed_tree.symbol,__placed_count))
                         self.__failured_count = 0
                         s = time()
                         self.update_state(placed_tree)
@@ -163,7 +180,7 @@ class ForestCreator:
                         # It is impossible to place the tree in the cell.
                         __failured_status.append(status)
                         self.__failured_count += 1
-                        testing_cell.kill()
+                        testing_cell.kill(status)
                         try: del self.cell_states[testing_cell]
                         except: self.log("ERROR: failed to del from self.cell_states")
 
@@ -177,7 +194,7 @@ class ForestCreator:
                     else:
                         # update testing cell
                         self.log("DEBUG: try to place close to testing cell. : try_count-{}".format(i_dense_placement))
-                        close_cells = [c for c in close_cells if c!=testing_cell] # type:ignore - remove placed testing cell from close_cells
+                        close_cells = [c for c in close_cells if c!=testing_cell and c in self.cell_states] # type:ignore - remove placed testing cell from close_cells
                         # testing_cell = self.pick_cell(close_cells)
                         # if not testing_cell:
                         #     break
@@ -223,19 +240,18 @@ class ForestCreator:
             _description_
         """
         self.log('Executing post_create------------------------------')
-        trees_short = [t for t in self.trees if t.estimate_future_height(0.0)<self.__config.high_tree_shortest_height_class]
+        trees_short = [t for t in self.trees if t.height_category<self.__config.high_tree_shortest_height_class]
         if not trees_short:
             self.log("WARN: no short trees")
             return []
         
-        __failured_status = []
         placed_trees = []
         for testing_cell in trying_cells:
             assert testing_cell is not None
 
             placed_tree,status = self.try_to_place(testing_cell,trees_short,places_damy=True)
-
-            __failured_status.append(__failured_status)
+            if not placed_tree:
+                self.log("failured to place: {}".format(status))
             placed_trees.append(placed_tree)
         self.__flush()
         return placed_trees
@@ -300,11 +316,11 @@ class ForestCreator:
 
         
         if not (any(rst[0] for rst in ls_is_cleared)):
-            # statuses = [rst[1] for rst in ls_is_cleared]
-            # counter = count_defaultdict(statuses)
-            # most_status = max(counter.items(),key=lambda it: it[1])[0]
+            statuses = [rst[1] for rst in ls_is_cleared]
+            counter = count_defaultdict(statuses)
+            message = " / ".join("{}:{}".format(key,count) for key,count in counter.items())
             # return [],most_status
-            return [],"No rest things after filtering"
+            return [],"No Filtered Trees : {}".format(message)
         trees_matches_environment = [t for t,rst in zip(trees,ls_is_cleared) if rst[0]]
         
        
@@ -435,7 +451,9 @@ class ForestCreator:
             return None,"no inputted tree"
         # tree = random.choices(tree_altanatives,weight)[0]
         # tree = random.choice(tree_altanatives)
-        tree = weighted_choice(tree_altanatives,weight,1)[0]
+
+        # place damy to apply the tree height limit by soil thickness of the cell.
+        tree = weighted_choice(tree_altanatives,weight,1)[0].place(cell,is_damy=True)
         overlapping_neighbors=[]
 
         # add collision check here
@@ -458,7 +476,7 @@ class ForestCreator:
                     return None,"Already placed trees whose overlapping ratio exceeds the tolerance"
             else:
                 # too close with already placed tree.
-                return None,"Placing Tree is too close with already placed trees"
+                return None,"Placing Tree<{}/r:{}/h:{}> is too close with already placed trees".format(tree.species,tree.radius,tree.height)
 
         # place tre trying tree
         placed_tree = tree.place(cell,is_damy=places_damy)
@@ -482,11 +500,21 @@ class ForestCreator:
         self.__placed_trees.append(placed_tree)
         self.placed_tree_rtree.append(placed_tree)
 
-        if any(cell.is_dead for cell in self.cell_states.keys()):
+        dead_cells = [cell for cell in self.cell_states.keys() if cell.is_dead]
+
+        if dead_cells:
             # if some cells can't be used.
             #   - ForestRegion of cell is fullfilled
-            self.cell_states = {cell:dist for cell,dist in self.cell_states.items()
-                                    if not cell.is_dead}
+            if len(dead_cells)<=30:
+                for dc in dead_cells:
+                    self.log("DEBUG: cell<{}> in region<{}> is removed".format(dc.ID,dc.forest_region.ID))
+                    del self.cell_states[dc]
+            else:
+                self.log("Many cells are removed in one time. Display only 30 cells")
+                for dc in dead_cells[:30]:
+                    self.log("DEBUG: cell<{}> in region<{}> is removed".format(dc.ID,dc.forest_region.ID))
+                dead_set = set(dead_cells)
+                self.cell_states = dict((cell,dist) for cell,dist in self.cell_states.items() if cell not in dead_set)
 
         placed_point = placed_tree.point
         radius = placed_tree.radius

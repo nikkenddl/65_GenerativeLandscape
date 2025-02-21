@@ -57,6 +57,7 @@ class ForestDomain:
 
 class ForestRegion:
     __config = Config()
+    _regions = []
     def __init__(self, ID, region_mesh, forest_domain):
         self.ID = int(ID)
         self.region_mesh = region_mesh
@@ -74,8 +75,7 @@ class ForestRegion:
         # set self information to Cell.FR_DICT (class attribute)
         Cell.set_FR(self)
 
-        eval_dominant = 0.0
-        eval_egdd = 0.0
+        ForestRegion._regions.append(self)
 
     def initialize(self):
         self.__has_been_finished_placement = False
@@ -111,12 +111,12 @@ class ForestRegion:
     def update_has_been_finished(self):
         # density should be calculated with only trees whose height category is over tolerance.
         tol = self.__config.high_tree_shortest_height_class
-        self.__has_been_finished_placement = sum(t.height_category>=tol for t in self.placed_trees)>self.__limit_tree_count
+        self.__has_been_finished_placement = sum(t.height_category>=tol for t in self.placed_trees)>=self.__limit_tree_count
 
     def update_has_been_finished_lower(self):
         # density should be calculated with only trees whose height category is over tolerance.
         tol = self.__config.high_tree_shortest_height_class
-        self.__has_been_finished_placement_lower = sum(t.height_category<tol for t in self.placed_trees)>self.__limit_tree_count_lower
+        self.__has_been_finished_placement_lower = sum(t.height_category<tol for t in self.placed_trees)>=self.__limit_tree_count_lower
 
     def evaluate_dominant(self):
         """Evaluates the ratio of dominant species in placed trees and compares it to the target ratio.

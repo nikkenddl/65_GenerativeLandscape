@@ -26,6 +26,8 @@ class Cell:
         self.placed_tree = None
         self.__is_killed = False
 
+        self.status = ""
+
         self.forest_region.cells.append(self)
 
         self.tree_height_limit = self.get_height_limit_by_soil_thickness(self.soil_thickness)
@@ -109,8 +111,8 @@ class Cell:
     
     @property
     def is_dead(self):
-        return self.__is_killed or\
-            self.placed_tree is not None\
+        return self.__is_killed\
+            or self.placed_tree is not None\
             or self.forest_region.has_finished_placement
     
     @property
@@ -121,11 +123,55 @@ class Cell:
         -------
         (x,y) (2,) int
         """
-        y,x = divmod(self.ID,self.__NumericalGrid.x_num)
-        return (int(x),int(y))
+        assert self.__NumericalGrid is not None
+        return self.__NumericalGrid.get_xyID_from_ID(self.ID)
+
+    def get_right_id(self):
+        assert self.__NumericalGrid is not None
+        myxyid = self.xy_ID
+        xid = myxyid[0]+1
+        yid = myxyid[1]
+        if self.__NumericalGrid.is_contained_xyid(xid,yid):
+            return self.__NumericalGrid.get_ID_from_xyID(xid,yid)
+        else:
+            return None
+        
+    def get_left_id(self):
+        assert self.__NumericalGrid is not None
+        myxyid = self.xy_ID
+        xid = myxyid[0]-1
+        yid = myxyid[1]
+        if self.__NumericalGrid.is_contained_xyid(xid,yid):
+            return self.__NumericalGrid.get_ID_from_xyID(xid,yid)
+        else:
+            return None
+        
+    def get_upper_id(self):
+        assert self.__NumericalGrid is not None
+        myxyid = self.xy_ID
+        xid = myxyid[0]
+        yid = myxyid[1]+1
+        if self.__NumericalGrid.is_contained_xyid(xid,yid):
+            return self.__NumericalGrid.get_ID_from_xyID(xid,yid)
+        else:
+            return None
+        
+    def get_lower_id(self):
+        assert self.__NumericalGrid is not None
+        myxyid = self.xy_ID
+        xid = myxyid[0]
+        yid = myxyid[1]-1
+        if self.__NumericalGrid.is_contained_xyid(xid,yid):
+            return self.__NumericalGrid.get_ID_from_xyID(xid,yid)
+        else:
+            return None
+        
+
     
-    def kill(self):
+    
+    def kill(self,status=None):
         self.__is_killed = True
+        if status: self.status=status
 
     @classmethod
     def set_FD(cls, FD):
@@ -234,3 +280,13 @@ class NumericalGrid:
         index = cell_y * self.x_num + cell_x
 
         return (index,cell_x,cell_y)
+    
+    def get_ID_from_xyID(self,x_id,y_id):
+        return y_id * self.x_num + x_id
+    
+    def get_xyID_from_ID(self,index):
+        y,x = divmod(index,self.x_num)
+        return (int(x),int(y))
+    
+    def is_contained_xyid(self,x_id,y_id):
+        return 0<=x_id<self.x_num and 0<=y_id<self.y_num
