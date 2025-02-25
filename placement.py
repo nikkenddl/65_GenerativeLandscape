@@ -46,6 +46,15 @@ class ForestCreator:
 
         self.preplaced_unplaced_trees = []
 
+        forest_regions_dic = {} # ID:fr
+        for cell in cell_altanatives:
+            fr = cell.forest_region
+            if fr.ID not in forest_regions_dic:
+                forest_regions_dic[fr.ID] = fr
+
+        sorted_forest_region_IDs = sorted(forest_regions_dic.keys())
+        self.forest_regions = [forest_regions_dic[i] for i in sorted_forest_region_IDs]
+
         s = time()
         self.all_cell_rtree = PointableRTree(cell_altanatives)
         self.log('time to init all_cell_rtree: {}'.format(time()-s))
@@ -114,8 +123,10 @@ class ForestCreator:
         
     def create(self):
         ## initial height 
-        trees_high = [t for t in self.trees if t.initial_height>=self.__config.high_tree_shortest_height_class]
-        minimum_required_soil_thickness_for_high_trees = self.__config.required_soil_thickness_by_height_category[self.__config.high_tree_shortest_height_class]
+        trees_high = [t for t in self.trees if not t.is_short_tree]
+
+        ## remove too thin soil thickness cells to accelerate calculation speed.
+        minimum_required_soil_thickness_for_high_trees = self.__config.required_soil_thickness_by_height_category[self.__config.short_tree_height_class_tolerance]
         cells_for_high_trees = [c for c in self.cell_states.keys() if c.soil_thickness>=minimum_required_soil_thickness_for_high_trees]
         cells_for_high_trees_set = set(cells_for_high_trees)
 
@@ -125,13 +136,13 @@ class ForestCreator:
             __time_to_try_to_place = []
             __time_to_update_state = []
             __failured_status = []
-            # for _ in range(10):
+
             while True:
                 if self.is_created:
                     self.log("INFO: Finished Creation")
                     try:
-                        for fr in ForestRegion._regions:
-                            self.log("INFO: region<{}> created status-{}".format(fr.ID,fr.has_finished_placement))
+                        for fr in self.forest_regions:
+                            self.log("INFO: region<{}> created status-{}".format(fr.ID,fr.has_finished_placement_tall))
                             self.log("DEBUG: region tree count (placed[all]/target): {}/{}".format(len(fr.placed_trees),fr.limit_tree_count))
                     except:
                         self.log("ERROR:failed to log")
@@ -162,6 +173,9 @@ class ForestCreator:
                     else:
                         random.shuffle(close_cells)
 
+                def log_layer(tree):
+                    self.log("INFO: placed tree layer check [value/target]: {}/{}".format(tree.get_layer_count(tree.inlayer_trees),tree.placed_cell.FD_vicinity_same_height_category_limit))
+
                 for i_dense_placement in range(loop_limit):
                     self.log("DEBUG:Trying cell:{} / FRID:{} / FDname:{}".format(testing_cell,testing_cell.forest_region.ID,testing_cell.FDname))
                     placed_tree,status = self.try_to_place(testing_cell,trees_high)
@@ -169,6 +183,11 @@ class ForestCreator:
                     if placed_tree:
                         __placed_count += 1
                         self.log("INFO: {}/{} is placed : placed total {}".format(placed_tree.species,placed_tree.symbol,__placed_count))
+
+                        for t in placed_tree.inlayer_trees:
+                            log_layer(t)
+                        self.log("INFO: check layer-------------------")
+                        
                         self.__failured_count = 0
                         s = time()
                         self.update_state(placed_tree)
@@ -240,7 +259,7 @@ class ForestCreator:
             _description_
         """
         self.log('Executing post_create------------------------------')
-        trees_short = [t for t in self.trees if t.height_category<self.__config.high_tree_shortest_height_class]
+        trees_short = [t for t in self.trees if t.is_short_tree]
         if not trees_short:
             self.log("WARN: no short trees")
             return []
@@ -248,11 +267,16 @@ class ForestCreator:
         placed_trees = []
         for testing_cell in trying_cells:
             assert testing_cell is not None
+            if testing_cell.is_dead(checks_short_trees_count=True): continue
 
-            placed_tree,status = self.try_to_place(testing_cell,trees_short,places_damy=True)
+            placed_tree,status = self.try_to_place(testing_cell,trees_short)
             if not placed_tree:
-                self.log("failured to place: {}".format(status))
-            placed_trees.append(placed_tree)
+                self.log("DEBUG: failured to place: {}".format(status))
+            else:
+                placed_trees.append(placed_tree)
+                # self.__placed_trees.append(placed_tree)
+                self.placed_tree_rtree.append(placed_tree)
+                
         self.__flush()
         return placed_trees
 
@@ -265,7 +289,7 @@ class ForestCreator:
             return True
         # tree counts is enough for all region => all cells are removed.
         if len(self.cell_states)==0:
-            self.log("finish because density goal is reached.")
+            self.log("finish because No placable cells.")
             return True
 
         # default
@@ -320,28 +344,17 @@ class ForestCreator:
             counter = count_defaultdict(statuses)
             message = " / ".join("{}:{}".format(key,count) for key,count in counter.items())
             # return [],most_status
-            return [],"No Filtered Trees : {}".format(message)
+            return [],"No Environment Filtered Trees : {}".format(message)
+    
         trees_matches_environment = [t for t,rst in zip(trees,ls_is_cleared) if rst[0]]
-        
-       
-       # filter trees by tree layer count limit.
-        close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_forest_layer_count)
-        limit_layer_count = cell.FD_vicinity_same_height_category_limit
 
-        if len(close_placed_trees)<limit_layer_count:
-            # close placed tree count less than limit. = any height category trees can be placed.
-            pass
-        else:
-            # Placed and closed tree count is equal or larger than limit count. 
-            # Filter the placing trees, keeping only those with
-            # a height category that matches the height categories of nearby placed trees.
-            height_category_in_vicinity = set(t.height_category for t in close_placed_trees)
-            if len(height_category_in_vicinity)>=limit_layer_count:
-                trees_matches_environment = [t for t in trees_matches_environment if t.height_category in height_category_in_vicinity]
-            if not trees_matches_environment:
-                return [], "No rest things after forest layer filtering"
+        # layer check
+        close_placed_trees_for_layer_check = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_forest_layer_count)
+        trees_clear_layerlimit = [t for t in trees_matches_environment if t.place(cell,is_damy=True).check_layer_count(close_placed_trees_for_layer_check)[0]]
+        if not trees_clear_layerlimit:
+            return [],"No LayerCount Filtered Trees"
 
-        return trees_matches_environment,"OK"
+        return trees_clear_layerlimit,"OK"
     
     
     def possibility(self,trees,cell):
@@ -454,40 +467,29 @@ class ForestCreator:
 
         # place damy to apply the tree height limit by soil thickness of the cell.
         tree = weighted_choice(tree_altanatives,weight,1)[0].place(cell,is_damy=True)
-        overlapping_neighbors=[]
 
-        # add collision check here
-        close_placed_trees = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_collision)
-        if close_placed_trees:
-            # root collision
-            if not all(tree.checks_root_collision(t,cell.point) for t in close_placed_trees):
-                return None, "The placing tree root collides to already placed tree roots."
 
-            overlapping_ratio,overlapping_neighbors = tree.get_overlapping_ratio(close_placed_trees,cell.point)
-            if overlapping_ratio<=cell.FD_overlap_tolerance_ratio:
-                # placing tree's overlap is acceptable.
-                # But neighbors overlap ratio is unknown, recheck their overlapping ratio.
-                results_is_acceptable = [t.recheck_overlap(tree,cell.point) for t in overlapping_neighbors]
-                if all(results_is_acceptable):
-                    # All neighbors' overlap is acceptable.
-                    pass
-                else:
-                    # The tree whose overlapping ratio exceeds the tolerance if the placing tree is placed.
-                    return None,"Already placed trees whose overlapping ratio exceeds the tolerance"
-            else:
-                # too close with already placed tree.
-                return None,"Placing Tree<{}/r:{}/h:{}> is too close with already placed trees".format(tree.species,tree.radius,tree.height)
-
+        # collision check
+        close_placed_trees_for_collision_check = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_collision)
+        collision_check_result,status,overlapping_neighbors = tree.check_overlap(close_placed_trees_for_collision_check)
+        if not collision_check_result:
+            return None,status
+        
         # place tre trying tree
         placed_tree = tree.place(cell,is_damy=places_damy)
         placed_tree.register_overlapped_trees(overlapping_neighbors)
-
         # Register the placed tree as an overlapped tree with neighbours.
         for neighbor in overlapping_neighbors:
             neighbor.register_overlapped_tree(placed_tree)
 
+        close_placed_trees_for_layer_check = self.placed_tree_rtree.search_close_objects(cell,self.__config.radius_to_check_forest_layer_count)
+        placed_tree.register_inlayer_trees(close_placed_trees_for_layer_check)
+        # Register the placed tree as an inlayer tree
+        for neighbor in close_placed_trees_for_layer_check:
+            neighbor.register_inlayer_tree(placed_tree)
+
         return placed_tree,"OK"
-        
+    
     
     def update_state(self,placed_tree):
         """Remove killed or placed cells from self.cell_states and update distances
@@ -500,7 +502,7 @@ class ForestCreator:
         self.__placed_trees.append(placed_tree)
         self.placed_tree_rtree.append(placed_tree)
 
-        dead_cells = [cell for cell in self.cell_states.keys() if cell.is_dead]
+        dead_cells = [cell for cell in self.cell_states.keys() if cell.is_dead(checks_tall_trees_count=True)]
 
         if dead_cells:
             # if some cells can't be used.
@@ -558,6 +560,7 @@ class RandomPicker:
     def picksome(self,points,picking_count,picking_radius=0.0,obstacles=[]):
         if picking_count==0: return
         if picking_count>len(points): raise Exception("count is larger than count of points")
+
 
         weight = [float("inf")] * len(points)
         obst_list = self._picked + obstacles

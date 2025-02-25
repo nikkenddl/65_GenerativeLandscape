@@ -55,17 +55,19 @@ class Tree:
         self.species = try_get_text(species)
         self.symbol = try_get_text(symbol)
         self.__height = try_get_float(height) * 1000.0 # convert from m to mm
-        self.height_category = self.get_height_category(self.__height)
+        # diameter and radius will be got from tree height and d/h ratio
+        diameter = try_get_float(diameter) * 1000.0 # convert from m to mm
+        self.DH_ratio = diameter/self.__height
+
+        self.__initial_height = self.__height
+        self.__initial_radius = self.radius
+        self.height_category = self.get_height_category(self.__initial_height)
+
         # ignore error because circumuference include "株立"
         self.trunk_circumference = try_get_float(trunk_circumference,False) * 1000.0 # convert from m to mm
         self.maximum_height = try_get_float(maximum_height) * 1000.0 # convert from m to mm
         self.undercut_height_ratio = try_get_float(undercut_height_ratio)
 
-        # diameter and radius will be got from tree height and d/h ratio
-        diameter = try_get_float(diameter) * 1000.0 # convert from m to mm
-        self.DH_ratio = diameter/self.__height
-        self.__initial_height = self.__height
-        self.__initial_radius = self.radius
 
         self.__root_radius = try_get_float(root_diameter) * 500.0
         self.safety_distance = try_get_float(safety_distance) * 1000.0
@@ -85,6 +87,7 @@ class Tree:
         self.__init_age()
 
         self.__overlapped_trees = []
+        self.__inlayer_trees = []
         self.is_damy = False
 
         self.required_shade_tolerance = None
@@ -120,6 +123,10 @@ class Tree:
     @property
     def tree_shape_section(self):
         return self.get_tree_shape_info()[0]
+    
+    @property
+    def is_short_tree(self):
+        return self.height_category<self.__config.short_tree_height_class_tolerance
 
     def set_config_value(self):
         assert self.age==self.initial_age
@@ -142,6 +149,7 @@ class Tree:
 
     def init_list_contents(self):
         self.__overlapped_trees = []
+        self.__inlayer_trees = []
         self.custom_tags = set()
 
     
@@ -156,14 +164,12 @@ class Tree:
     def __update_attributes_of_age(self,age):
         self.__age = age
         self.__height = self.estimate_height(self.__age)
-        #self.height_category = self.get_height_category(self.__height) # do not change height category by age.
-
+        
     def get_attributes_of_age(self,age):
         height = self.estimate_height(age)
         radius = self.estimate_radius_from_height(height)
-        height_category = self.get_height_category(height)
         tree_shape_section = self.get_tree_shape_info(height)[0]
-        return height,radius,height_category,tree_shape_section
+        return height,radius,self.height_category,tree_shape_section
 
 
     def timetravel(self,years):
@@ -322,7 +328,7 @@ class Tree:
 
     @property
     def radius(self):
-        return self.estimate_radius_from_height(self.__height)
+        return self.estimate_radius_from_height(self.height)
     
     @property
     def root_radius(self):
@@ -331,6 +337,10 @@ class Tree:
     @property
     def overlapped_trees(self):
         return copy(self.__overlapped_trees)
+    
+    @property
+    def inlayer_trees(self):
+        return copy(self.__inlayer_trees)
     
     def copy(self):
         new = copy(self)
@@ -349,6 +359,12 @@ class Tree:
     
     def register_overlapped_trees(self,trees):
         return self.__overlapped_trees.extend(trees)
+    
+    def register_inlayer_tree(self,tree):
+        return self.__inlayer_trees.append(tree)
+    
+    def register_inlayer_trees(self,trees):
+        return self.__inlayer_trees.extend(trees)
     
     def __str__(self):
         if self.__placed_point and self.placed_cell:
@@ -381,7 +397,8 @@ class Tree:
             # add this tree to cell.
             cell.placed_tree = new
             # update forest_region status.
-            cell.forest_region.update_has_been_finished()
+            
+            cell.forest_region.update_has_been_finished(new)
         else:
             new.is_damy = True
         return new
@@ -392,7 +409,6 @@ class Tree:
         try:
             cell = next(cell for cell in cells if cell.ID==id_of_cell)
         except StopIteration as e:
-            print("not found cell whose id=={}".format(id_of_cell))
             return None
         except Exception as e:
             raise Exception("strange error ",e )
@@ -405,7 +421,7 @@ class Tree:
             # add this tree to cell.
             cell.placed_tree = new
             # update forest_region status.
-            cell.forest_region.update_has_been_finished()
+            cell.forest_region.update_has_been_finished(new)
         else:
             new.is_damy = True
         return new
@@ -442,16 +458,16 @@ class Tree:
             # default
             return True,"ok"
         
-    def checks_root_collision(self,other_tree,self_tree_origin=None):
-        if self_tree_origin is None and self.point is None: # other tree has been set = must have point attribute.
+    def checks_root_collision(self,other_tree):
+        if self.point is None: # other tree has been set = must have point attribute.
             raise Exception("To check root collision, self and other trees must already have been placed.\nYou can specify damy origin for self via the parameter 'self_tree_origin'.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,neighbor.placed_cell)) # type:ignore
-        self_point = self_tree_origin or self.point
+        self_point = self.point
         xy_dist_square = (other_tree.point.X - self_point.X)**2 +(other_tree.point.Y - self_point.Y)**2 # type: ignore
         required_dist = (self.safety_distance+other_tree.safety_distance)**2
         return xy_dist_square>=required_dist
                 
     
-    def get_overlapping_ratio(self,neighbor_trees,self_tree_origin=None):
+    def get_overlapping_ratio(self,neighbor_trees):
         """_summary_
 
         Parameters        ----------
@@ -468,10 +484,10 @@ class Tree:
         def translate_coordinates(coordinates,vec):
             return [(c[0]+vec[0],c[1]+vec[1]) for c in coordinates]
         
-        if self_tree_origin is None and self.point is None: # other tree has been set = must have point attribute.
+        if self.point is None: # other tree has been set = must have point attribute.
             raise Exception("To compute canopy overlapping area, self and other trees must already have been placed.\nYou can specify damy origin for self via the parameter 'self_tree_origin'.\n self.placed_cell: {}\nother_tree.placed_cell: {}".format(self.placed_cell,neighbor.placed_cell)) # type:ignore
 
-        self_point = self_tree_origin or self.point
+        self_point = self.point
 
         # find overlapped trees and its intersectioned area
         overlap_neighbors = []
@@ -500,8 +516,9 @@ class Tree:
         overlap_ratio = intersected_area / self_tree_area
         return overlap_ratio,overlap_neighbors
 
-    def recheck_overlap(self,extra_tree,extra_tree_origin):
-        """_summary_
+    def recheck_overlap(self,tree_for_recheck):
+        """recheck overlap among trees via closed trees cache.
+        For accurate judgement, self.overalpped_trees is reqruired.
 
         Parameters
         ----------
@@ -513,20 +530,89 @@ class Tree:
         is_acceptable: bool
             This tree can be placed if extra_tree is added.
         """
-        if not self.is_placed: raise Exception("Only placed trees can be rechecked.")
+        if not self.placed_cell: raise Exception("Only placed trees can be rechecked.")
 
-        added_tree = extra_tree.get_damy_pointed_tree(extra_tree_origin)
         overlapped_trees = self.overlapped_trees
-        overlapped_trees.append(added_tree)
+        overlapped_trees.append(tree_for_recheck)
 
         ov_ratio,_ = self.get_overlapping_ratio(overlapped_trees)
         
         return ov_ratio<=self.placed_cell.FD_overlap_tolerance_ratio # type:ignore
+    
+    def check_overlap(self,close_placed_trees):
+        if not self.placed_cell: raise Exception("The tree to check collision must have been placed. (damy placing is allowed)")
+
+        result = True
+        status = "ok"
+        overlapping_neighbors = []
+        if close_placed_trees:
+            # root collision
+            if not all(self.checks_root_collision(t) for t in close_placed_trees):
+                result = False
+                status = "The placing tree root collides to already placed tree roots."
+
+            overlapping_ratio,overlapping_neighbors = self.get_overlapping_ratio(close_placed_trees)
+            if overlapping_ratio<=self.placed_cell.FD_overlap_tolerance_ratio:
+                # placing tree's overlap is acceptable.
+                # But neighbors overlap ratio is unknown, recheck their overlapping ratio.
+                results_is_acceptable = [t.recheck_overlap(self) for t in overlapping_neighbors]
+                if all(results_is_acceptable):
+                    # All neighbors' overlap is acceptable.
+                    pass
+                else:
+                    # The tree whose overlapping ratio exceeds the tolerance if the placing tree is placed.
+                    result = False
+                    status = "Already placed trees whose overlapping ratio exceeds the tolerance"
+            else:
+                # too close with already placed tree.
+                result = False
+                status = "Placing Tree is too close with already placed trees"
+        return result,status,overlapping_neighbors
 
 
+    def get_layer_count(self,neighbor_trees):
+        height_category_in_vicinity = set(t.height_category for t in neighbor_trees if not t.is_short_tree)
+        if not self.is_short_tree:
+            height_category_in_vicinity.add(self.height_category)
 
+        
+        return len(height_category_in_vicinity)
+    
+    def recheck_layer_count(self,tree_for_recheck):
+        if not self.placed_cell: raise Exception("Only placed trees can be check.")
+        if self.is_short_tree: return True
+        limit_layer_count = self.placed_cell.FD_vicinity_same_height_category_limit
+        inlayer_trees = self.inlayer_trees
+        inlayer_trees.append(tree_for_recheck)
+        return self.get_layer_count(inlayer_trees)<=limit_layer_count
+    
+    def check_layer_count(self,close_placed_trees):
+        if not self.placed_cell: raise Exception("The tree to check layer must have been placed. (damy placing is allowed)")
+        if self.is_short_tree:
+            return True,"Short tree is not relate to layer count"
 
-
+        limit_layer_count = self.placed_cell.FD_vicinity_same_height_category_limit
+        result = True
+        status = "ok"
+        if close_placed_trees:
+            layer_count_of_self = self.get_layer_count(close_placed_trees)
+            if layer_count_of_self<=limit_layer_count:
+                # placing tree's layer count is safe.
+                # But neighbors layer count is unknwon, check it.
+                results_is_acceptable = all(t.recheck_layer_count(self) for t in close_placed_trees)
+                
+                if results_is_acceptable:
+                    # All neighbor's layer count is safe
+                    pass
+                else:
+                    # Some neighbor's layer count is over if self.tree will be palced.
+                    result = False
+                    status = "Some already placed trees will be over layer count if new tree will be placed."
+            else:
+                # self layer count is over limit
+                result = False
+                status = "Placing Tree can't be placed due to layer count"
+        return result,status
 
     @classmethod
     def generate_trees_from_database(cls,database_matrix):

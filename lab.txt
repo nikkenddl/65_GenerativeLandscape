@@ -1,0 +1,5177 @@
+tree_for_recheck: Tree<HK1/ハンノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000828>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000827>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000826>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000825>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000824>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000823>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000822>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000821>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000820>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000081F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000081E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000081D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000081C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000081B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000081A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000819>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000818>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000817>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000816>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000815>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000814>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000813>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000812>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000811>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000810>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000080F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000080E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000080D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000080C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000080B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000080A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000809>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000808>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000807>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000806>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000805>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000804>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000803>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000802>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000801>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000800>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007FF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007FE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007FD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007FC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007FB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007FA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007F0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007EF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007EE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007ED>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007EC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007EB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[40657]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007EA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007E0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007DF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007DE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007DD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007DC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007DB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007DA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007D0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007CF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007CE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007CD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007CC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007CB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007CA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007C0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007BF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007BE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007BD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007BC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007BB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007BA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007B0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007AF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007AE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007AD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007AC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[39565]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007AB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007AA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000007A0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000079F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000079E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000079D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000079C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000079B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000079A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000799>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000798>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000797>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000796>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000795>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000794>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000793>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000792>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000791>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000790>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000078F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000078E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000078D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000078C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000078B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000078A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000789>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000788>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000787>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000786>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000785>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000784>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000783>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000782>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000781>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000780>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000077F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000077E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000077D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000077C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000077B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000077A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000779>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000778>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000777>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000776>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000775>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000774>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000773>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000772>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000771>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000770>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000076F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000076E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000076D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[39016]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000076C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000076B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000076A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000769>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000768>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000767>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000766>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000765>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000764>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000763>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000762>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000761>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000760>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000075F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000075E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000075D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000075C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000075B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000075A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000759>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000758>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000757>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000756>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000755>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000754>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000753>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000752>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000751>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000750>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000074F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000074E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000074D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000074C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000074B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000074A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000749>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000748>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000747>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000746>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000745>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000744>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000743>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000742>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000741>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000740>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000073F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000073E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000073D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000073C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000073B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000073A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000739>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000738>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000737>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000736>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000735>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000734>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000733>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000732>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000731>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000730>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000072F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000072E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[40110]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000072D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000072C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000072B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000072A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000729>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000728>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000727>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000726>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000725>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000724>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000723>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000722>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000721>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000720>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000071F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000071E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000071D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000071C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000071B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000071A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000719>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000718>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000717>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000716>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000715>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000714>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000713>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000712>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000711>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000710>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000070F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000070E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000070D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000070C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000070B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x000000000000070A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000709>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000708>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000707>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000706>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000705>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000704>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000703>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000702>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000701>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x0000000000000700>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006FF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006FE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006FD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006FC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006FB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006FA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006F0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006EF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[39567]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006ED>, <lib_65land.Tree.Tree instance at 0x00000000000006EE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MT/ミツバツツジ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006EC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK2/ハンノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006EB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006EA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB3/ヤマボウシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG3/エゴノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM3/イロハモミジ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006E0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006DF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS3/イヌシデ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006DE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006DD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006DC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006DB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS3/アカシデ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006DA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD3/アオダモ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT3/カツラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH3/アオハダ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006D0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006CF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS3/コブシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006CE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006CD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006CC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006CB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006CA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR3/コナラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK3/エノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006C0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006BF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006BE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006BD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006BC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006BB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006BA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-LL/ケヤキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HI/ハイノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006B0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006AF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006AE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006AD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006AC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB1/タブノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006AB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006AA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD3/シロダモ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK4/シラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK1/シラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK3/アラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000006A0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000069F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000069E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000069D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000069C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000069B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[37923]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000069A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MT/ミツバツツジ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000699>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK2/ハンノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000698>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000697>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000696>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000695>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB3/ヤマボウシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000694>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000693>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000692>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG3/エゴノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000691>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000690>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000068F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM3/イロハモミジ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000068E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000068D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000068C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS3/イヌシデ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000068B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000068A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000689>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000688>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS3/アカシデ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000687>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000686>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000685>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD3/アオダモ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000684>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000683>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000682>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT3/カツラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000681>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000680>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000067F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH3/アオハダ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000067E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000067D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000067C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS3/コブシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000067B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000067A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000679>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000678>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000677>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR3/コナラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000676>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000675>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000674>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK3/エノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000673>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000672>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000671>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000670>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000066F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000066E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000066D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000066C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000066B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000066A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000669>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000668>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000667>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000666>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000665>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-LL/ケヤキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000664>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HI/ハイノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000663>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000662>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000661>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000660>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000065F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000065E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000065D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000065C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000065B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000065A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000659>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB1/タブノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000658>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000657>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000656>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD3/シロダモ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000655>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000654>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000653>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK4/シラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000652>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000651>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000650>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK1/シラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000064F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK3/アラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000064E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000064D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000064C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000064B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000064A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000649>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000648>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[37921]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000647>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MT/ミツバツツジ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000646>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK2/ハンノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000645>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000644>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000643>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000642>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB3/ヤマボウシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000641>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000640>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000063F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG3/エゴノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000063E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000063D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000063C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM3/イロハモミジ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000063B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000063A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000639>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS3/イヌシデ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000638>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000637>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000636>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000635>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS3/アカシデ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000634>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000633>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000632>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD3/アオダモ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000631>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000630>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000062F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT3/カツラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000062E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000062D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000062C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH3/アオハダ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000062B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000062A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000629>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS3/コブシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000628>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000627>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000626>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000625>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000624>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR3/コナラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000623>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000622>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000621>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK3/エノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000620>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000061F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000061E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000061D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000061C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000061B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000061A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000619>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000618>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000617>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000616>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000615>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000614>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000613>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000612>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-LL/ケヤキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000611>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HI/ハイノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000610>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000060F>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000060E>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000060D>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000060C>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000060B>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x000000000000060A>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000609>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000608>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000607>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000606>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB1/タブノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000605>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000604>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000603>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD3/シロダモ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000602>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000601>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x0000000000000600>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK4/シラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005FF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005FE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005FD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK1/シラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005FC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK3/アラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005FB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005FA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[36827]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MT/ミツバツツジ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK2/ハンノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HK1/ハンノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SA/サルスベリ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005F0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HO/ホオノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005EF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB3/ヤマボウシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005EE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB2/ヤマボウシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005ED>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YB1/ヤマボウシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005EC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG3/エゴノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005EB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG2/エゴノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005EA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EG1/エゴノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM3/イロハモミジ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM2/イロハモミジ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IM1/イロハモミジ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS3/イヌシデ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS2/イヌシデ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IS1/イヌシデ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MZ/ミズキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS3/アカシデ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS2/アカシデ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005E0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AS1/アカシデ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005DF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD3/アオダモ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005DE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD2/アオダモ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005DD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AD1/アオダモ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005DC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT3/カツラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005DB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT2/カツラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005DA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KT1/カツラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH3/アオハダ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH2/アオハダ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AH1/アオハダ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS3/コブシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS2/コブシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KS1/コブシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG2/クヌギ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KG1/クヌギ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR3/コナラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005D0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR2/コナラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005CF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KR1/コナラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005CE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK3/エノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005CD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK2/エノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005CC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<EK1/エノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005CB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KZ/カスミザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005CA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<IZ/イヌザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ2/ウワミズザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<UZ1/ウワミズザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ2/ヤマザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ1/ヤマザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L2/ヤマザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YZ-L1/ヤマザクラ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY2/ケヤキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY1/ケヤキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L2/ケヤキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005C0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-L1/ケヤキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005BF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KY-LL/ケヤキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005BE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HI/ハイノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005BD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SO1/ソヨゴ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005BC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YH/ユズリハ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005BB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YN1/ヤブニッケイ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005BA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<YT1/ヤブツバキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MC1/モチノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<NM1/ネズミモチ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<KM1/カクレミノ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK2/モッコク/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MK1/モッコク/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB2/タブノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<TB1/タブノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ2/スダジイ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B1>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SJ1/スダジイ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005B0>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD3/シロダモ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005AF>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD2/シロダモ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005AE>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SD1/シロダモ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005AD>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK4/シラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005AC>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK3/シラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005AB>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK2/シラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005AA>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<SK1/シラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A9>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK3/アラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A8>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK2/アラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A7>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AK1/アラカシ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A6>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<HT/ホルトノキ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A5>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<MM/モミ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A4>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<CY/カヤ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A3>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM2/アカマツ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 3
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A2>]
+
+limit_layer_count: 2
+
+tree_for_recheck: Tree<AM1/アカマツ/cell[40113]>
+
+self.get_layer_count(inlayer_trees): 2
+
+inlayer_trees: [<lib_65land.Tree.Tree instance at 0x00000000000005A0>, <lib_65land.Tree.Tree instance at 0x00000000000005A1>]
+
+limit_layer_count: 2
+
+[<lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000321>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000322>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000323>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000324>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000325>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000326>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000327>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000328>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000329>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000032A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000032B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000032C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000032D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000032E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000032F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000330>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000331>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000332>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000333>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000334>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000335>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000336>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000337>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000338>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000339>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000033A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000033B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000033C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000033D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000033E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000033F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000340>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000341>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000342>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000343>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000344>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000345>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000346>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000347>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000348>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000349>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000034A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000034B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000034C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000034D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000034E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000034F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000350>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000351>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000352>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000353>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000354>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000355>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000356>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000357>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000358>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000359>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000035A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000035B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000035C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000035D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000035E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000035F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000360>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000361>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000362>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000363>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000364>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000365>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000366>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000367>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000368>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000369>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000036A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000036B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000036C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000036D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000036E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000036F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000370>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000371>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000372>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000373>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000374>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000375>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000376>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000377>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000378>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000379>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000037A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000037B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000037C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000037D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000037E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000037F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000380>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000381>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000382>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000383>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000384>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000385>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000386>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000387>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000388>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000389>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000038A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000038B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000038C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000038D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000038E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000038F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000390>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000391>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000392>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000393>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000394>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000395>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000396>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000397>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000398>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000399>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000039A>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000039B>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000039C>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000039D>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000039E>, <lib_65land.Tree.PlacementPostponedTree instance at 0x000000000000039F>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A0>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A1>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A2>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A3>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A4>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A5>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A6>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A7>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A8>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003A9>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003AA>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003AB>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003AC>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003AD>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003AE>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003AF>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B0>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B1>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B2>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B3>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B4>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B5>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B6>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B7>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B8>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003B9>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003BA>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003BB>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003BC>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003BD>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003BE>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003BF>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C0>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C1>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C2>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C3>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C4>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C5>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C6>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C7>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C8>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003C9>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003CA>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003CB>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003CC>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003CD>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003CE>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003CF>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D0>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D1>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D2>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D3>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D4>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D5>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D6>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D7>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D8>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003D9>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003DA>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003DB>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003DC>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003DD>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003DE>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003DF>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E0>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E1>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E2>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E3>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E4>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E5>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E6>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E7>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E8>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003E9>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003EA>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003EB>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003EC>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003ED>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003EE>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003EF>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F0>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F1>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F2>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F3>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F4>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F5>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F6>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F7>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F8>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003F9>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003FA>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003FB>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003FC>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003FD>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003FE>, <lib_65land.Tree.PlacementPostponedTree instance at 0x00000000000003FF>, <lib_65land.Tree.PlacementPostponedTree instance at 0x0000000000000400>]

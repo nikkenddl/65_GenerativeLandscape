@@ -106,7 +106,7 @@ class Config(Singleton):
         self.__required_sunshine_duration_hour_by_shade_tolerance = (6.0,4.0,2.0,0.0)
         self.__limit_wind_speed_by_wind_tolerance = (4.3,5.6,float('inf'))
         self.__tree_height_lower_limit_to_consider_root_shape_for_soil_thickness = 8000.0 # mm
-        self.__high_tree_shortest_height_class = 3000 # mm
+        self.__short_tree_height_class_tolerance = 3000 # mm
 
         __SOIL_THICKNESS_1 = 600
         __SOIL_THICKNESS_2 = 1000
@@ -146,13 +146,13 @@ class Config(Singleton):
             "D" : tree_shape_section_2D_coordinates_typeD
         }
 
-        __area_to_check_forest_layer_count = 100 # m2
+        __area_to_check_forest_layer_count = 100.0 # m2
         self.__radius_to_check_forest_layer_count = (__area_to_check_forest_layer_count/math.pi) ** 0.5 * 1000.0 #mm
 
         self.__radius_to_check_collision = 8000.0 * 2.0 # finding radius * 2
 
-        self.__trying_placement_count_in_nogap_region = 15
-        self.__trying_multiplacement_radius_in_nogap_region = 3000
+        self.__trying_placement_count_in_nogap_region = 10
+        self.__trying_multiplacement_radius_in_nogap_region = 3000.0
 
 
     @property
@@ -315,8 +315,8 @@ class Config(Singleton):
         return self.__height_limit_by_soil_thickness_category
     
     @property
-    def high_tree_shortest_height_class(self):
-        return self.__high_tree_shortest_height_class
+    def short_tree_height_class_tolerance(self):
+        return self.__short_tree_height_class_tolerance
 
     @property
     def tree_height_lower_limit_to_consider_root_shape_for_soil_thickness(self):

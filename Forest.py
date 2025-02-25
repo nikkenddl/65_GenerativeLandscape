@@ -57,36 +57,46 @@ class ForestDomain:
 
 class ForestRegion:
     __config = Config()
-    _regions = []
     def __init__(self, ID, region_mesh, forest_domain):
         self.ID = int(ID)
         self.region_mesh = region_mesh
         self.region_mesh_projected = project_to_xyplane(self.region_mesh)
         self.forest_domain = forest_domain
-        self.__area = compute_area(self.region_mesh_projected)
-        self.__limit_tree_count = self.__area * self.forest_domain.density
-        self.__limit_tree_count_lower = self.__area * self.forest_domain.low_density
+        # self.__area = compute_area(self.region_mesh_projected)
+        self.__area = None
         
         # add when Cell is istanced.
         self.cells = []
-        self.__has_been_finished_placement = False
-        self.__has_been_finished_placement_lower = False
+        self.__has_been_finished_placement_tall_tree = False
+        self.__has_been_finished_placement_short_tree = False
 
         # set self information to Cell.FR_DICT (class attribute)
         Cell.set_FR(self)
 
-        ForestRegion._regions.append(self)
-
     def initialize(self):
-        self.__has_been_finished_placement = False
+        self.__has_been_finished_placement_tall_tree = False
 
     @property
     def area(self):
+        if self.__area is None:
+            raise Exception("self area has never computed yet. Area of the region must be computed by ForestRegion.compute_area_by_cells() after Cells are instanced.")
         return self.__area
+    
+    def compute_area_by_cells(self):
+        if self.cells:
+            span = self.cells[0].get_numerical_grid().span
+            area_of_cell = span*span
+            self.__area = area_of_cell * len(self.cells)
+        else:
+            self.__area = 0.0
     
     @property
     def limit_tree_count(self):
-        return self.__limit_tree_count
+        return self.__area * self.forest_domain.density
+    
+    @property
+    def limit_tree_count_short(self):
+        return self.__area * self.forest_domain.low_density
     
     @property
     def FD_dominant_species(self):
@@ -101,22 +111,20 @@ class ForestRegion:
         return [c.placed_tree for c in self.cells if c.placed_tree]
     
     @property
-    def has_finished_placement(self):
-        return self.__has_been_finished_placement
+    def has_finished_placement_tall(self):
+        return self.__has_been_finished_placement_tall_tree
     
     @property
-    def has_finished_placement_lower(self):
-        return self.__has_been_finished_placement_lower
+    def has_finished_placement_short(self):
+        return self.__has_been_finished_placement_short_tree
     
-    def update_has_been_finished(self):
+    def update_has_been_finished(self,tree):
         # density should be calculated with only trees whose height category is over tolerance.
-        tol = self.__config.high_tree_shortest_height_class
-        self.__has_been_finished_placement = sum(t.height_category>=tol for t in self.placed_trees)>=self.__limit_tree_count
-
-    def update_has_been_finished_lower(self):
-        # density should be calculated with only trees whose height category is over tolerance.
-        tol = self.__config.high_tree_shortest_height_class
-        self.__has_been_finished_placement_lower = sum(t.height_category<tol for t in self.placed_trees)>=self.__limit_tree_count_lower
+        tol = self.__config.short_tree_height_class_tolerance
+        if tree.is_short_tree:
+            self.__has_been_finished_placement_short_tree = sum(t.height_category<tol for t in self.placed_trees)>=self.limit_tree_count_short
+        else:
+            self.__has_been_finished_placement_tall_tree = sum(t.height_category>=tol for t in self.placed_trees)>=self.limit_tree_count
 
     def evaluate_dominant(self):
         """Evaluates the ratio of dominant species in placed trees and compares it to the target ratio.

@@ -160,7 +160,7 @@ class RegionAnalyser(Analyser):
         error_values = []
         trees = []
         tree_states = []
-        height_cat_tol_to_count = self._config.high_tree_shortest_height_class
+        height_cat_tol_to_count = self._config.short_tree_height_class_tolerance
 
         for cells in cells_by_regions:
             assert cells
@@ -284,20 +284,28 @@ class RelationAnalyser(Analyser):
 
         for c in cells_has_tree:
             tree = c.placed_tree
+            if tree.is_short_tree:
+                # short Tree
+                eval_values.append(0)
+                error_values.append(0)
+                tree_states.append(True)
+                com.append(com_fmt.format(2000))
+                continue
 
             tol = c.FD_vicinity_same_height_category_limit
 
             neighbors = rtree.search_close_objects(tree,dist)
-            height_classes = set(t.height_category for t in neighbors)
+            height_classes = set(t.height_category for t in neighbors if not t.is_short_tree)
 
             layer_count = len(height_classes)
             err = layer_count - tol
 
             eval_values.append(layer_count)
             error_values.append(err)
+            # tree_states.append(False)
             tree_states.append(err<=0)
 
-            com.append(com_fmt.format(len(neighbors)))
+            com.append(com_fmt.format(height_classes))
         
         return (trees,tree_states,eval_values,error_values,com)
             
