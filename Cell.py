@@ -36,6 +36,12 @@ class Cell:
         self.placed_tree=None
         self.__is_killed = False
 
+
+    @classmethod
+    def get_numerical_grid(cls):
+        return cls.__NumericalGrid
+
+
     
     @classmethod
     def set_grid_info(cls,origin,x_count,y_count,span):
@@ -44,6 +50,13 @@ class Cell:
                                             num_cells_x=x_count,
                                             num_cells_y=y_count)
         
+    @property
+    def span(self):
+        if not self.__NumericalGrid:
+            raise Exception("NumericalGrid is not defined for this cell.")
+        else:
+            return self.__NumericalGrid.span
+                
     @classmethod
     def get_cell_ID_of_point(cls,point):
         assert cls.__NumericalGrid
@@ -109,11 +122,13 @@ class Cell:
         cells = cells[:count]
         return cells,invalid_cell_points
     
-    @property
-    def is_dead(self):
+    def is_dead(self,checks_tall_trees_count=False,checks_short_trees_count=False):
+        bo_tall = checks_tall_trees_count and self.forest_region.has_finished_placement_tall
+        bo_short = checks_short_trees_count and self.forest_region.has_finished_placement_short
         return self.__is_killed\
             or self.placed_tree is not None\
-            or self.forest_region.has_finished_placement
+            or bo_tall\
+            or bo_short
     
     @property
     def xy_ID(self):
@@ -252,6 +267,7 @@ class NumericalGrid:
         or not cell_span:
             raise Exception("Some parameters are wrong")
         self.span = cell_span
+        self.grid_origin = grid_origin
         self.x_interval = (grid_origin.X,grid_origin.X + self.span * num_cells_x)
         self.y_interval = (grid_origin.Y,grid_origin.Y + self.span * num_cells_y)
         self.x_num = int(num_cells_x)

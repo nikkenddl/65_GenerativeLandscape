@@ -230,7 +230,6 @@ def load_base64_pickle(pickledata_base64):
 class ExcelReader:
     @staticmethod
     def read_from_file(path,sheet_index=0):
-        print('path',path)
         fileExt = System.IO.Path.GetExtension(path)
 
         data = None

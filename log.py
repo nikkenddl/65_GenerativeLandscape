@@ -1,4 +1,6 @@
 import os
+from time import time
+
 
 def create_incremented_file(path, threshold, default_filename="autocreated_log_000.txt"):
     """
@@ -92,3 +94,35 @@ def write(path, content):
         # Log error details for debugging
         print("Error while appending to file: {}".format(e))
         return False
+    
+
+
+
+class Timer(object):
+    def __init__(self):
+        self.records = [] # record comment and elapsed time tuple ((com1,time1)...(com_n,time_n))
+
+    class TimerContext(object):  #context manager
+        def __init__(self, timer, comment=None):
+            self.timer = timer
+            self.comment = comment
+
+        def __enter__(self):
+            self.start_time = time()
+            return self
+
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            self.end_time = time()
+            elapsed = self.end_time - self.start_time
+            self.timer.records.append((self.comment, elapsed))  # record
+
+    def with_comment(self, comment):
+        return self.TimerContext(self, comment)  # return context manager to record comment and time.
+
+    def flush(self):
+        # flush all records via stdout
+        for i, (comment, elapsed) in enumerate(self.records):
+            if comment:
+                print("Task {} ({}): {:.2f} seconds".format(i + 1, comment, elapsed))
+            else:
+                print("Task {}: {:.2f} seconds".format(i + 1, elapsed))

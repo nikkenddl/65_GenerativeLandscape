@@ -1,0 +1,183 @@
+import rhinoscriptsyntax as rs
+import scriptcontext as sc
+import Rhino as R
+from Rhino import Geometry as rg
+from rhinoscript import utility as rhutil
+
+from pickle import loads
+import base64
+from itertools import compress
+
+from lib_65land.config import Config
+from lib_65land.Forest import ForestRegion
+from lib_65land.rhinopy import get_user_texts
+from lib_65land.Cell import Cell,NumericalGrid
+from lib_65land.log import Timer
+
+
+
+
+def get_layer_objects(layer):
+    """_summary_
+
+    Parameters
+    ----------
+    layer : str
+
+    Returns
+    -------
+    objs: (n,) rhino_object
+    guids: (n,) str
+    """
+    if not isinstance(layer, str): raise Exception("method: get should receive str. received : {}".format(layer))
+    
+    sc.doc = R.RhinoDoc.ActiveDoc
+
+    exists = rs.IsLayer(layer)
+    if not exists: raise Exception("Layer:{} doesn't exist".format(layer))
+
+    objs = list(rs.ObjectsByLayer(layer))
+    sc.doc = ghdoc
+
+    return objs
+
+def coercemesh(guid):
+    sc.doc = R.RhinoDoc.ActiveDoc
+    mesh = rhutil.coercemesh(guid, True)
+    sc.doc = ghdoc
+    return mesh
+
+def find_index_by_attribute(class_list, target_value):
+    return next(
+        (i for i, cls in enumerate(class_list) if cls.value == target_value),
+        None  # 見つからなかった場合に返す値
+    )
+
+def try_get_point_from_string(string):
+    succeeds,point =  rg.Point3d.TryParse(string)
+    if not point: raise Exception("failured to parse point. input:{}".format(string))
+    return point
+
+def load_base64_pickle(pickledata_base64):
+    return loads(base64.b64decode(pickledata_base64))
+
+def load_map(forest_regions):
+    config = Config()
+    map_layer = config.map_layer_name
+    
+    timer = Timer()
+
+    with timer.with_comment("guids"):
+        guids = get_layer_objects(map_layer)
+    if len(guids)!=1: raise Exception("number of map objects is not 1. found : {}".format(len(objs)))
+
+    
+    guid = guids[0]
+    grid = coercemesh(guid)
+
+
+
+    with timer.with_comment("x_cell_count"):
+        x_cell_count = int(get_user_texts(guid,config.map_key_x_cell_count))
+    with timer.with_comment("y_cell_count"):
+        y_cell_count = int(get_user_texts(guid,config.map_key_y_cell_count))
+    with timer.with_comment("grid_origin_coords"):
+        grid_origin_coords = list(map(float,get_user_texts(guid,config.map_key_grid_origin)[1:-1].split(",")))
+    with timer.with_comment("grid_origin"):
+        grid_origin = rg.Point3d(grid_origin_coords[0],grid_origin_coords[1],0)
+    with timer.with_comment("span"):
+        span = float(get_user_texts(guid,config.map_key_span))
+    
+    with timer.with_comment("is_cell_in_region"):
+        is_cell_in_region = load_base64_pickle(get_user_texts(guid,config.map_key_is_cell_in_region_base64))
+    with timer.with_comment("cell_IDs"):
+        cell_IDs = [i for i,bo in enumerate(is_cell_in_region) if bo]
+    
+    with timer.with_comment("cell_z_value"):
+        cell_z_value = load_base64_pickle(get_user_texts(guid,config.map_key_cell_z_value_base64))
+    cell_z_value = [cell_z_value[i] for i in cell_IDs]
+    with timer.with_comment("sunshine_duration_hour"):
+        sunshine_duration_hour = load_base64_pickle(get_user_texts(guid,config.map_key_sunshine_duration_hour_base64))
+    sunshine_duration_hour = [sunshine_duration_hour[i] for i in cell_IDs]
+    with timer.with_comment("soil_thickness"):
+        soil_thickness = load_base64_pickle(get_user_texts(guid,config.map_key_soil_thickness_base64))
+    soil_thickness = [soil_thickness[i] for i in cell_IDs]
+    with timer.with_comment("wind_speed"):
+        wind_speed = load_base64_pickle(get_user_texts(guid,config.map_key_wind_speed_base64))
+    wind_speed = [wind_speed[i] for i in cell_IDs]
+    with timer.with_comment("forest_region_id"):
+        forest_region_id = load_base64_pickle(get_user_texts(guid,config.map_key_FR_data_celluar_automaton_base64,False))\
+                    or load_base64_pickle(get_user_texts(guid,config.map_key_FR_data_base64))
+    forest_region_id = [forest_region_id[i] for i in cell_IDs]
+    with timer.with_comment("distance_to_edge"):
+        distance_to_edge = load_base64_pickle(get_user_texts(guid,config.map_key_distance_to_edge_base64))
+    distance_to_edge = [distance_to_edge[i] for i in cell_IDs]
+    
+    with timer.with_comment("grid_points"):
+        grid_points = [grid.Faces.GetFaceCenter(i) for i in cell_IDs]
+    for pt,z in zip(grid_points,cell_z_value):
+        pt.Z = z
+    
+    created_time = get_user_texts(guid,config.map_key_created_time)
+
+    Cell.set_grid_info(grid_origin,x_cell_count,y_cell_count,span)
+
+    grid_info = NumericalGrid(grid_origin,span,x_cell_count,y_cell_count)
+    
+    with timer.with_comment("Create cell"):
+        cells,invalid_cell_points = Cell.create_from_map_info(cell_IDs,
+                                                              grid_points,
+                                                              sunshine_duration_hour,
+                                                              soil_thickness,
+                                                              wind_speed,
+                                                              forest_region_id,
+                                                              forest_regions,
+                                                              distance_to_edge
+                                                              )
+
+    for region in forest_regions:
+        region.compute_area_by_cells()
+
+    timer.flush()
+    
+    return (
+        grid,
+        grid_info,
+        cells,
+        invalid_cell_points,
+        created_time,
+    )
+
+
+
+def load_forest_region(forest_domains):
+    config = Config()
+    region_layer = config.forest_region_archive_layer
+    region_keys = config.forest_region_keys
+
+    guids = get_layer_objects(region_layer)
+
+    region_id = [int(get_user_texts(guid,region_keys[0])) for guid in guids]
+    region_domain_name = [str(get_user_texts(guid,region_keys[1])) for guid in guids]
+    region_meshes = [coercemesh(guid) for guid in guids]
+    print('region_id', region_id)
+    print('region_domain_name', region_domain_name)
+    print('region_meshes', region_meshes)
+    forest_regions = []
+    if region_meshes and region_domain_name and region_id:
+        for i in range(len(region_meshes)):
+            
+            fd = next(fd for fd in forest_domains if fd.name==region_domain_name[i])
+            if not fd: raise Exception("forest domain not found.")
+            forest_region = ForestRegion(region_id[i],region_meshes[i],fd)
+            forest_regions.append(forest_region)
+
+
+    if not forest_regions:
+        raise Exception("No forest region is loaded")
+    return forest_regions
+
+
+if forest_domains:
+    forest_regions = load_forest_region(forest_domains)
+    grid,grid_info,cells,invalid_cell_points,created_time = load_map(forest_regions)

@@ -70,3 +70,14 @@ def get_source_load_map():
         code= f.read()
 
     return output_names,code
+
+def get_source_load_region_and_map():
+    output_names = []
+    ghpy_path = os.path.join(__file__,os.path.pardir,'.load_map_and_region.ghpy')
+    code = ""
+
+    with open(ghpy_path) as f:
+        code= f.read()
+    
+    return output_names,code
+    
