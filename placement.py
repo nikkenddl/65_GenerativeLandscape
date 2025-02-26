@@ -173,9 +173,6 @@ class ForestCreator:
                     else:
                         random.shuffle(close_cells)
 
-                def log_layer(tree):
-                    self.log("INFO: placed tree layer check [value/target]: {}/{}".format(tree.get_layer_count(tree.inlayer_trees),tree.placed_cell.FD_vicinity_same_height_category_limit))
-
                 for i_dense_placement in range(loop_limit):
                     self.log("DEBUG:Trying cell:{} / FRID:{} / FDname:{}".format(testing_cell,testing_cell.forest_region.ID,testing_cell.FDname))
                     placed_tree,status = self.try_to_place(testing_cell,trees_high)
@@ -183,10 +180,6 @@ class ForestCreator:
                     if placed_tree:
                         __placed_count += 1
                         self.log("INFO: {}/{} is placed : placed total {}".format(placed_tree.species,placed_tree.symbol,__placed_count))
-
-                        for t in placed_tree.inlayer_trees:
-                            log_layer(t)
-                        self.log("INFO: check layer-------------------")
                         
                         self.__failured_count = 0
                         s = time()

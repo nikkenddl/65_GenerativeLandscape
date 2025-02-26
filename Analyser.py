@@ -68,7 +68,7 @@ class Analyser(object):
     
 
 class RegionAnalyser(Analyser):
-    class_keys = ("dominant","density","egdd")
+    class_keys = ("dominant","density","density_short","egdd")
     def __init__(self, placed_cells):
         super(RegionAnalyser,self).__init__(placed_cells)
 
@@ -101,7 +101,9 @@ class RegionAnalyser(Analyser):
         if key=="dominant":
             rst = self.evaluate_dominants()
         elif key=="density":
-            rst = self.evaluate_density()
+            rst = self.evaluate_density(False)
+        elif key=="density_short":
+            rst = self.evaluate_density(True)
         elif key=="egdd":
             rst = self.evaluate_EGDD()
         else:
@@ -151,26 +153,28 @@ class RegionAnalyser(Analyser):
         return (cells_by_regions,trees,tree_states,eval_values,error_values)
 
 
-
-
-    def evaluate_density(self):
+    def evaluate_density(self,evaluate_short):
         cells_by_regions = [ls for ls in self._split_by_forest_regions().values()]
 
         eval_values = []
         error_values = []
         trees = []
         tree_states = []
-        height_cat_tol_to_count = self._config.short_tree_height_class_tolerance
+        shrot_tree_height_category_tolerance = self._config.short_tree_height_class_tolerance
 
         for cells in cells_by_regions:
             assert cells
                 
-            tol = cells[0].forest_region.forest_domain.density * 100 * 1000000 # to tree per 100m2
             area = cells[0].forest_region.area
 
             trees_in_region = [c.placed_tree for c in cells if c.placed_tree]
             # density should be calculated with only trees whose height category is over tolerance.
-            is_tree_in_region = [t.height_category>=height_cat_tol_to_count for t in trees_in_region]
+            if evaluate_short:
+                tol = cells[0].forest_region.forest_domain.low_density * 100 * 1000000 # to tree per 100m2
+                is_tree_in_region = [t.height_category<shrot_tree_height_category_tolerance for t in trees_in_region]
+            else:
+                tol = cells[0].forest_region.forest_domain.density * 100 * 1000000 # to tree per 100m2
+                is_tree_in_region = [t.height_category>=shrot_tree_height_category_tolerance for t in trees_in_region]
             tree_count_over_tol = sum(is_tree_in_region)
 
             density = tree_count_over_tol / area * 100 * 1000000 # to tree per 100m2
@@ -240,6 +244,7 @@ class RelationAnalyser(Analyser):
     def evaluate_overlap(self):
         cells_has_tree = [c for c in self._cells if c.placed_tree]
         trees = [c.placed_tree for c in cells_has_tree]
+        rtree = PointableRTree(trees)
 
         eval_values = []
         error_values = []
@@ -251,7 +256,10 @@ class RelationAnalyser(Analyser):
 
             tol = c.FD_overlap_tolerance_ratio
 
-            overlapped_neighbors = tree.overlapped_trees
+
+            # overlapped_neighbors = tree.overlapped_trees
+            overlapped_neighbors = [t for t in rtree.search_close_objects(c,self._config.radius_to_check_collision) if t is not tree]
+
             ov_ratio,_ = tree.get_overlapping_ratio(overlapped_neighbors)
 
             err = ov_ratio - tol
